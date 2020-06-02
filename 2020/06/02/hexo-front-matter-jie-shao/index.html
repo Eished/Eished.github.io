@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="王菲英语语法, Web,technology,CSS,HTML,JavaScript,Vue">
+    <meta name="keywords" content="Hexo Front-matter 介绍, Web,technology,CSS,HTML,JavaScript,Vue">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>王菲英语语法 | Eish&#39;s blog</title>
+    <title>Hexo Front-matter 介绍 | Eish&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -264,12 +264,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">王菲英语语法</h1>
+                    <h1 class="description center-align post-title">Hexo Front-matter 介绍</h1>
                 </div>
             </div>
         </div>
@@ -299,8 +299,8 @@
                                 <span class="chip bg-color">Markdown</span>
                             </a>
                         
-                            <a href="/tags/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">英语语法</span>
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
@@ -311,8 +311,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                英语
+                            <a href="/categories/Markdown/" class="post-category">
+                                Markdown
                             </a>
                         
                     </div>
@@ -324,7 +324,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-23
+                    2020-06-02
                 </div>
                 
 
@@ -340,234 +340,247 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="（一）不定冠词-a-an-的用法"><a href="#（一）不定冠词-a-an-的用法" class="headerlink" title="（一）不定冠词 a / an 的用法"></a>（一）不定冠词 a / an 的用法</h3><ol>
-<li>不定冠词 a / an 用在单数名词的前面</li>
-<li>a 用在辅音开头的词前面</li>
-<li>an 用在元音开头的词前面</li>
-</ol>
-<p><strong>具体用法：</strong></p>
-<ol>
-<li><p>泛指某一个人或物</p>
-<ul>
-<li><p>There is <u>a dog</u> lying on the ground.</p>
-<ul>
-<li><p><em>There is</em> 符合主谓一致的就近原则 </p>
-</li>
-<li><p><em>lying on the ground</em> 非谓语动词作定语来修饰 <em>dog</em></p>
-</li>
-<li><p><em>a</em> 泛指一只狗</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>表示类人或物，区别于其它种类</p>
-<ul>
-<li><u>An elephant</u> is much stronger than <u>a man</u>.<ul>
-<li>元音 e 前面用 <em>an</em> ，辅音 m 前用 <em>a</em></li>
-<li><em>An elephant， a man</em> 表示类别</li>
-<li>比较结构 <em>much stronger than</em></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>表示“一”这个数量</p>
-<ul>
-<li>There is <u>a table</u> and four chairs in that dining-room.<ul>
-<li><em>a table</em> 一张桌子  </li>
-<li><em>four chairs</em> 四把椅子</li>
-<li><em>there be</em> 句型 就近原则：根据后面名词是复数则用 <em>are</em> 单数用 <em>is</em></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>用不定冠词的习惯用语</p>
+                <h1 id="文章-Front-matter-介绍"><a href="#文章-Front-matter-介绍" class="headerlink" title="文章 Front-matter 介绍"></a>文章 Front-matter 介绍</h1><h2 id="Front-matter-选项详解"><a href="#Front-matter-选项详解" class="headerlink" title="Front-matter 选项详解"></a>Front-matter 选项详解</h2><p><code>Front-matter</code> 选项中的所有内容均为<strong>非必填</strong>的。但我仍然建议至少填写 <code>title</code> 和 <code>date</code> 的值。</p>
+<table>
+<thead>
+<tr>
+<th>配置选项</th>
+<th>默认值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>title</td>
+<td><code>Markdown</code> 的文件标题</td>
+<td>文章标题，强烈建议填写此选项</td>
+</tr>
+<tr>
+<td>date</td>
+<td>文件创建时的日期时间</td>
+<td>发布时间，强烈建议填写此选项，且最好保证全局唯一</td>
+</tr>
+<tr>
+<td>author</td>
+<td>根 <code>_config.yml</code> 中的 <code>author</code></td>
+<td>文章作者</td>
+</tr>
+<tr>
+<td>img</td>
+<td><code>featureImages</code> 中的某个值</td>
+<td>文章特征图，推荐使用图床(腾讯云、七牛云、又拍云等)来做图片的路径.如: <code>http://xxx.com/xxx.jpg</code></td>
+</tr>
+<tr>
+<td>top</td>
+<td><code>true</code></td>
+<td>推荐文章（文章是否置顶），如果 <code>top</code> 值为 <code>true</code>，则会作为首页推荐文章</td>
+</tr>
+<tr>
+<td>cover</td>
+<td><code>false</code></td>
+<td><code>v1.0.2</code>版本新增，表示该文章是否需要加入到首页轮播封面中</td>
+</tr>
+<tr>
+<td>coverImg</td>
+<td>无</td>
+<td><code>v1.0.2</code>版本新增，表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片</td>
+</tr>
+<tr>
+<td>password</td>
+<td>无</td>
+<td>文章阅读密码，如果要对文章设置阅读验证密码的话，就可以设置 <code>password</code> 的值，该值必须是用 <code>SHA256</code> 加密后的密码，防止被他人识破。前提是在主题的 <code>config.yml</code> 中激活了 <code>verifyPassword</code> 选项</td>
+</tr>
+<tr>
+<td>toc</td>
+<td><code>true</code></td>
+<td>是否开启 TOC，可以针对某篇文章单独关闭 TOC 的功能。前提是在主题的 <code>config.yml</code> 中激活了 <code>toc</code> 选项</td>
+</tr>
+<tr>
+<td>mathjax</td>
+<td><code>false</code></td>
+<td>是否开启数学公式支持 ，本文章是否开启 <code>mathjax</code>，且需要在主题的 <code>_config.yml</code> 文件中也需要开启才行</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>无</td>
+<td>文章摘要，自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要</td>
+</tr>
+<tr>
+<td>categories</td>
+<td>无</td>
+<td>文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类</td>
+</tr>
+<tr>
+<td>tags</td>
+<td>无</td>
+<td>文章标签，一篇文章可以多个标签</td>
+</tr>
+<tr>
+<td>keywords</td>
+<td>文章标题</td>
+<td>文章关键字，SEO 时需要</td>
+</tr>
+<tr>
+<td>reprintPolicy</td>
+<td>cc_by</td>
+<td>文章转载规则， 可以是 cc_by, cc_by_nd, cc_by_sa, cc_by_nc, cc_by_nc_nd, cc_by_nc_sa, cc0, noreprint 或 pay 中的一个</td>
+</tr>
+</tbody></table>
 <blockquote>
-<p>a bit (一点)    a little (一点)    a few (几个)    a lot (许多)</p>
-<p>a kind of (一种)     a pair of (一副、一双)    a number of (大量的)</p>
-<p>a piece of (一片)    half an hour (半小时)    have a good time (玩的开心)</p>
-<p>have a cold (感冒)    make a noise (发出噪音)    have/take a rest (休息一下) 等</p>
+<p><strong>注意</strong>:</p>
+<ol>
+<li>如果 <code>img</code> 属性不填写的话，文章特色图会根据文章标题的 <code>hashcode</code> 的值取余，然后选取主题中对应的特色图片，从而达到让所有文章都的特色图<strong>各有特色</strong>。</li>
+<li><code>date</code> 的值尽量保证每篇文章是唯一的，因为本主题中 <code>Gitalk</code> 和 <code>Gitment</code> 识别 <code>id</code> 是通过 <code>date</code> 的值来作为唯一标识的。</li>
+<li>如果要对文章设置阅读验证密码的功能，不仅要在 Front-matter 中设置采用了 SHA256 加密的 password 的值，还需要在主题的 <code>_config.yml</code> 中激活了配置。有些在线的 SHA256 加密的地址，可供你使用：<a href="http://tool.oschina.net/encrypt?type=2" target="_blank" rel="noopener">开源中国在线工具</a>、<a href="http://encode.chahuo.com/" target="_blank" rel="noopener">chahuo</a>、<a href="http://tool.chinaz.com/tools/hash.aspx" target="_blank" rel="noopener">站长工具</a>。</li>
+<li>您可以在文章md文件的 front-matter 中指定 reprintPolicy 来给单个文章配置转载规则</li>
+</ol>
 </blockquote>
-</li>
-</ol>
-<h3 id="（二）定冠词-the-的用法"><a href="#（二）定冠词-the-的用法" class="headerlink" title="（二）定冠词 the 的用法"></a>（二）定冠词 the 的用法</h3><ol>
-<li>表特指的人或事物<ul>
-<li><u>The man</u> with a flower in his hand is jack.<ul>
-<li><em>the man</em> 特指这个男人</li>
-<li><em>with a flower in his hand</em> 介词短语充当定语，修饰名词</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>复述前面提到过的人或物<ul>
-<li>There is a man under the tree. <u>The man</u> is called Robert.<ul>
-<li><em>a man</em> 泛指一个人</li>
-<li><em>the man</em> 特指前面提到过的人</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>表独一无二的事物<ul>
-<li><u>The earth</u> turns around the sun.<ul>
-<li><em>the earth</em> 独一无二的事物</li>
-<li><em>turns</em> 动词表现时态</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>用在表示方位的名词前面<ul>
-<li>There will be strong wind to <u>the south</u> of the Yangtze River.<ul>
-<li><em>the south</em> 方位</li>
-<li>这里经常刮大风：<em>there will be</em> 改成 <em>there is</em> </li>
-</ul>
-</li>
-</ul>
-</li>
-<li>在序数词和形容词最高级的前面<ul>
-<li>Who is <u>the first</u> one to go?<ul>
-<li><em>the first</em> 序数词前</li>
-</ul>
-</li>
-<li>Of all the stars , the sun is <u>the nearest</u> to the earth.<ul>
-<li><em>the stars</em> / <em>the sun</em> / <em>the earth</em> 独一无二的事物</li>
-<li><em>the nearest</em> 形容词最高级前</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>用在江河、海洋、山脉等名称的前面<ul>
-<li>I have never been to <u>the Himalaya Mountains</u>.<ul>
-<li><em>the Himalaya Mountains</em> 山脉</li>
-<li><em>have never been to</em> 现在完成时</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>用在 <u>含有普通名词的专有名词</u> 的前面<ul>
-<li>He is from <u>the United States of America</u>.<ul>
-<li><em>the United States of America</em> 专有名词</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>用在姓氏之前表示一家人<ul>
-<li><u>The Greens</u> are going to Mount Emei next month.<ul>
-<li><em>the Greens</em> 格林一家人</li>
-<li><em>are going to</em> 一般将来时</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>固定短语搭配<ul>
-<li>at the same time (与此同时) ；make the bed (铺床) ；</li>
-<li>in the end (最后) ；all the time (一直)；</li>
-<li>by the way (顺便说一下) ；on the way (在路上) ；</li>
-</ul>
-</li>
-<li>乐器名称前<ul>
-<li>He began to play <u>the violin</u> at the age of 5.<ul>
-<li><em>the violin</em> 乐器</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="（三）零冠词"><a href="#（三）零冠词" class="headerlink" title="（三）零冠词"></a>（三）零冠词</h3><ol>
-<li><u>专有名词</u> 和 <u>第一次使用一些不可数名词</u> 时前面通常不用<ul>
-<li><u>China</u> is a very large country.<ul>
-<li><em>China</em> 专有名词</li>
-</ul>
-</li>
-<li>Man needs <u>air and water</u>.<ul>
-<li><em>air and water</em> 第一次使用不可数名词</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>名词前已有指示、物主或不定代词 作定语修饰时不用<ul>
-<li><u>My pen</u> is <u>much more expensive than</u> yours.<ul>
-<li><em>my pen</em> 物主代词</li>
-<li><em>much more expensive than</em> 比较级</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>周名、月名、日期 或 季节名前不用<ul>
-<li>He <u>was born</u> on <u>Monday</u> , <u>February</u> <u>18</u> , <u>1995</u>.<ul>
-<li><em>Monday , February 18 , 1995</em>  周名/月名/日期</li>
-<li><em>was born</em> 一般过去时的被动语态</li>
-</ul>
-</li>
-<li>They usually plant trees in the hills in <u>spring</u>.<ul>
-<li><em>spring</em> 季节； <em>the spring</em> 表特指不是零冠词</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><u>第一次使用</u> 复数名词表示人或事物的 <u>类别</u> 时不用<ul>
-<li><u>Men</u> are cleverer than <u>monkeys</u>.<ul>
-<li>特指可以加 the</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>三餐、学科前不用<ul>
-<li>We <u>have breakfast</u> at home <u>and lunch</u> at school.<ul>
-<li><em>and lunch</em> 省略了 <em>we have</em></li>
-</ul>
-</li>
-<li>We all like <u>English</u>.</li>
-</ul>
-</li>
-<li>节假日前不用<ul>
-<li><u>On Children’s Day</u> the boys often get presents from their parents.<ul>
-<li><em>On Children’s Day</em> 介词短语作时间状语</li>
-<li><em>often</em> 一般现在时</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>球类前不用<ul>
-<li>The children <u>play football</u> <u>on Saturday</u> afternoons.<ul>
-<li><em>play football</em> 球类不用</li>
-<li><em>on Saturday</em> 日期不用</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>一些习惯用语中不用（查询中文并背诵）<ol>
-<li>at / to / from /out of / after / for school ;</li>
-<li>in / to / for / after class ;</li>
-<li>in / to / for /out of / into bed ;</li>
-<li>after / at / from /out of /to work ;</li>
-<li>at / to sea ;</li>
-<li>in / from / down / to town ; </li>
-<li>at / from home ;</li>
-<li>at / for / to breakfast / lunch / supper ;</li>
-<li>at night / noon / midnight ;</li>
-<li>on foot ;</li>
-<li>go to school / bed ;</li>
-<li>on top of ;</li>
-<li>in front of ;</li>
-<li>on show / display / duty / watch ;</li>
-<li>in / out of hospital ;</li>
-<li>at all ;</li>
-<li>on / in time ;</li>
-<li>at first / last / once ;</li>
-<li>in Chinese / English ;</li>
-<li>take care of ;</li>
-</ol>
-</li>
-<li>序数词作副词时前面不用<ul>
-<li>He <u>came first</u> in the race. Work must <u>come first</u>.</li>
-</ul>
-</li>
-<li>头衔、职位、称呼前一般不用<ul>
-<li>This is <u>Doctor Li</u>.</li>
-<li>The guards took the American to <u>General Lee</u>.</li>
-</ul>
-</li>
-</ol>
+<p>以下为文章的 <code>Front-matter</code> 示例。</p>
+<h2 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h2><pre><code>---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+---</code></pre><h2 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h2><pre><code>---
+title: typora-vue-theme主题介绍
+date: 2018-09-07 09:25:00
+author: 赵奇
+img: /source/images/xxx.jpg
+top: true
+cover: true
+coverImg: /images/1.jpg
+password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
+toc: false
+mathjax: false
+summary: 这是你自定义的文章摘要内容，如果这个属性有值，文章卡片摘要就显示这段文字，否则程序会自动截取文章的部分内容作为摘要
+categories: Markdown
+tags:
+  - Typora
+  - Markdown
+---</code></pre><h1 id="Hexo-指令"><a href="#Hexo-指令" class="headerlink" title="Hexo 指令"></a>Hexo 指令</h1><iframe src="https://www.youtube.com/embed/mgdXi5npArQ" frameborder="0" loading="lazy" allowfullscreen="" style="box-sizing: inherit; margin: 1em 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; font-size: 15px; vertical-align: baseline;"></iframe>
+
+<h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><pre><code>$ hexo init [folder]</code></pre><p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><pre><code>$ hexo new [layout] &lt;title&gt;</code></pre><p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a href="https://hexo.io/zh-cn/docs/configuration" target="_blank" rel="noopener">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
+<pre><code>$ hexo new &quot;post title with whitespace&quot;</code></pre><table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--path</code></td>
+<td align="left">自定义新文章的路径</td>
+</tr>
+<tr>
+<td align="left"><code>-r</code>, <code>--replace</code></td>
+<td align="left">如果存在同名文章，将其替换</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--slug</code></td>
+<td align="left">文章的 Slug，作为新文章的文件名和发布后的 URL</td>
+</tr>
+</tbody></table>
+<p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p>
+<pre><code>hexo new page --path about/me &quot;About me&quot;</code></pre><p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p>
+<p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p>
+<pre><code>hexo new page --path about/me</code></pre><p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p>
+<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><pre><code>$ hexo generate</code></pre><p>生成静态文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-d</code>, <code>--deploy</code></td>
+<td align="left">文件生成后立即部署网站</td>
+</tr>
+<tr>
+<td align="left"><code>-w</code>, <code>--watch</code></td>
+<td align="left">监视文件变动</td>
+</tr>
+<tr>
+<td align="left"><code>-b</code>, <code>--bail</code></td>
+<td align="left">生成过程中如果发生任何未处理的异常则抛出异常</td>
+</tr>
+<tr>
+<td align="left"><code>-f</code>, <code>--force</code></td>
+<td align="left">强制重新生成文件 Hexo 引入了差分机制，如果 <code>public</code> 目录存在，那么 <code>hexo g</code> 只会重新生成改动的文件。 使用该参数的效果接近 <code>hexo clean &amp;&amp; hexo generate</code></td>
+</tr>
+<tr>
+<td align="left"><code>-c</code>, <code>--concurrency</code></td>
+<td align="left">最大同时生成文件的数量，默认无限制</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为</p>
+<pre><code>$ hexo g</code></pre><h2 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h2><pre><code>$ hexo publish [layout] &lt;filename&gt;</code></pre><p>发表草稿。</p>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><pre><code>$ hexo server</code></pre><p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
+<table>
+<thead>
+<tr>
+<th align="left">选项</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-p</code>, <code>--port</code></td>
+<td align="left">重设端口</td>
+</tr>
+<tr>
+<td align="left"><code>-s</code>, <code>--static</code></td>
+<td align="left">只使用静态文件</td>
+</tr>
+<tr>
+<td align="left"><code>-l</code>, <code>--log</code></td>
+<td align="left">启动日记记录，使用覆盖记录格式</td>
+</tr>
+</tbody></table>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><pre><code>$ hexo deploy</code></pre><p>部署网站。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-g</code>, <code>--generate</code></td>
+<td align="left">部署之前预先生成静态文件</td>
+</tr>
+</tbody></table>
+<p>该命令可以简写为：</p>
+<pre><code>$ hexo d</code></pre><h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><pre><code>$ hexo render &lt;file1&gt; [file2] ...</code></pre><p>渲染文件。</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>-o</code>, <code>--output</code></td>
+<td align="left">设置输出路径</td>
+</tr>
+</tbody></table>
+<h2 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h2><pre><code>$ hexo migrate &lt;type&gt;</code></pre><p>从其他博客系统 <a href="https://hexo.io/zh-cn/docs/migration" target="_blank" rel="noopener">迁移内容</a>。</p>
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><pre><code>$ hexo clean</code></pre><p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
+<p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><pre><code>$ hexo list &lt;type&gt;</code></pre><p>列出网站资料。</p>
+<h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><pre><code>$ hexo version</code></pre><p>显示 Hexo 版本。</p>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><h3 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h3><pre><code>$ hexo --safe</code></pre><p>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
+<h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><pre><code>$ hexo --debug</code></pre><p>在终端中显示调试信息并记录到 <code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并 <a href="https://github.com/hexojs/hexo/issues/new" target="_blank" rel="noopener">提交调试信息到 GitHub</a>。</p>
+<h3 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h3><pre><code>$ hexo --silent</code></pre><p>隐藏终端信息。</p>
+<h3 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h3><pre><code># 使用 custom.yml 代替默认的 _config.yml
+$ hexo server --config custom.yml
+
+# 使用 custom.yml 和 custom2.json，其中 custom2.json 优先级更高
+$ hexo generate --config custom.yml,custom2.json,custom3.yml</code></pre><p>自定义配置文件的路径，指定这个参数后将不再使用默认的 <code>_config.yml</code>。<br>你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：</p>
+<pre><code># 使用 custom.yml 代替默认的 _config.yml
+$ hexo server --config custom.yml
+
+# 使用 custom.yml, custom2.json 和 custom3.yml，其中 custom3.yml 优先级最高，其次是 custom2.json
+$ hexo generate --config custom.yml,custom2.json,custom3.yml</code></pre><p>当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 <code>_multiconfig.yml</code>。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。</p>
+<h3 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h3><pre><code>$ hexo --draft</code></pre><p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
+<h3 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h3><pre><code>$ hexo --cwd /path/to/cwd</code></pre><p>自定义当前工作目录（Current working directory）的路径。</p>
 
             </div>
             <hr/>
@@ -593,7 +606,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://eish.top/2020/05/23/wang-fei-ying-yu-yu-fa/">https://eish.top/2020/05/23/wang-fei-ying-yu-yu-fa/</a>
+                    <a href="https://eish.top/2020/06/02/hexo-front-matter-jie-shao/">https://eish.top/2020/06/02/hexo-front-matter-jie-shao/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -639,8 +652,8 @@
                                     <span class="chip bg-color">Markdown</span>
                                 </a>
                             
-                                <a href="/tags/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">英语语法</span>
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -685,7 +698,7 @@
         repo: 'Eished.github.io',
         owner: 'Eished',
         admin: "Eished",
-        id: '2020-05-23T19-25-00',
+        id: '2020-06-02T16-02-11',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -709,65 +722,58 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/23/wang-fei-ying-yu-yu-fa/">
+                <a href="/2020/06/02/javascript-cong-ru-men-dao-jing-tong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="王菲英语语法">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="JavaScript从入门到精通">
                         
-                        <span class="card-title">王菲英语语法</span>
+                        <span class="card-title">JavaScript从入门到精通</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            （一）不定冠词 a / an 的用法
-不定冠词 a / an 用在单数名词的前面
-a 用在辅音开头的词前面
-an 用在元音开头的词前面
+                            JavaScript从入门到精通初探 JavaScript 魅力JavsScript 是什么
+网页特效原理
+JavaScript 就是修改样式（文档）
 
-具体用法：
 
-泛指某一个人或物
-
-There is a dog lying on the ground
+编写 JS 的流程
+布局：HTML + CSS 
+属性：确定要修改的属性
+事件： 确
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%8B%B1%E8%AF%AD/" class="post-category">
-                                    英语
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/Markdown/">
-                        <span class="chip bg-color">Markdown</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">英语语法</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
                 </div>
@@ -781,32 +787,52 @@ There is a dog lying on the ground
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/23/hello-world/">
+                <a href="/2020/06/02/git-he-github-xiang-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Git和GitHub详解">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">Git和GitHub详解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            Git和GitHub详解（一）Git基础Git 下载和安装
+下载地址： https://git-scm.com/downloads
+使用默认值安装
+资源管理器内单击鼠标右键选择 Git Bash Here
+输入git --version 检
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Eish
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
+                    </a>
+                    
+                    <a href="/tags/Github/">
+                        <span class="chip bg-color">Github</span>
+                    </a>
+                    
                 </div>
                 
             </div>

@@ -1,0 +1,1504 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="JavaScript从入门到精通, Web,technology,CSS,HTML,JavaScript,Vue">
+    <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>JavaScript从入门到精通 | Eish&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Eish&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Eish&#39;s blog</div>
+        <div class="logo-desc">
+            
+            Web technology CSS HTML JavaScript Vue Node.js
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/Eished" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/Eished" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">JavaScript从入门到精通</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/JavaScript/">
+                                <span class="chip bg-color">JavaScript</span>
+                            </a>
+                        
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-02
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="JavaScript从入门到精通"><a href="#JavaScript从入门到精通" class="headerlink" title="JavaScript从入门到精通"></a><a href="https://www.bilibili.com/video/av29885002" target="_blank" rel="noopener">JavaScript从入门到精通</a></h1><h2 id="初探-JavaScript-魅力"><a href="#初探-JavaScript-魅力" class="headerlink" title="初探 JavaScript 魅力"></a>初探 JavaScript 魅力</h2><h3 id="JavsScript-是什么"><a href="#JavsScript-是什么" class="headerlink" title="JavsScript 是什么"></a>JavsScript 是什么</h3><ul>
+<li>网页特效原理<ul>
+<li>JavaScript 就是修改样式（文档）</li>
+</ul>
+</li>
+<li>编写 JS 的流程<ul>
+<li>布局：HTML + CSS </li>
+<li>属性：确定要修改的属性</li>
+<li>事件： 确定用户 做哪些操作（产品设计）</li>
+<li>编写 JS ：在事件中，用 JS 来修改页面元素的样式</li>
+</ul>
+</li>
+</ul>
+<h3 id="第一个-JS-特效：鼠标提示框"><a href="#第一个-JS-特效：鼠标提示框" class="headerlink" title="第一个 JS 特效：鼠标提示框"></a>第一个 JS 特效：鼠标提示框</h3><ul>
+<li><p>分析效果实现原理</p>
+<ul>
+<li>样式：<code>div</code> 的 <code>display / none</code></li>
+<li>事件：<code>onmouseover / onmouseout</code></li>
+<li>动手编写效果</li>
+</ul>
+</li>
+<li><p>特效基础</p>
+<ul>
+<li>事件驱动：<code>onmouseover</code></li>
+<li>元素属性操作：<code>obj.style.[...]</code></li>
+<li>特效实现原理概括：响应式用户操作，对页面元素样式修改</li>
+</ul>
+</li>
+<li><p>兼容性问题 </p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// div2.style.display='block'; // 部分浏览器不兼容</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'block'</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 所有浏览器兼容</span></code></pre>
+</li>
+<li><p>函数</p>
+<ul>
+<li>制作更复杂的效果</li>
+<li>直接在事件内写代码会很乱<ul>
+<li>引入 <code>function()</code> 函数的基本形式</li>
+<li>把 JS 标签里放入到函数里，类似于 css 里的 <code>class</code></li>
+<li>变量的使用：别名</li>
+</ul>
+</li>
+<li>定义和调用<ul>
+<li>函数定义：告诉系统有这个函数，不会执行</li>
+<li>函数调用：执行函数里面的代码</li>
+<li>关系和区别</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>第一个JS效果<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+      <span class="token selector"><span class="token id">#div2</span> </span><span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span> 
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span> 
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">50</span>px<span class="token punctuation">;</span> 
+        <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token selector"><span class="token id">#div1</span> </span><span class="token punctuation">{</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span> 
+        <span class="token property">background</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span> 
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span> 
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">100</span>px<span class="token punctuation">;</span> 
+        <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+
+    <span class="token comment" spellcheck="true">// 封装 getElementById 函数</span>
+    <span class="token keyword">function</span> <span class="token keyword">get</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 显示 div2</span>
+    <span class="token keyword">function</span> <span class="token function">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// div2.style.display='block'; // 部分浏览器不兼容</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'div2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'block'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 隐藏 div2</span>
+    <span class="token keyword">function</span> <span class="token function">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// div2.style.display='none'; // 部分浏览器不兼容</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'div2'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token operator">=</span><span class="token string">'none'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// div1 变绿</span>
+    <span class="token keyword">function</span> <span class="token function">toGreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'green'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// div1 变蓝</span>
+    <span class="token keyword">function</span> <span class="token function">toblue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'blue'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// div1 变红</span>
+    <span class="token keyword">function</span> <span class="token function">toRed</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>background<span class="token operator">=</span><span class="token string">'red'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 点击循环变色</span>
+    <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">function</span> <span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'i='</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">toGreen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'i='</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">toblue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i<span class="token operator">++</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'i='</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> 
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">==</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">toRed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        i <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'i='</span><span class="token punctuation">,</span>i<span class="token punctuation">)</span>
+        <span class="token keyword">return</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+     <span class="token comment" spellcheck="true">&lt;!-- 调用页内函数修改样式 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>changeColor()<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>按钮<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!-- 行内 JS 修改样式 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>checkbox<span class="token punctuation">"</span></span> <span class="token attr-name">onmouseover</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div2.style.display<span class="token punctuation">=</span><span class="token punctuation">'</span>block<span class="token punctuation">'</span>;<span class="token punctuation">"</span></span> <span class="token attr-name">onmouseout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div2.style.display<span class="token punctuation">=</span><span class="token punctuation">'</span>none<span class="token punctuation">'</span>;<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>按钮<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>文字<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>文字2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+<h3 id="网页换肤和-if-判断"><a href="#网页换肤和-if-判断" class="headerlink" title="网页换肤和 if 判断"></a>网页换肤和 if 判断</h3><ul>
+<li><p>网页换肤</p>
+<ul>
+<li>土豆网 “开灯” “关灯效果”</li>
+<li>任何标签都可以加 ID ，包括 link</li>
+<li>任何标签的属性，都可以修改</li>
+<li>HTML 里面怎么写，JS 里面就怎么写</li>
+</ul>
+</li>
+<li><p>if 判断</p>
+<ul>
+<li>特效实现原理</li>
+<li>if 基本形式</li>
+<li>JS 里面 <code>= 赋值， == 判断</code></li>
+<li>为 a 链接添加 JS <ul>
+<li><code>&lt;a href=&quot;javascript:;&quot;&gt;&lt;/a&gt;</code></li>
+</ul>
+</li>
+<li>className  的使用<ul>
+<li><code>class</code> 是关键字，所以用 <code>className</code> 代替</li>
+<li>其它 HTML 里面怎么写，JS 里面就怎么写</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码</p>
+<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Content-Type<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/html;charset<span class="token punctuation">=</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>link1<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text/css<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>css/grey.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token keyword">function</span> <span class="token function">changeColor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'b1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">==</span> <span class="token string">'关灯'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'link1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">'css/black.css'</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'b1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'开灯'</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'black'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'link1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>href <span class="token operator">=</span> <span class="token string">'css/grey.css'</span><span class="token punctuation">;</span>
+        document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'b1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'关灯'</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'bl2:'</span><span class="token punctuation">,</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'link1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>href<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">changeText</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>value <span class="token operator">=</span> <span class="token string">'456'</span><span class="token punctuation">;</span>
+      document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'text1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>title <span class="token operator">=</span> <span class="token string">'文字1'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">showHide</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> div2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span><span class="token punctuation">(</span>div2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">==</span> <span class="token string">'block'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        div2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span><span class="token string">'none'</span><span class="token punctuation">;</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        div2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display <span class="token operator">=</span> <span class="token string">'block'</span><span class="token punctuation">;</span>
+        div2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>background <span class="token operator">=</span> <span class="token string">'blue'</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'display:'</span><span class="token punctuation">,</span> div2<span class="token punctuation">.</span>style<span class="token punctuation">.</span>display<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">function</span> <span class="token function">class1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">var</span> div <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div4'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      div<span class="token punctuation">.</span>className<span class="token operator">=</span><span class="token string">'div5'</span><span class="token punctuation">;</span>
+      div<span class="token punctuation">.</span>id<span class="token operator">=</span><span class="token string">'div5'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- 换肤 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>b1<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>changeColor()<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>关灯<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>3<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>显示隐藏div2<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>showHide()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- HTMl 里面怎么写，JS 里面就怎么写 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text1<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>123<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>改文字<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>changeText()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
+    <span class="token comment" spellcheck="true">&lt;!-- a 链接的使用 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>javascript:;<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>javascript:;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+
+    <span class="token comment" spellcheck="true">&lt;!-- className 的使用 --></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>div4<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>4<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>button<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>className<span class="token punctuation">"</span></span> <span class="token attr-name">onclick</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>class1()<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+</li>
+</ul>
+<h3 id="函数传参"><a href="#函数传参" class="headerlink" title="函数传参"></a>函数传参</h3><ul>
+<li><p>改变背景颜色</p>
+<ul>
+<li>函数传参：参数就是占位符<ul>
+<li>函数里面变量用传参</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>改变 div 的任意样式</p>
+<ul>
+<li>操纵属性的第二种方式<ul>
+<li>要修改的属性不确定时：<code>元素.style[ 变量/字符串 ] = 变量/字符串</code></li>
+<li>JS 中用 <code>.</code> 的地方都可以用 <code>[]</code> 代替;</li>
+<li>字符串变量区别和关系 ：带引号是字符串，不带是变量</li>
+</ul>
+</li>
+<li>将属性名作为参数传递</li>
+</ul>
+</li>
+<li><p>style 与 className </p>
+<ul>
+<li><code>元素.style.属性 = 变量/字符串</code> <ul>
+<li>style 是修改行内样式</li>
+</ul>
+</li>
+<li>行内样式优先级最高，之后再修改 className 不会有效果</li>
+<li>建议：只操作一种样式，要么只操作 style ，要么只操作 className</li>
+</ul>
+</li>
+<li><p>代码：</p>
+<pre class=" language-HTML"><code class="language-HTML"><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>函数传参</title>
+
+    <style>
+      div {
+        display: block; 
+        background: red; 
+        width: 100px; 
+        height: 100px; 
+        font-size: 16px;
+      }
+
+      .div2 {
+        display: block; 
+        background: grey; 
+        width: 100px; 
+        height: 100px; 
+      }
+    </style>
+
+    <script>
+
+    // 封装 getElementById 函数
+    function get(id) {
+      return document.getElementById(id);
+    }
+
+    // div1 变绿
+    function toGreen() {
+     get('div1').style.background='green';
+    }
+
+    // div1 变蓝
+    function toblue() {
+      get('div1').style.background='blue';
+    }
+
+    // div1 变红
+    function toRed() {
+      get('div1').style.background='red';
+    }
+
+    // 点击循环变色
+    var i = 0;
+    function changeColor() {
+      console.log('i=',i)
+      if (i == 0) {
+        toGreen();
+        i++;
+        console.log('i=',i)
+        return;
+      } 
+      if (i == 1) {
+        toblue();
+        i++;
+        console.log('i=',i)
+        return;
+      } 
+      if (i == 2) {
+        toRed();
+        i = i - 2;
+        console.log('i=',i)
+        return;
+      }
+    }
+
+    // 函数传参
+    function toColor(color, width) {
+      get('div1').style.background = color;
+      get('div1').style.width = width;
+    }
+    // 将属性名作为参数传递
+    function chgName(name, width) {
+      // get('div1').style.name = width; // name 会被当作属性赋值
+      get('div1')['style'][name] = width; // 数组 可以加字符串或者变量
+    }
+    // 样式优先级
+    function chgClass(className) {
+      get('div1').className =  className; 
+    }
+    </script>
+  <meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  <body>
+    <!-- 调用页内函数修改样式 -->
+    <input type="button" onclick="changeColor()" value="循环">
+    <!-- 函数传参 -->
+    <input type="button" onclick="toColor('green', '200px')" value="变绿">
+    <input type="button" onclick="toColor('blue', '300px')" value="变蓝">
+    <input type="button" onclick="toColor('red', '400px')" value="变红">
+    <input type="button" onclick="chgName('height', '200px')" value="变高">
+    <input type="button" onclick="chgClass('div2')" value="class变灰">
+    <div id="div1"></div>
+
+  </body>
+</html></code></pre>
+</li>
+</ul>
+<h3 id="提取行间事件"><a href="#提取行间事件" class="headerlink" title="提取行间事件"></a>提取行间事件</h3><ul>
+<li>提取事件<ul>
+<li>为元素添加事件<ul>
+<li>事件和其它属性一样，可以用 JS 添加：<code>元素.事件 = 函数名/函数;</code><ul>
+<li>不能加括号，加括号直接执行函数</li>
+</ul>
+</li>
+<li><code>window.onload</code> 的意义：等待页面加载完成再执行 JS</li>
+<li>行为( js )、样式( css )、结构( html ) 三者分离</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>获取一组元素<ul>
+<li><code>元素.getElementsByTagName(&#39;标签名&#39;)</code><ul>
+<li>数组的使用</li>
+<li>数组的属性</li>
+</ul>
+</li>
+<li>全选的实现</li>
+</ul>
+</li>
+<li>代码: 同下</li>
+</ul>
+<h3 id="循环-while-和-for"><a href="#循环-while-和-for" class="headerlink" title="循环 while 和 for"></a>循环 while 和 for</h3><ul>
+<li><p>用 while 引入 循环的概念</p>
+<ul>
+<li>while 循环语法<ul>
+<li>自增的意义</li>
+<li>循环的构成：初始化、条件、语句、自增</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>for 循环</p>
+<ul>
+<li>用 for 代替 while 循环<ul>
+<li>用 for 循环为一组元素甜腻骄傲事件</li>
+<li>什么时候用循环—-一组元素</li>
+</ul>
+</li>
+<li>例子<ul>
+<li>全选—- checked 属性</li>
+<li>反选—- for 循环配合 if 判断</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码:</p>
+<pre class=" language-HTML"><code class="language-HTML"><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>提取行间事件和循环</title>
+
+    <style>
+      div {
+        display: block; 
+        border: 1px solid black; 
+        width: 100px; 
+        height: 100px; 
+        margin: 10px;
+        float: left;
+      }
+    </style>
+
+    <script>
+      window.onload = function () {
+        // 封装 getElementById 函数
+        function get(id) {
+          return document.getElementById(id);
+        }
+
+        // 封装 getElementsByTagName
+        function gets(tagName) {
+          return document.getElementsByTagName(tagName)
+        }
+
+        // 提取行间样式
+        get('btn1').onclick = function () {
+          get('btn1').value = '提取成功';
+        }
+
+        // 修改一组元素中的某一个元素
+        get('btn2').onclick = function () {
+          gets('div')[2].style.background = 'blue';
+        } 
+
+        // 修改一组元素- while 循环
+        get('btn3').onclick = function () {
+          var i = 0;
+          while ( i < gets('div').length ) {
+            gets('div')[i].style.background = 'yellow';
+            i++;
+          }
+        } 
+        // for
+        get('btn4').onclick = function () {
+          for (var i = 0; i < gets('div').length; i++ ){
+            gets('div')[i].style.background = 'pink';
+          }
+        } 
+
+        // 全选的实现 if 判断 无需div
+        get('btn5').onclick = function () {
+          for (var i = 0; i < gets('input').length; i++ ){
+            if (gets('input')[i].type == 'checkbox'){
+              if (gets('input')[i].checked == false) {
+                gets('input')[i].checked = true;
+              } else {
+                gets('input')[i].checked = false;
+              }
+            }
+          }
+        } 
+        // 元素.getElementsByTagName 方法 单个div
+        get('btn6').onclick = function () {
+          var div2 = get('div2');
+          var inp = div2.getElementsByTagName('input');
+          for (var i = 0; i < inp.length; i++ ){
+            // console.log(inp);
+            if (inp[i].checked == false) {
+              inp[i].checked = true;
+            } else {
+              inp[i].checked = false;
+            }
+          }
+        }
+        // 元素.getElementsByTagName 方法 多个div
+        get('btn7').onclick = function () {
+          var div2 = gets('div');
+          for (var i = 0; i < div2.length; i++ ){
+            var div = gets('div')[i];
+            var inps = div.getElementsByTagName('input');
+            for (var a = 0; a < inps.length; a++){
+              if (inps[a].checked == false) {
+                inps[a].checked = true;
+              } else {
+                inps[a].checked = false;
+              }
+            }
+          }
+        }  
+      };
+    </script>
+  </head>
+
+  <body>
+    <!-- 提取行间样式 -->
+    <input id="btn1" type="button" value="按钮">
+    <!-- 修改一组元素中的某一个元素 -->
+    <input type="button" id="btn2" value="改第三个元素">
+    <!-- 修改一组元素-循环 -->
+    <input type="button" id="btn3" value="while循环改一组元素">
+    <input type="button" id="btn4" value="for循环改一组元素">
+    <input type="button" id="btn5" value="全选">
+    <input type="button" id="btn6" value="全选2">
+    <input type="button" id="btn7" value="全选3">
+    <div><input type="checkbox" name="1" id="c1"></div>
+    <div><input type="checkbox" name="1" id="c2"></div>
+    <div><input type="checkbox" name="1" id="c3"></div>
+    <div><input type="checkbox" name="1" id="c4"></div>
+    <div><input type="checkbox" name="1" id="c5"></div>
+
+    <div id="div2">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+      <input type="checkbox" name="" id="">
+    </div>
+
+  </body>
+</html></code></pre>
+</li>
+</ul>
+<h3 id="导航栏选项卡"><a href="#导航栏选项卡" class="headerlink" title="导航栏选项卡"></a>导航栏选项卡</h3><ul>
+<li><p>按钮的实现</p>
+<ul>
+<li>添加事件<ul>
+<li>this 的使用: 指当前发生事件的元素</li>
+</ul>
+</li>
+<li>先清空所有按钮，再选中当前按钮</li>
+</ul>
+</li>
+<li><p>内容的实现（ul）</p>
+<ul>
+<li>先隐藏所有 ul，再显示当前 ul<ul>
+<li>索引值的使用：什么时候用索引值</li>
+<li>HTML 添加 index 会被 FireFox 过滤</li>
+<li>JS 添加 index</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码:</p>
+<pre class=" language-HTML"><code class="language-HTML"><!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>导航选项卡</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      #div2 {
+        width: 200px;
+        height: 200px;
+        margin-top: 20px;
+        position: relative;
+      }
+      #div1 {
+        width: 200px;
+        height: 20px;
+        position: absolute;
+        top: 0px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        display: block;
+        background: rgb(157, 234, 253);
+        float: left;
+        position: absolute;
+        display: none;
+        width: 200px;
+        height: 200px;
+      }
+      .ul {
+        display: block;
+      }
+      a {
+        display: block;
+        float: left;
+        width: 49px;
+        height: 20px;
+        background: rgb(7, 184, 253);
+        border-left: 1px solid rgb(255, 0, 234);
+        text-decoration: none;
+      }
+      .a {
+        background: rgb(32, 108, 221);
+      }
+    </style>
+    <script>
+      window.onload = function (){
+        // 封装 getElementById 函数
+        function get(id) {
+          return document.getElementById(id);
+        }
+        // 封装 getElementsByTagName
+        function gets(tagName) {
+          return document.getElementsByTagName(tagName)
+        }
+        // 显示第一个元素
+        gets('ul')[0].className = 'ul';
+        // 当鼠标覆盖某个标签时 显示对应元素
+        for (var i = 0; i < 4; i++) {
+          gets('a')[i].index = i;
+          gets('a')[i].onmouseover = function () {
+            for (var a = 0; a < 4; a++) {
+              gets('ul')[a].className = '';
+              gets('a')[a].className = '';
+            }
+            // console.log(this);
+            gets('ul')[this.index].className = 'ul';
+            this.className = 'a';
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="div1">
+      <a href="javascript:;" id="a0">1</a>
+      <a href="javascript:;" id="a1">2</a>
+      <a href="javascript:;" id="a2">3</a>
+      <a href="javascript:;" id="a3">4</a>
+    </div>
+    <div id="div2">
+      <ul>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      </ul>
+      <ul>
+        <li>2</li>
+        <li>2</li>
+        <li>2</li>
+      </ul>
+      <ul>
+        <li>3</li>
+        <li>3</li>
+        <li>3</li>
+      </ul>
+      <ul>
+        <li>4</li>
+        <li>4</li>
+        <li>4</li>
+      </ul>
+    </div>
+  </body>
+</html></code></pre>
+</li>
+</ul>
+<h2 id="JavaScript-基础-点击去Github查看完整版"><a href="#JavaScript-基础-点击去Github查看完整版" class="headerlink" title="JavaScript 基础 点击去Github查看完整版"></a><a href="https://github.com/Eished/JavaScript_notes" target="_blank" rel="noopener">JavaScript 基础 点击去Github查看完整版</a></h2>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Eish</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://eish.top/2020/06/02/javascript-cong-ru-men-dao-jing-tong/">https://eish.top/2020/06/02/javascript-cong-ru-men-dao-jing-tong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Eish</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/JavaScript/">
+                                    <span class="chip bg-color">JavaScript</span>
+                                </a>
+                            
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'b9cda0c484bb0e96f9b3',
+        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
+        repo: 'Eished.github.io',
+        owner: 'Eished',
+        admin: "Eished",
+        id: '2020-06-02T16-13-38',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/06/02/javascript-es6-10/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="JavaScript ES6-10语法">
+                        
+                        <span class="card-title">JavaScript ES6-10语法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            第1章 课程介绍与环境搭建  JS作为前端的立身之本，让大家了解学习这门课的必要性。考虑到很多同学刚刚接触前端或者对工程化方法不太了解，为了快速进入到学习状态，我们提供了极其简单的方式帮大家准备好学习环境。
+1-1 课程导学 试看怎么学？
+
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/06/02/hexo-front-matter-jie-shao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Hexo Front-matter 介绍">
+                        
+                        <span class="card-title">Hexo Front-matter 介绍</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            文章 Front-matter 介绍Front-matter 选项详解Front-matter 选项中的所有内容均为非必填的。但我仍然建议至少填写 title 和 date 的值。
+
+
+
+配置选项
+默认值
+描述
+
+
+
+title
+Markd
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-02
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Typora/">
+                        <span class="chip bg-color">Typora</span>
+                    </a>
+                    
+                    <a href="/tags/Markdown/">
+                        <span class="chip bg-color">Markdown</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="/about" target="_blank">Eish</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:sueis@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
