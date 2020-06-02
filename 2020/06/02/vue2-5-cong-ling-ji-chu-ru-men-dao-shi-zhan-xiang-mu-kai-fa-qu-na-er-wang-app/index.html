@@ -425,14 +425,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.5k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    7 分
                 </div>
                 
 
@@ -613,129 +613,128 @@
 <h2 id="2-5-前端组件化"><a href="#2-5-前端组件化" class="headerlink" title="2-5 前端组件化"></a>2-5 前端组件化</h2><ul>
 <li>每个组件就是页面的一个区域</li>
 </ul>
-<h2 id="2-6-使用组件改造TodoList"><a href="#2-6-使用组件改造TodoList" class="headerlink" title="2-6 使用组件改造TodoList"></a>2-6 使用组件改造TodoList</h2><pre class=" language-HTML"><code class="language-HTML"><!DOCTYPE html>
-<html lang="en">
+<h2 id="2-6-使用组件改造TodoList"><a href="#2-6-使用组件改造TodoList" class="headerlink" title="2-6 使用组件改造TodoList"></a>2-6 使用组件改造TodoList</h2><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TodoList</title>
-  <script src="./vue.js"></script>
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Eish's blog" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>TodoList<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-<body>
-  <div id="app">
-    <input type="text" v-model="inputValue">
-    <button v-on:click="handleBtnClick">提交</button>
-    <ul>
-      <!-- <li v-for="item in list">{{item}}</li> -->
-      <todo-item v-bind:content="item" v-for="item in list">
-      </todo-item>
-    </ul>
-  </div>
-  <script>
-    // // 全局组件
-    // Vue.component("TodoItem", {
-    //   props: ['content'], // 接收 v-bind:content 传递的值
-    //   template: "<li>{{content}}</li>" // 模板内使用字符串
-    // })
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputValue<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleBtnClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!-- &lt;li v-for="item in list">{{item}}&lt;/li> --></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>todo-item</span> <span class="token attr-name"><span class="token namespace">v-bind:</span>content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item in list<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>todo-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token comment" spellcheck="true">// // 全局组件</span>
+    <span class="token comment" spellcheck="true">// Vue.component("TodoItem", {</span>
+    <span class="token comment" spellcheck="true">//   props: ['content'], // 接收 v-bind:content 传递的值</span>
+    <span class="token comment" spellcheck="true">//   template: "&lt;li>{{content}}&lt;/li>" // 模板内使用字符串</span>
+    <span class="token comment" spellcheck="true">// })</span>
 
-    var TodoItem = {
-      props: ['content'],
-      template: "<li>{{content}}</li>"
-    }
+    <span class="token keyword">var</span> TodoItem <span class="token operator">=</span> <span class="token punctuation">{</span>
+      props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      template<span class="token punctuation">:</span> <span class="token string">"&lt;li>{{content}}&lt;/li>"</span>
+    <span class="token punctuation">}</span>
 
-    var app = new Vue({
-      el: '#app',
-      components: {
-        TodoItem: TodoItem // 注册局部组件
-      },
-      data: {
-        list: ['第一课的内容', '第二课的内容'],
-        inputValue: ''
-      },
-      methods: {
-        handleBtnClick() {
-          this.$data.list.unshift(this.inputValue)
-          this.inputValue = ''
-        }
-      },
-    })
-  </script>
+    <span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+      components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        TodoItem<span class="token punctuation">:</span> TodoItem <span class="token comment" spellcheck="true">// 注册局部组件</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'第一课的内容'</span><span class="token punctuation">,</span> <span class="token string">'第二课的内容'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        inputValue<span class="token punctuation">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token function">handleBtnClick</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$data<span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>inputValue<span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>inputValue <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-</body>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-</html></code></pre>
-<h2 id="2-7-简单的组件间传值"><a href="#2-7-简单的组件间传值" class="headerlink" title="2-7 简单的组件间传值"></a>2-7 简单的组件间传值</h2><pre class=" language-HTMl"><code class="language-HTMl"><!DOCTYPE html>
-<html lang="en">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
+<h2 id="2-7-简单的组件间传值"><a href="#2-7-简单的组件间传值" class="headerlink" title="2-7 简单的组件间传值"></a>2-7 简单的组件间传值</h2><pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TodoList</title>
-  <script src="./vue.js"></script>
-</head>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>TodoList<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>./vue.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
 
-<body>
-  <div id="app">
-    <input type="text" v-model="inputValue">
-    <button v-on:click="handleBtnClick">提交</button>
-    <ul>
-      <!-- <li v-for="item in list">{{item}}</li> -->
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>app<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>inputValue<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name"><span class="token namespace">v-on:</span>click</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleBtnClick<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>提交<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ul</span><span class="token punctuation">></span></span>
+      <span class="token comment" spellcheck="true">&lt;!-- &lt;li v-for="item in list">{{item}}&lt;/li> --></span>
 
-      <!-- v-bind: 可以简写为: -->
-      <!-- v-on: 可以简写为@ -->
-      <!-- @delete="handleItemDelete" 监听 $emit 传递的 delete 事件 -->
-      <todo-item :content="item" :index="index" v-for="(item,index) in list" @delete="handleItemDelete">
-      </todo-item>
-    </ul>
-  </div>
-  <script>
-    // // 全局组件
-    // Vue.component("TodoItem", {
-    //   props: ['content'], // 接收 v-bind:content 传递的值
-    //   template: "<li>{{content}}</li>" // 模板内使用字符串
-    // })
+      <span class="token comment" spellcheck="true">&lt;!-- v-bind: 可以简写为: --></span>
+      <span class="token comment" spellcheck="true">&lt;!-- v-on: 可以简写为@ --></span>
+      <span class="token comment" spellcheck="true">&lt;!-- @delete="handleItemDelete" 监听 $emit 传递的 delete 事件 --></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>todo-item</span> <span class="token attr-name">:content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>item<span class="token punctuation">"</span></span> <span class="token attr-name">:index</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>(item,index) in list<span class="token punctuation">"</span></span> <span class="token attr-name">@delete</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>handleItemDelete<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>todo-item</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ul</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
+    <span class="token comment" spellcheck="true">// // 全局组件</span>
+    <span class="token comment" spellcheck="true">// Vue.component("TodoItem", {</span>
+    <span class="token comment" spellcheck="true">//   props: ['content'], // 接收 v-bind:content 传递的值</span>
+    <span class="token comment" spellcheck="true">//   template: "&lt;li>{{content}}&lt;/li>" // 模板内使用字符串</span>
+    <span class="token comment" spellcheck="true">// })</span>
 
-    var TodoItem = {
-      // 父组件向子组件传值, v-bind: 发送和 props 接收
-      props: ['content', 'index'],
-      template: "<li @click='handleItemClick'>{{content}}</li>",
-      methods: {
-        handleItemClick: function () {
-          // $emit 向外触发事件; 父组件监听此事件传值
-          this.$emit("delete", this.index);
-        }
-      }
-    }
+    <span class="token keyword">var</span> TodoItem <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token comment" spellcheck="true">// 父组件向子组件传值, v-bind: 发送和 props 接收</span>
+      props<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'content'</span><span class="token punctuation">,</span> <span class="token string">'index'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      template<span class="token punctuation">:</span> <span class="token string">"&lt;li @click='handleItemClick'>{{content}}&lt;/li>"</span><span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        handleItemClick<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token comment" spellcheck="true">// $emit 向外触发事件; 父组件监听此事件传值</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$emit</span><span class="token punctuation">(</span><span class="token string">"delete"</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>index<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
 
-    var app = new Vue({
-      el: '#app',
-      components: {
-        TodoItem: TodoItem // 注册局部组件
-      },
-      data: {
-        list: ['第一课的内容', '第二课的内容'],
-        inputValue: ''
-      },
-      methods: {
-        handleBtnClick: function () {
-          this.$data.list.unshift(this.inputValue)
-          this.inputValue = ''
-        },
-        handleItemDelete: function (index) {
-          this.list.splice(index, 1)
-        }
-      },
-    })
-  </script>
+    <span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+      components<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        TodoItem<span class="token punctuation">:</span> TodoItem <span class="token comment" spellcheck="true">// 注册局部组件</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        list<span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token string">'第一课的内容'</span><span class="token punctuation">,</span> <span class="token string">'第二课的内容'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        inputValue<span class="token punctuation">:</span> <span class="token string">''</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        handleBtnClick<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>$data<span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>inputValue<span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>inputValue <span class="token operator">=</span> <span class="token string">''</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        handleItemDelete<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>list<span class="token punctuation">.</span><span class="token function">splice</span><span class="token punctuation">(</span>index<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
 
-</body>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
 
-</html></code></pre>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
 <h2 id="2-8-章节小结"><a href="#2-8-章节小结" class="headerlink" title="2-8 章节小结"></a>2-8 章节小结</h2><p>作业: 仔细阅读Vue介绍部分文档, 查漏补缺</p>
 <ol>
 <li><p><code>v-bind</code> attribute 被称为<strong>指令</strong></p>
