@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Tampermonkey 油猴脚本笔记</title>
+      <link href="/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
+      <url>/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Tampermonkey-语法"><a href="#Tampermonkey-语法" class="headerlink" title="Tampermonkey 语法"></a>Tampermonkey 语法</h1><h2 id="require-引入文件"><a href="#require-引入文件" class="headerlink" title="require 引入文件"></a>require 引入文件</h2><ul><li>引入后相当于在同一个文件内，可直接调用引入文件的函数。</li></ul><h2 id="GM-xmlhttpRequest-Promise-写法"><a href="#GM-xmlhttpRequest-Promise-写法" class="headerlink" title="GM_xmlhttpRequest Promise 写法"></a>GM_xmlhttpRequest Promise 写法</h2><pre class=" language-JavaScript"><code class="language-JavaScript">    // GM_xmlhttpRequest GET异步通用模块    function getData(url, type = "document", usermethod = "GET") {      return new Promise((resolve, reject) => {        GM_xmlhttpRequest({          method: usermethod,          url: url,          responseType: type,          onload: function (response) {            if (!response) {              try {} catch (err) {                console.log(err);              }            }            resolve(response.response);          },          onerror: function (error) {            messageBox("网络错误");            reject(error);          }        });      });    }    // GM_xmlhttpRequest POST异步通用模块    function postDataAs(url, postData, type = "document", usermethod = "POST") {      return new Promise((resolve, reject) => {        GM_xmlhttpRequest({          method: usermethod,          url: url,          headers: {            "Content-Type": "application/x-www-form-urlencoded"          },          data: postData,          responseType: type,          onload: function (response) {            if (!response) {              try {} catch (err) {                console.log(err);              }            }            resolve(turnCdata(response.response));          },          onerror: function (error) {            messageBox("网络错误");            reject(error);          }        });      });    }</code></pre><h1 id="脚本执行顺序"><a href="#脚本执行顺序" class="headerlink" title="脚本执行顺序"></a>脚本执行顺序</h1><pre class=" language-JavaScript"><code class="language-JavaScript">// @require      file://d:\a.js// ==/UserScript==console.log(0);(function () {  'use strict';    console.log(1);})();</code></pre><ol><li>require 引入文件</li><li><code>// ==/UserScript==</code> 下的内容</li><li><code>(function () { &#39;use strict&#39;;console.log(1);})();</code> 的内容</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Web </tag>
+            
+            <tag> JavaScript </tag>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>新标准日本语学习笔记</title>
       <link href="/2021/06/07/xin-biao-zhun-ri-ben-yu-xue-xi-bi-ji/"/>
       <url>/2021/06/07/xin-biao-zhun-ri-ben-yu-xue-xi-bi-ji/</url>

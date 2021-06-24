@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eish.top/"/>
-  <updated>2021-06-07T12:42:14.028Z</updated>
+  <updated>2021-06-24T06:48:14.092Z</updated>
   <id>https://eish.top/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tampermonkey 油猴脚本笔记</title>
+    <link href="https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
+    <id>https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</id>
+    <published>2021-06-20T12:03:56.000Z</published>
+    <updated>2021-06-24T06:48:14.092Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Tampermonkey-语法&quot;&gt;&lt;a href=&quot;#Tampermonkey-语法&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 语法&quot;&gt;&lt;/a&gt;Tampermonkey 语法&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://eish.top/categories/JavaScript/"/>
+    
+    
+      <category term="Web" scheme="https://eish.top/tags/Web/"/>
+    
+      <category term="JavaScript" scheme="https://eish.top/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://eish.top/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
   
   <entry>
     <title>新标准日本语学习笔记</title>
