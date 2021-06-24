@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://eish.top/"/>
-  <updated>2021-06-24T06:48:14.092Z</updated>
+  <updated>2021-06-24T06:58:29.890Z</updated>
   <id>https://eish.top/</id>
   
   <author>
@@ -17,11 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用FTP软件和USB线进行文件传输</title>
+    <link href="https://eish.top/2021/06/24/shi-yong-ftp-ruan-jian-he-usb-xian-jin-xing-wen-jian-chuan-shu/"/>
+    <id>https://eish.top/2021/06/24/shi-yong-ftp-ruan-jian-he-usb-xian-jin-xing-wen-jian-chuan-shu/</id>
+    <published>2021-06-24T06:55:01.000Z</published>
+    <updated>2021-06-24T06:58:29.890Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;准备的软件&quot;&gt;&lt;a href=&quot;#准备的软件&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="https://eish.top/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="局域网" scheme="https://eish.top/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    
+      <category term="FTP" scheme="https://eish.top/tags/FTP/"/>
+    
+      <category term="网络" scheme="https://eish.top/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Tampermonkey 油猴脚本笔记</title>
     <link href="https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
     <id>https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</id>
     <published>2021-06-20T12:03:56.000Z</published>
-    <updated>2021-06-24T06:48:14.092Z</updated>
+    <updated>2021-06-24T06:53:11.141Z</updated>
     
     <summary type="html">
     

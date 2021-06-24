@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Tampermonkey 油猴脚本笔记, Web,technology,CSS,HTML,JavaScript,Vue">
+    <meta name="keywords" content="使用FTP软件和USB线进行文件传输, Web,technology,CSS,HTML,JavaScript,Vue">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tampermonkey 油猴脚本笔记 | Eish&#39;s blog</title>
+    <title>使用FTP软件和USB线进行文件传输 | Eish&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,12 +265,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Tampermonkey 油猴脚本笔记</h1>
+                    <h1 class="description center-align post-title">使用FTP软件和USB线进行文件传输</h1>
                 </div>
             </div>
         </div>
@@ -387,16 +387,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/">
+                                <span class="chip bg-color">局域网</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/FTP/">
+                                <span class="chip bg-color">FTP</span>
                             </a>
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">网络</span>
                             </a>
                         
                     </div>
@@ -407,8 +407,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
                             </a>
                         
                     </div>
@@ -420,7 +420,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-20
+                    2021-06-24
                 </div>
                 
 
@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    600
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -451,69 +451,56 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Tampermonkey-语法"><a href="#Tampermonkey-语法" class="headerlink" title="Tampermonkey 语法"></a>Tampermonkey 语法</h1><h2 id="require-引入文件"><a href="#require-引入文件" class="headerlink" title="require 引入文件"></a>require 引入文件</h2><ul>
-<li>引入后相当于在同一个文件内，可直接调用引入文件的函数。</li>
-</ul>
-<h2 id="GM-xmlhttpRequest-Promise-写法"><a href="#GM-xmlhttpRequest-Promise-写法" class="headerlink" title="GM_xmlhttpRequest Promise 写法"></a>GM_xmlhttpRequest Promise 写法</h2><pre class=" language-JavaScript"><code class="language-JavaScript">    // GM_xmlhttpRequest GET异步通用模块
-    function getData(url, type = "document", usermethod = "GET") {
-      return new Promise((resolve, reject) => {
-        GM_xmlhttpRequest({
-          method: usermethod,
-          url: url,
-          responseType: type,
-          onload: function (response) {
-            if (!response) {
-              try {} catch (err) {
-                console.log(err);
-              }
-            }
-            resolve(response.response);
-          },
-          onerror: function (error) {
-            messageBox("网络错误");
-            reject(error);
-          }
-        });
-      });
-    }
-    // GM_xmlhttpRequest POST异步通用模块
-    function postDataAs(url, postData, type = "document", usermethod = "POST") {
-      return new Promise((resolve, reject) => {
-        GM_xmlhttpRequest({
-          method: usermethod,
-          url: url,
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-          },
-          data: postData,
-          responseType: type,
-          onload: function (response) {
-            if (!response) {
-              try {} catch (err) {
-                console.log(err);
-              }
-            }
-            resolve(turnCdata(response.response));
-          },
-          onerror: function (error) {
-            messageBox("网络错误");
-            reject(error);
-          }
-        });
-      });
-    }</code></pre>
-<h2 id="脚本执行顺序"><a href="#脚本执行顺序" class="headerlink" title="脚本执行顺序"></a>脚本执行顺序</h2><pre class=" language-JavaScript"><code class="language-JavaScript">// @require      file://d:\a.js
-// ==/UserScript==
-console.log(0);
-(function () {
-  'use strict';
-    console.log(1);
-})();</code></pre>
-<ol>
-<li>require 引入文件</li>
-<li><code>// ==/UserScript==</code> 下的内容</li>
-<li><code>(function () { &#39;use strict&#39;;console.log(1);})();</code> 的内容</li>
+                <h2 id="准备的软件"><a href="#准备的软件" class="headerlink" title="准备的软件"></a>准备的软件</h2><ol>
+<li>手机端：实简FTP（Android）</li>
+<li>电脑端：FlashFxp（Windows）</li>
 </ol>
+<h2 id="逐字稿"><a href="#逐字稿" class="headerlink" title="逐字稿:"></a>逐字稿:</h2><h3 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h3><p>大家好！这里是：We Kown。</p>
+<p>今天来给大家介绍一种，电脑和手机之间快速传输文件的方法。</p>
+<p>传输速度平均40MB/S，是我目前发现的最快的方法。</p>
+<p>首先要准备这两个软件和USB线。</p>
+<p>这两个软件，软件市场有下载，</p>
+<p>其它同类软件也可以，只要支持FTP即可。</p>
+<h2 id="手机端操作："><a href="#手机端操作：" class="headerlink" title="手机端操作："></a>手机端操作：</h2><p>首先来看手机端操作：</p>
+<p>打开 实简FTP，</p>
+<p>设置 用户名和密码。</p>
+<p>启动服务，后台运行。</p>
+<p>然后进入手机设置，打开个人热点，</p>
+<p>把手机用USB线连上电脑。</p>
+<p>仅充电，选择USB共享网络就可以了。</p>
+<h2 id="电脑端操作"><a href="#电脑端操作" class="headerlink" title="电脑端操作"></a>电脑端操作</h2><p>接下来是电脑端操作：</p>
+<p>电脑提示连上网络，右键网络图标，打开网络设置，选择更改适配器选项，</p>
+<p>禁用有线网卡或无线网卡，不禁用的话也可以用，但会经过路由器，</p>
+<p>速度取决于路由器速度，通常只有10MB/S左右。</p>
+<p>然后打开FlashFXP，左边是本地，打开收藏夹：选择素材文件夹</p>
+<p>菜单栏选择站点，站点管理，新建站点</p>
+<p>输入站点名，连接类型，地址，用户名，密码</p>
+<p>然后就可以连接了</p>
+<p>连上后显示在右边，选择自己要传的文件，拖过去就开始传输了，</p>
+<p>右下角又显示需要的时间，传输速度之类的。</p>
+<p>快进到99%，已经传输完了，可以看到平均速度。</p>
+<h3 id="准备的软件-1"><a href="#准备的软件-1" class="headerlink" title="准备的软件"></a>准备的软件</h3><ol>
+<li>手机端：实简FTP（Android）</li>
+<li>电脑端：FlashFxp（Windows）</li>
+</ol>
+<h3 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h3><ol>
+<li>USB连接电脑</li>
+<li>个人热点，USB共享网络</li>
+<li>设置开启FTP服务端软件</li>
+</ol>
+<h3 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h3><ol>
+<li>更改适配器选项，禁用有线或无线网卡，留下手机USB共享的网卡</li>
+<li>开启FTP客户端软件，连接手机服务端</li>
+<li>传输文件</li>
+</ol>
+<p>传输完还原所有设置。</p>
+<h3 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h3><ol>
+<li>此方法无需网络</li>
+<li>可以用无线网络传输，手机或电脑开热点</li>
+</ol>
+<p>USB连接只有40MB/s，因为小米手机只支持USB2.0，达到了传输速度上限，使用USB3.0的手机理论可达600MB/s，实际100MB/s左右</p>
+<p>手机与电脑<br>最快传输文件的方式<br>轻松易操作</p>
+<p>无线/有线传输<br>平均40MB/S</p>
 
             </div>
             <hr/>
@@ -539,7 +526,7 @@ console.log(0);
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/">https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</a>
+                    <a href="https://eish.top/2021/06/24/shi-yong-ftp-ruan-jian-he-usb-xian-jin-xing-wen-jian-chuan-shu/">https://eish.top/2021/06/24/shi-yong-ftp-ruan-jian-he-usb-xian-jin-xing-wen-jian-chuan-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,16 +564,16 @@ console.log(0);
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web/">
-                                    <span class="chip bg-color">Web</span>
+                                <a href="/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/">
+                                    <span class="chip bg-color">局域网</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/FTP/">
+                                    <span class="chip bg-color">FTP</span>
                                 </a>
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">网络</span>
                                 </a>
                             
                         </div>
@@ -631,7 +618,7 @@ console.log(0);
         repo: 'Eished.github.io',
         owner: 'Eished',
         admin: "Eished",
-        id: '2021-06-20T20-03-56',
+        id: '2021-06-24T14-55-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -655,9 +642,10 @@ console.log(0);
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/06/24/shi-yong-ftp-ruan-jian-he-usb-xian-jin-xing-wen-jian-chuan-shu/">
                     <div class="card-image">
@@ -681,9 +669,9 @@ console.log(0);
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -696,6 +684,7 @@ console.log(0);
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -722,54 +711,35 @@ console.log(0);
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/07/xin-biao-zhun-ri-ben-yu-xue-xi-bi-ji/">
+                <a href="/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="新标准日本语学习笔记">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Tampermonkey 油猴脚本笔记">
                         
-                        <span class="card-title">新标准日本语学习笔记</span>
+                        <span class="card-title">Tampermonkey 油猴脚本笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            新标日初级上书本介绍书本结构
-上、下册各设6个”基本单元”，每个单元由4课构成。
-上册另设”入门单元”
+                            Tampermonkey 语法require 引入文件
+引入后相当于在同一个文件内，可直接调用引入文件的函数。
 
-入门单元
-
-基本单元
-
-寒暄用语
-人物介绍
-单元结构
-单元扉页
-单元末
-阅读文
-实用场景对话
-词语之泉
-日本风情
-
-
-
-
-模拟试题
-
+GM_xmlhttpRequest Promise 写法    // GM_xmlhttpRequest GET异步通用模块
 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    读书笔记
+                            <a href="/categories/JavaScript/" class="post-category">
+                                    JavaScript
                                 </a>
                             
                             
@@ -779,12 +749,16 @@ console.log(0);
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">语言学习</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
                     </a>
                     
-                    <a href="/tags/%E6%97%A5%E8%AF%AD/">
-                        <span class="chip bg-color">日语</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
                 </div>
