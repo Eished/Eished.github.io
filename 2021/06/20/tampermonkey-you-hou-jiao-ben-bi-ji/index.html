@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tampermonkey 油猴脚本笔记 | Eish&#39;s blog</title>
+    <title>Tampermonkey 油猴脚本笔记 | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -29,7 +29,7 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Eish's blog" type="application/atom+xml">
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 
@@ -42,7 +42,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">Eish&#39;s blog</span>
+                    <span class="logo-span">iKnow&#39;s blog</span>
                 </a>
             </div>
             
@@ -119,7 +119,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">Eish&#39;s blog</div>
+        <div class="logo-name">iKnow&#39;s blog</div>
         <div class="logo-desc">
             
             Web technology CSS HTML JavaScript Vue Node.js
@@ -429,7 +429,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    193
+                    270
                 </div>
                 
 
@@ -514,6 +514,34 @@ console.log(0);
 <li><code>// ==/UserScript==</code> 下的内容</li>
 <li><code>(function () { &#39;use strict&#39;;console.log(1);})();</code> 的内容</li>
 </ol>
+<h2 id="GM-addValueChangeListener"><a href="#GM-addValueChangeListener" class="headerlink" title="GM_addValueChangeListener"></a>GM_addValueChangeListener</h2><ul>
+<li>先运行监听函数；</li>
+<li>只要对应名称的值发生变化就可以监听到。</li>
+</ul>
+<pre class=" language-JavaScript"><code class="language-JavaScript">let myname = "user";
+GM_addValueChangeListener(myname, function (myname, old_value, new_value, remote) {
+  console.log(myname, old_value, new_value, remote);
+})
+let user = {
+  "a": 1,
+  "b": 2
+};
+GM_setValue(myname, user);
+// console.log(2);
+
+function launch1() {
+  user.a = 2;
+  // console.log(user);
+  GM_setValue(myname, user);
+
+}
+
+function launch2() {
+  user.c = 3;
+
+  GM_setValue(myname, user);
+  // console.log("user", user);
+}</code></pre>
 
             </div>
             <hr/>
@@ -529,7 +557,7 @@ console.log(0);
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Eish</a>
+                    <a href="/about" rel="external nofollow noreferrer">iKnow</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -539,7 +567,7 @@ console.log(0);
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/">https://eish.top/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</a>
+                    <a href="https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/">https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -552,7 +580,7 @@ console.log(0);
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Eish</a>
+                    <a href="/about" target="_blank">iKnow</a>
                     !
                 </span>
             </div>
@@ -675,7 +703,7 @@ console.log(0);
 手机端：实简FTP（Android）
 电脑端：FlashFxp（Windows）
 
-逐字稿:介绍：大家好！这里是：We Kown。
+逐字稿:介绍：大家好！这里是：We Know。
 今天来给大家介绍一种，电脑和手机之间快速传输文件的方法。
 传输速度平均40MB/S，是我目前发现
                         
@@ -931,7 +959,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2019</span>
-            <a href="/about" target="_blank">Eish</a>
+            <a href="/about" target="_blank">iKnow</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
