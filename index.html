@@ -332,11 +332,11 @@
                 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        strings: ['Never really desperate, only the lost of the soul.','Fear can hold you prisoner, hope can set you free.'],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
-                        backSpeed: 50,
+                        backSpeed: 100,
                         showCursor: true
                     });
                 </script>
@@ -366,16 +366,24 @@
                 
             </div>
             <div class="cover-social-link">
-    <a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
+<a href="https://space.bilibili.com/588239166" class="tooltipped" target="_blank" data-tooltip="在B站上关注我" data-position="top"
+    data-delay="50">
+    <i class="fas fa-play-circle"></i>
+</a>
 
 
 
-    <a href="mailto:kished@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
+<a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
 
+
+
+<a href="mailto:kished@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
 
 
 
@@ -566,6 +574,64 @@ server 接收到 http 请求，处理并返回数据
                     
 
                     
+                        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="music-player">
+    
+        <div class="title center-align">
+            <i class="fas fa-music"></i>&nbsp;&nbsp;听听音乐
+        </div>
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="song"
+                   id="1305032976"
+                   fixed='false'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.3'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+                        
 
                     
 
@@ -1440,41 +1506,6 @@ Markd
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2020/02/23/404/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="404">
-                            
-                            <span class="card-title">404</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-02-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                iKnow
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1516,16 +1547,24 @@ Markd
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
+<a href="https://space.bilibili.com/588239166" class="tooltipped" target="_blank" data-tooltip="在B站上关注我" data-position="top"
+    data-delay="50">
+    <i class="fas fa-play-circle"></i>
+</a>
 
 
 
-    <a href="mailto:kished@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
+<a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
 
+
+
+<a href="mailto:kished@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
 
 
 
