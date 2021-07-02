@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-02T05:19:43.242Z</updated>
+  <updated>2021-07-02T06:14:04.029Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>C++ 实现学生信息管理系统</title>
-    <link href="https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/"/>
-    <id>https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/</id>
-    <published>2021-07-02T05:15:58.000Z</published>
-    <updated>2021-07-02T05:19:43.242Z</updated>
+    <title>hexo 代码高亮问题</title>
+    <link href="https://iknow.fun/2021/07/02/xin-jian-wen-ben-wen-dang/"/>
+    <id>https://iknow.fun/2021/07/02/xin-jian-wen-ben-wen-dang/</id>
+    <published>2021-07-02T06:10:10.000Z</published>
+    <updated>2021-07-02T06:14:04.029Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,36 @@
       
         
         
-          &lt;h1 id=&quot;C-实现学生信息管理系统&quot;&gt;&lt;a href=&quot;#C-实现学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;C++ 实现学生信息管理系统&quot;&gt;&lt;/a&gt;C++ 实现学生信息管理系统&lt;/h1&gt;&lt;blockquote&gt;
+          &lt;h1 id=&quot;hexo-prism-代码高亮问题&quot;&gt;&lt;a href=&quot;#hexo-prism-代码高亮问题&quot; class=&quot;headerlink&quot; title=&quot;hexo prism 代码高亮问题&quot;&gt;&lt;/a&gt;hexo prism
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Markdown" scheme="https://iknow.fun/categories/Markdown/"/>
+    
+    
+      <category term="Hexo" scheme="https://iknow.fun/tags/Hexo/"/>
+    
+      <category term="prism" scheme="https://iknow.fun/tags/prism/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C++ 实现学生信息管理系统</title>
+    <link href="https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/"/>
+    <id>https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/</id>
+    <published>2021-07-02T05:15:58.000Z</published>
+    <updated>2021-07-02T05:51:29.560Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;cpp-实现学生信息管理系统&quot;&gt;&lt;a href=&quot;#cpp-实现学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;cpp 实现学生信息管理系统&quot;&gt;&lt;/a&gt;cpp 实现学生信息管理系统&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt;&lt;a
         
       
@@ -42,7 +71,13 @@
     
       <category term="信息管理系统" scheme="https://iknow.fun/tags/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="C - C++ - 实践 - 考试" scheme="https://iknow.fun/tags/C-C-%E5%AE%9E%E8%B7%B5-%E8%80%83%E8%AF%95/"/>
+      <category term="C" scheme="https://iknow.fun/tags/C/"/>
+    
+      <category term="C++" scheme="https://iknow.fun/tags/C/"/>
+    
+      <category term="实践" scheme="https://iknow.fun/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="考试" scheme="https://iknow.fun/tags/%E8%80%83%E8%AF%95/"/>
     
   </entry>
   
@@ -82,7 +117,7 @@
     <link href="https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
     <id>https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</id>
     <published>2021-06-20T12:03:56.000Z</published>
-    <updated>2021-06-28T14:48:03.985Z</updated>
+    <updated>2021-07-02T06:00:37.678Z</updated>
     
     <summary type="html">
     
@@ -102,9 +137,15 @@
     
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
-    
       <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://iknow.fun/tags/javascript/"/>
+    
+      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    
+      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
   </entry>
   
@@ -131,9 +172,9 @@
       <category term="读书笔记" scheme="https://iknow.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="语言学习" scheme="https://iknow.fun/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/"/>
-    
       <category term="日语" scheme="https://iknow.fun/tags/%E6%97%A5%E8%AF%AD/"/>
+    
+      <category term="语言学习" scheme="https://iknow.fun/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
@@ -161,9 +202,9 @@
       <category term="读书笔记" scheme="https://iknow.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="英语" scheme="https://iknow.fun/tags/%E8%8B%B1%E8%AF%AD/"/>
-    
       <category term="语言学习" scheme="https://iknow.fun/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/"/>
+    
+      <category term="英语" scheme="https://iknow.fun/tags/%E8%8B%B1%E8%AF%AD/"/>
     
   </entry>
   
@@ -350,7 +391,7 @@
     <link href="https://iknow.fun/2020/06/02/hexo-front-matter-jie-shao/"/>
     <id>https://iknow.fun/2020/06/02/hexo-front-matter-jie-shao/</id>
     <published>2020-06-02T08:02:11.000Z</published>
-    <updated>2021-06-28T14:47:48.629Z</updated>
+    <updated>2021-07-02T06:08:59.315Z</updated>
     
     <summary type="html">
     
