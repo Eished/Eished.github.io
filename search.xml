@@ -4,9 +4,9 @@
   
     
     <entry>
-      <title>hexo 代码高亮问题</title>
-      <link href="/2021/07/02/xin-jian-wen-ben-wen-dang/"/>
-      <url>/2021/07/02/xin-jian-wen-ben-wen-dang/</url>
+      <title>hexo prism 代码高亮问题</title>
+      <link href="/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/"/>
+      <url>/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/</url>
       
         <content type="html"><![CDATA[<h1 id="hexo-prism-代码高亮问题"><a href="#hexo-prism-代码高亮问题" class="headerlink" title="hexo prism 代码高亮问题"></a>hexo prism 代码高亮问题</h1><p><code>hexo-prism-plugin</code> 代码标注只支持小写英文，不支持符号、大写。</p><p>prism 支持的语言： <a href="https://prismjs.com/#languages-list" target="_blank" rel="noopener">https://prismjs.com/#languages-list</a></p><ul><li>小写</li></ul><pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre><ul><li>大写</li></ul><pre class=" language-CPP"><code class="language-CPP">#include <iostream>int main(){    return 0;}</code></pre><ul><li>大写+符号</li></ul><pre class=" language-C++"><code class="language-C++">#include <iostream>int main(){    return 0;}</code></pre><ul><li>小写+符号</li></ul><pre class=" language-c++"><code class="language-c++">#include <iostream>int main(){    return 0;}</code></pre>]]></content>
       
