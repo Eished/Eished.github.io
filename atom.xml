@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-02T06:16:25.997Z</updated>
+  <updated>2021-07-08T11:26:35.111Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Tampermonkey 中使用 JavaScript 打包下载图片</title>
+    <link href="https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/"/>
+    <id>https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/</id>
+    <published>2021-07-08T10:54:52.000Z</published>
+    <updated>2021-07-08T11:26:35.111Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;pre class=&quot; language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot; spellcheck=&quot;true&quot;&gt;//
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    
+    
+      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="javascript" scheme="https://iknow.fun/tags/javascript/"/>
+    
+      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    
+      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo prism 代码高亮问题</title>

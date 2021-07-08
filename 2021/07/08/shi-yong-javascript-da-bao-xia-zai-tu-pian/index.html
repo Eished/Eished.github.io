@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="hexo prism 代码高亮问题, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
+    <meta name="keywords" content="Tampermonkey 中使用 JavaScript 打包下载图片, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js C++">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>hexo prism 代码高亮问题 | iKnow&#39;s blog</title>
+    <title>Tampermonkey 中使用 JavaScript 打包下载图片 | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,12 +265,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/1.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">hexo prism 代码高亮问题</h1>
+                    <h1 class="description center-align post-title">Tampermonkey 中使用 JavaScript 打包下载图片</h1>
                 </div>
             </div>
         </div>
@@ -387,12 +387,28 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
                             </a>
                         
-                            <a href="/tags/prism/">
-                                <span class="chip bg-color">prism</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/javascript/">
+                                <span class="chip bg-color">javascript</span>
+                            </a>
+                        
+                            <a href="/tags/Tampermonkey/">
+                                <span class="chip bg-color">Tampermonkey</span>
+                            </a>
+                        
+                            <a href="/tags/Promise/">
+                                <span class="chip bg-color">Promise</span>
+                            </a>
+                        
+                            <a href="/tags/GM-xmlhttpRequest/">
+                                <span class="chip bg-color">GM_xmlhttpRequest</span>
                             </a>
                         
                     </div>
@@ -403,8 +419,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Markdown/" class="post-category">
-                                Markdown
+                            <a href="/categories/JavaScript/" class="post-category">
+                                JavaScript
                             </a>
                         
                     </div>
@@ -416,7 +432,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-02
+                    2021-07-08
                 </div>
                 
 
@@ -425,7 +441,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    333
                 </div>
                 
 
@@ -447,36 +463,69 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="hexo-prism-代码高亮问题"><a href="#hexo-prism-代码高亮问题" class="headerlink" title="hexo prism 代码高亮问题"></a>hexo prism 代码高亮问题</h1><p><code>hexo-prism-plugin</code> 代码标注只支持小写英文，不支持符号、大写。</p>
-<p>prism 支持的语言： <a href="https://prismjs.com/#languages-list" target="_blank" rel="noopener">https://prismjs.com/#languages-list</a></p>
-<ul>
-<li>小写</li>
-</ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
-<ul>
-<li>大写</li>
-</ul>
-<pre class=" language-CPP"><code class="language-CPP">#include <iostream>
-int main(){
-    return 0;
-}</code></pre>
-<ul>
-<li>大写+符号</li>
-</ul>
-<pre class=" language-C++"><code class="language-C++">#include <iostream>
-int main(){
-    return 0;
-}</code></pre>
-<ul>
-<li>小写+符号</li>
-</ul>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
-int main(){
-    return 0;
-}</code></pre>
+                <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 引入插件：另存和压缩打包</span>
+<span class="token comment" spellcheck="true">// @require      https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js</span>
+<span class="token comment" spellcheck="true">// @require      https://cdn.jsdelivr.net/npm/jszip@3.6.0/dist/jszip.min.js</span>
+
+<span class="token comment" spellcheck="true">// 批量下载 顺序下载 传入（图片链接数组，对应的带后缀的图片标题数组，文件夹名）</span>
+    <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">batchDownload</span><span class="token punctuation">(</span>imgsUrl<span class="token punctuation">,</span> imgsTitles<span class="token punctuation">,</span> folderName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> data <span class="token operator">=</span> imgsUrl<span class="token punctuation">;</span>
+      <span class="token keyword">const</span> zip <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSZip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 压缩包</span>
+      <span class="token keyword">const</span> promises <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 异步需把 for 改为 forEach</span>
+        <span class="token keyword">const</span> item <span class="token operator">=</span> data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getData</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token string">"blob"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 下载文件, 并存成ArrayBuffer对象</span>
+          <span class="token keyword">const</span> file_name <span class="token operator">=</span> imgsTitles<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取文件名</span>
+          <span class="token comment" spellcheck="true">// （文件名，二进制流，多文件）</span>
+          zip<span class="token punctuation">.</span><span class="token function">file</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            binary<span class="token punctuation">:</span> <span class="token boolean">true</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 逐个添加文件</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`第</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">张，文件名：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，大小：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">parseInt</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> Kb，下载完成！等待压缩...`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> 
+          <span class="token comment" spellcheck="true">// 处理错误 reject；不处理会打断 Promise.all</span>
+          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        promises<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 返回 promise 结果数组，处理结果中的错误</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> err<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"文件缺失！"</span><span class="token punctuation">)</span>
+            <span class="token keyword">break</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        zip<span class="token punctuation">.</span><span class="token function">generateAsync</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          type<span class="token punctuation">:</span> <span class="token string">"blob"</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>content <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 生成二进制流</span>
+          <span class="token function">saveAs</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>folderName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> [</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token punctuation">.</span>length<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">P]`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 利用 file-saver 保存文件</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// GM_xmlhttpRequest GET异步通用模块</span>
+    <span class="token keyword">function</span> <span class="token function">getData</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token string">"document"</span><span class="token punctuation">,</span> usermethod <span class="token operator">=</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        <span class="token function">GM_xmlhttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+          method<span class="token punctuation">:</span> usermethod<span class="token punctuation">,</span>
+          url<span class="token punctuation">:</span> url<span class="token punctuation">,</span>
+          responseType<span class="token punctuation">:</span> type<span class="token punctuation">,</span>
+          onload<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              <span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+              <span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          onerror<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"网络错误"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span></code></pre>
+<p><a href="https://github.com/Eished/jkforum_helper" target="_blank" rel="noopener">项目完整代码</a></p>
 
             </div>
             <hr/>
@@ -502,7 +551,7 @@ int main(){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://iknow.fun/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/">https://iknow.fun/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/</a>
+                    <a href="https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/">https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,12 +589,28 @@ int main(){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
                                 </a>
                             
-                                <a href="/tags/prism/">
-                                    <span class="chip bg-color">prism</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/javascript/">
+                                    <span class="chip bg-color">javascript</span>
+                                </a>
+                            
+                                <a href="/tags/Tampermonkey/">
+                                    <span class="chip bg-color">Tampermonkey</span>
+                                </a>
+                            
+                                <a href="/tags/Promise/">
+                                    <span class="chip bg-color">Promise</span>
+                                </a>
+                            
+                                <a href="/tags/GM-xmlhttpRequest/">
+                                    <span class="chip bg-color">GM_xmlhttpRequest</span>
                                 </a>
                             
                         </div>
@@ -590,7 +655,7 @@ int main(){
         repo: 'Eished.github.io',
         owner: 'Eished',
         admin: "Eished",
-        id: '2021-07-02T14-10-10',
+        id: '2021-07-08T18-54-52',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -614,9 +679,10 @@ int main(){
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/">
                     <div class="card-image">
@@ -636,9 +702,9 @@ int main(){
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -651,6 +717,7 @@ int main(){
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -689,28 +756,24 @@ int main(){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/">
+                <a href="/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="C++ 实现学生信息管理系统">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo prism 代码高亮问题">
                         
-                        <span class="card-title">C++ 实现学生信息管理系统</span>
+                        <span class="card-title">hexo prism 代码高亮问题</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            cpp 实现学生信息管理系统
-此笔记线更新地址
-cpp 笔记和代码库
+                            hexo prism 代码高亮问题hexo-prism-plugin 代码标注只支持小写英文，不支持符号、大写。
+prism 支持的语言： https://prismjs.com/#languages-list
 
-考试题目：A：学生信息存储（40分）
-业务描述：
+小写
 
-某学校的学生信息包括：学号、姓名、性别、学院。
-
-其中学号是整数；性别用单个大写字母表示，F 表示女性，M 表示男性
+#include 
                         
                     </div>
                     <div class="publish-info">
@@ -721,8 +784,8 @@ cpp 笔记和代码库
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C-C/" class="post-category">
-                                    C/C++
+                            <a href="/categories/Markdown/" class="post-category">
+                                    Markdown
                                 </a>
                             
                             
@@ -732,24 +795,12 @@ cpp 笔记和代码库
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/">
-                        <span class="chip bg-color">信息管理系统</span>
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C</span>
-                    </a>
-                    
-                    <a href="/tags/C/">
-                        <span class="chip bg-color">C++</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AE%9E%E8%B7%B5/">
-                        <span class="chip bg-color">实践</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%80%83%E8%AF%95/">
-                        <span class="chip bg-color">考试</span>
+                    <a href="/tags/prism/">
+                        <span class="chip bg-color">prism</span>
                     </a>
                     
                 </div>
