@@ -295,7 +295,7 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/5.jpg)');
+    $('.bg-cover').css('background-image', 'url(/medias/banner/2.jpg)');
 </script>
 
 
@@ -378,11 +378,11 @@
                 </a>
                 
                 
-                <a href="/tags/HTML5/" title="HTML5: 1">
+                <a href="/tags/HTML5/" title="HTML5: 2">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="HTML5" style="background-color: #D7BDE2;">HTML5
-                        <span class="tag-length">1</span>
+                        <span class="tag-length">2</span>
                     </span>
                 </a>
                 
@@ -396,11 +396,11 @@
                 </a>
                 
                 
-                <a href="/tags/Web/" title="Web: 6">
+                <a href="/tags/Web/" title="Web: 7">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="Web" style="background-color: #85C1E9;">Web
-                        <span class="tag-length">6</span>
+                        <span class="tag-length">7</span>
                     </span>
                 </a>
                 
@@ -432,20 +432,20 @@
                 </a>
                 
                 
-                <a href="/tags/JavaScript/" title="JavaScript: 3">
+                <a href="/tags/JavaScript/" title="JavaScript: 4">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="JavaScript" style="background-color: #85C1E9;">JavaScript
-                        <span class="tag-length">3</span>
+                        <span class="tag-length">4</span>
                     </span>
                 </a>
                 
                 
-                <a href="/tags/%E5%89%8D%E7%AB%AF/" title="前端: 2">
+                <a href="/tags/%E5%89%8D%E7%AB%AF/" title="前端: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
                             data-tagname="前端" style="background-color: #FEF9E7;">前端
-                        <span class="tag-length">2</span>
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -809,7 +809,72 @@ $(function () {
 </body>
 
 </html>
-pt>
+e_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+<a href="https://space.bilibili.com/588239166" class="tooltipped" target="_blank" data-tooltip="在B站上关注我" data-position="top"
+    data-delay="50">
+    <i class="fas fa-play-circle"></i>
+</a>
+
+
+
+<a href="https://github.com/Eished" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub"
+    data-position="top" data-delay="50">
+    <i class="fab fa-github"></i>
+</a>
+
+
+
+<a href="mailto:kished@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我"
+    data-position="top" data-delay="50">
+    <i class="fas fa-envelope-open"></i>
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
+});
+</script>
 
     <!-- 回到顶部按钮 -->
 <div id="backTop" class="top-scroll">
