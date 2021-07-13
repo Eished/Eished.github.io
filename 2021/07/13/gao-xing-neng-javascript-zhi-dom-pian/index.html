@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="querySelector 与 getElementById 性能比较, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
+    <meta name="keywords" content="高性能JavaScript之DOM篇, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js C++">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>querySelector 与 getElementById 性能比较 | iKnow&#39;s blog</title>
+    <title>高性能JavaScript之DOM篇 | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -265,12 +265,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">querySelector 与 getElementById 性能比较</h1>
+                    <h1 class="description center-align post-title">高性能JavaScript之DOM篇</h1>
                 </div>
             </div>
         </div>
@@ -433,14 +433,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    285
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -455,68 +455,116 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="1-querySelector-与-getElementById"><a href="#1-querySelector-与-getElementById" class="headerlink" title="1. querySelector 与 getElementById"></a>1. querySelector 与 getElementById</h2><p>首先我们来比较 <code>querySelector</code> 与 <code>getElementById</code> 的差别，创建测试文件如下：</p>
-<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-        console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'querySelector'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">"#test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'querySelector'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h1 id="高性能JavaScript之DOM篇"><a href="#高性能JavaScript之DOM篇" class="headerlink" title="高性能JavaScript之DOM篇"></a><a href="https://segmentfault.com/a/1190000020808364" target="_blank" rel="noopener">高性能JavaScript之DOM篇</a></h1><p><a href="https://segmentfault.com/u/hison" target="_blank" rel="noopener"><strong>Hison</strong></a>发布于 2019-10-26</p>
+<p>本篇文章主要分享一下操作DOM时的一些细节，来提高页面性能。<br>首先我们来思考以下几个问题。</p>
+<ol>
+<li>如何获取页面中所有class为div1和div2的div元素。</li>
+<li>你了解HTMLCollection和NodeList吗？有什么区别？</li>
+<li>如何获取一个元素的css属性值？</li>
+<li>怎么减少重排和重绘？</li>
+</ol>
+<hr>
+<h2 id="问题一：如何获取页面中所有class为div1和div2的div元素。"><a href="#问题一：如何获取页面中所有class为div1和div2的div元素。" class="headerlink" title="问题一：如何获取页面中所有class为div1和div2的div元素。"></a>问题一：如何获取页面中所有class为div1和div2的div元素。</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 这个问题如果我以前写的话，我会这么写。</span>
+<span class="token keyword">var</span> errs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    divs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    className <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> len <span class="token operator">=</span> divs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+    className <span class="token operator">=</span> divs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className<span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>className <span class="token operator">===</span> <span class="token string">'div1'</span> <span class="token operator">||</span> className <span class="token operator">===</span> <span class="token string">'div2'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        errs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>divs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-        console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getElementById'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getElementById'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 看起来中规中矩，好像没什么大问题。</span>
+<span class="token comment" spellcheck="true">// 但是现在我会这么写</span>
+<span class="token keyword">var</span> errs2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'div.div1, div.div2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<p><strong>测试结果：</strong>IE11、Edge、Chrome</p>
-<p><img src="/images/pic_39.png" alt="pic_39"></p>
-<h2 id="2-querySelectorAll-与-getElementByClassName"><a href="#2-querySelectorAll-与-getElementByClassName" class="headerlink" title="2. querySelectorAll 与 getElementByClassName"></a>2. querySelectorAll 与 getElementByClassName</h2><p>我们再创建一个测试文件来比较 <code>querySelectorAll</code> 与 <code>getElementByClassName</code>，如下：</p>
-<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>viewport<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>width<span class="token punctuation">=</span>device-width, initial-scale<span class="token punctuation">=</span>1.0<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">http-equiv</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>X-UA-Compatible<span class="token punctuation">"</span></span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>ie<span class="token punctuation">=</span>edge<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Document<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>test<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script language-javascript">
-        console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'querySelectorAll'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">".test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'querySelectorAll'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 用querySelectorAll,表面上看缩短了很多代码量，其实它的作用还不止这个。接下来我们引出第二个问题。</span></code></pre>
+<hr>
+<h2 id="问题二：你了解HTMLCollection和NodeList吗？有什么区别？"><a href="#问题二：你了解HTMLCollection和NodeList吗？有什么区别？" class="headerlink" title="问题二：你了解HTMLCollection和NodeList吗？有什么区别？"></a>问题二：你了解HTMLCollection和NodeList吗？有什么区别？</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 我们先来看两段代码。想一下这两段代码有什么区别。</span>
+<span class="token comment" spellcheck="true">// 片段一</span>
+<span class="token keyword">var</span> all <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-        console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getElementsByClassName'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getElementsByClassName'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 片段二</span>
+<span class="token keyword">var</span> all2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all2<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>你可以分别复制一下这两段代码在你的浏览器中运行，看看有什么区别没有。前提是你的页面中至少有一个div。否则不会进入到循环中去。</p>
+<ul>
+<li>运行完之后你会发现，片段一运行完之后页面崩溃了。片段二正常如期运行。为什么呢？<ul>
+<li>因为用<code>getElementsByTagName</code>方法获取到的是<code>HTMLCollection</code>, 而<strong>HTMLCollection是实时获取的</strong>，也就是说，每次循环时请求<code>all.length</code>，都会重新去触发一次<code>getElementsByTagName</code>方法。导致<code>all.length</code>每次循环之后都会加1。最终造成了死循环。</li>
+<li>而用<code>querySelectorAll</code>方法获取到的结果是<code>NodeList</code>，<strong><code>NodeList</code>不是实时获取的</strong>。</li>
+<li>也正是因为这个原因，我们推荐使用<code>querySelector</code>去代替<code>getElementBy</code>方法。实时获取会造成页面不断重排，这极大的降低了性能。</li>
+<li>另外：除了<code>getElementByXXX</code>方法外，<code>document.images</code>/<code>document.links</code>等方法返回的也是<code>HTMLCollection</code>。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="问题三：如何获取一个元素的css属性值？"><a href="#问题三：如何获取一个元素的css属性值？" class="headerlink" title="问题三：如何获取一个元素的css属性值？"></a>问题三：如何获取一个元素的css属性值？</h2><ul>
+<li>我们知道，直接用div.style.color这样的方式去获取css样式只能获取到行内写的属性，写在style标签中的样式是获取不到的。</li>
+<li>标准浏览器中有一个window.getComputedStyle方法，可以获取实时的样式（在IE中是currentStyle）。</li>
+<li>但是这个方法也会引起页面的重排，因为只有把页面重排之后他才会获取到实时的样式。</li>
+</ul>
+<hr>
+<h2 id="问题四：如何减少重排和重绘次数。"><a href="#问题四：如何减少重排和重绘次数。" class="headerlink" title="问题四：如何减少重排和重绘次数。"></a>问题四：如何减少重排和重绘次数。</h2><ul>
+<li>在改变DOM的一些样式时，重排和重绘是无法避免的，但是我们要尽量让这个次数降低，下面介绍集中方法。<ol>
+<li>当需要给一个DOM元素加各种动画或者改变一系列样式时，先把这个元素设置成绝对定位。<ul>
+<li>因为脱离文档流后，再对这个元素进行操作就不会影响到他周围的元素，也就不会发生重排。</li>
+<li>等到一系列复杂的操作结束之后，再把这个元素的定位恢复到之前的样子。这样只进行了两次重排，能明显的提高性能。</li>
+</ul>
+</li>
+<li>当我们需要改变很多样式时，不要用<code>style.color,style.width,style.height</code>这样一个一个去改，因为每次修改都会引起一次重排。<ul>
+<li>我们应该使用给这个元素加一个类名，把所有的样式都写到这个类名中。</li>
+<li>或者是改<code>style.cssText</code>。这样可以有效的减少重排的次数。</li>
+</ul>
+</li>
+<li>用<code>fragment</code>代替<code>dom</code>。思考这样一个问题，如何给页面中插入10000个div元素。每次创建一个然后<code>append</code>到<code>body</code>中去吗？<ul>
+<li>这显然不是一个好的办法。我们应该先把所有创建的元素都添加到一个<code>fragment</code>中。</li>
+<li>然后再把<code>fragment</code>添加到<code>body</code>中去。这样只会引起一次重排，而不是1万次。</li>
+</ul>
+</li>
+<li>介绍一些会引起重排的属性。当访问元素的以下属性时也会引起重排，因为这些属性是实时算的。<ul>
+<li><code>offsetTop,offsetLeft,offsetWidth,offsetHeight</code></li>
+<li><code>scrollTop,scrollLeft,scrollWidth,scrollHeight</code></li>
+<li><code>clientTop,clientLeft,clientWidth,clientHeight</code></li>
+</ul>
+</li>
+<li>尽可能少的访问DOM。看下面两段代码。</li>
+</ol>
+</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 片段一</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印结果80ms左右</span>
 
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></code></pre>
-<p><strong>测试结果：</strong>IE11、Edge、Chrome</p>
-<p><img src="/images/pic_40.png" alt="pic_40"></p>
-<h2 id="结论："><a href="#结论：" class="headerlink" title="结论："></a>结论：</h2><p>IE 差距大。</p>
-<p>Chrome 对 <code>querySelector</code> 和 <code>querySelectorAll</code> 进行了优化，与传统方式差距很小。</p>
+<span class="token comment" spellcheck="true">// 片段二</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    count <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token operator">+</span><span class="token operator">=</span> count<span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印结果0.3ms左右</span></code></pre>
+<p>一个是不停的访问DOM，并修改内容，一个是先把内容缓存起来，只访问一次。打印出来时间相差好几百倍。</p>
+<hr>
+<h2 id="最后：说几个可以提高效率和性能的小细节。"><a href="#最后：说几个可以提高效率和性能的小细节。" class="headerlink" title="最后：说几个可以提高效率和性能的小细节。"></a>最后：说几个可以提高效率和性能的小细节。</h2><p>用正确的DOM属性。</p>
+<ul>
+<li>因为我们大部分时候需要操作的是元素节点，像什么文本节点，注释节点一般都会过滤掉。如果是这样的话，提倡用前面的属性代替后面的属性。</li>
+</ul>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// children → childNodes</span>
+<span class="token comment" spellcheck="true">// childElementCount → childNodes.length</span>
+<span class="token comment" spellcheck="true">// firstElementChild → firstChild</span>
+<span class="token comment" spellcheck="true">// lastElementChild → lastChild</span>
+<span class="token comment" spellcheck="true">// nextElementSibling → nextSibling</span>
+<span class="token comment" spellcheck="true">// previousElementSibling → previousSibling</span></code></pre>
+<p>需要给大量元素分发事件时，采取事件委托。因为浏览器不仅不需要分发很多事件，而且需要跟踪每个事件处理器，这也会占用更多内存。</p>
 
             </div>
             <hr/>
@@ -542,7 +590,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://iknow.fun/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/">https://iknow.fun/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/</a>
+                    <a href="https://iknow.fun/2021/07/13/gao-xing-neng-javascript-zhi-dom-pian/">https://iknow.fun/2021/07/13/gao-xing-neng-javascript-zhi-dom-pian/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -638,7 +686,7 @@
         repo: 'Eished.github.io',
         owner: 'Eished',
         admin: "Eished",
-        id: '2021-07-13T16-39-33',
+        id: '2021-07-13T20-52-00',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -662,9 +710,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/07/13/gao-xing-neng-javascript-zhi-dom-pian/">
                     <div class="card-image">
@@ -686,9 +735,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -701,6 +750,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -731,26 +781,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/">
+                <a href="/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Tampermonkey 中使用 JavaScript 打包下载图片">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="querySelector 与 getElementById 性能比较">
                         
-                        <span class="card-title">Tampermonkey 中使用 JavaScript 打包下载图片</span>
+                        <span class="card-title">querySelector 与 getElementById 性能比较</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Tampermonkey 例子：// 引入插件：另存和压缩打包
-// @require      https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js
-// 
+                            1. querySelector 与 getElementById首先我们来比较 querySelector 与 getElementById 的差别，创建测试文件如下：
+&lt;!DOCTYPE html>
+&lt;html lang="
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
                             </span>
                         <span class="publish-author">
                             
@@ -767,28 +817,20 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
+                    </a>
+                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/javascript/">
-                        <span class="chip bg-color">javascript</span>
-                    </a>
-                    
-                    <a href="/tags/Tampermonkey/">
-                        <span class="chip bg-color">Tampermonkey</span>
-                    </a>
-                    
-                    <a href="/tags/Promise/">
-                        <span class="chip bg-color">Promise</span>
-                    </a>
-                    
-                    <a href="/tags/GM-xmlhttpRequest/">
-                        <span class="chip bg-color">GM_xmlhttpRequest</span>
                     </a>
                     
                 </div>
