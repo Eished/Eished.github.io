@@ -458,8 +458,8 @@
                 <h1 id="高性能JavaScript之DOM篇"><a href="#高性能JavaScript之DOM篇" class="headerlink" title="高性能JavaScript之DOM篇"></a><a href="https://segmentfault.com/a/1190000020808364" target="_blank" rel="noopener">高性能JavaScript之DOM篇</a></h1><p><a href="https://segmentfault.com/u/hison" target="_blank" rel="noopener"><strong>Hison</strong></a>发布于 2019-10-26</p>
 <p>本篇文章主要分享一下操作DOM时的一些细节，来提高页面性能。<br>首先我们来思考以下几个问题。</p>
 <ol>
-<li>如何获取页面中所有class为div1和div2的div元素。</li>
-<li>你了解HTMLCollection和NodeList吗？有什么区别？</li>
+<li>如何获取页面中所有<code>class</code>为<code>div1</code>和<code>div2</code>的<code>div</code>元素。</li>
+<li>你了解<code>HTMLCollection</code>和<code>NodeList</code>吗？有什么区别？</li>
 <li>如何获取一个元素的css属性值？</li>
 <li>怎么减少重排和重绘？</li>
 </ol>
@@ -496,7 +496,7 @@
 <p>你可以分别复制一下这两段代码在你的浏览器中运行，看看有什么区别没有。前提是你的页面中至少有一个div。否则不会进入到循环中去。</p>
 <ul>
 <li>运行完之后你会发现，片段一运行完之后页面崩溃了。片段二正常如期运行。为什么呢？<ul>
-<li>因为用<code>getElementsByTagName</code>方法获取到的是<code>HTMLCollection</code>, 而<strong>HTMLCollection是实时获取的</strong>，也就是说，每次循环时请求<code>all.length</code>，都会重新去触发一次<code>getElementsByTagName</code>方法。导致<code>all.length</code>每次循环之后都会加1。最终造成了死循环。</li>
+<li>因为用<code>getElementsByTagName</code>方法获取到的是<code>HTMLCollection</code>, 而<strong><code>HTMLCollection</code>是实时获取的</strong>，也就是说，每次循环时请求<code>all.length</code>，都会重新去触发一次<code>getElementsByTagName</code>方法。导致<code>all.length</code>每次循环之后都会加1。最终造成了死循环。</li>
 <li>而用<code>querySelectorAll</code>方法获取到的结果是<code>NodeList</code>，<strong><code>NodeList</code>不是实时获取的</strong>。</li>
 <li>也正是因为这个原因，我们推荐使用<code>querySelector</code>去代替<code>getElementBy</code>方法。实时获取会造成页面不断重排，这极大的降低了性能。</li>
 <li>另外：除了<code>getElementByXXX</code>方法外，<code>document.images</code>/<code>document.links</code>等方法返回的也是<code>HTMLCollection</code>。</li>
@@ -505,8 +505,8 @@
 </ul>
 <hr>
 <h2 id="问题三：如何获取一个元素的css属性值？"><a href="#问题三：如何获取一个元素的css属性值？" class="headerlink" title="问题三：如何获取一个元素的css属性值？"></a>问题三：如何获取一个元素的css属性值？</h2><ul>
-<li>我们知道，直接用div.style.color这样的方式去获取css样式只能获取到行内写的属性，写在style标签中的样式是获取不到的。</li>
-<li>标准浏览器中有一个window.getComputedStyle方法，可以获取实时的样式（在IE中是currentStyle）。</li>
+<li>我们知道，直接用<code>div.style.color</code>这样的方式去获取css样式只能获取到行内写的属性，写在<code>style</code>标签中的样式是获取不到的。</li>
+<li>标准浏览器中有一个<code>window.getComputedStyle</code>方法，可以获取实时的样式（在IE中是<code>currentStyle</code>）。</li>
 <li>但是这个方法也会引起页面的重排，因为只有把页面重排之后他才会获取到实时的样式。</li>
 </ul>
 <hr>
