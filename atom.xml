@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-16T06:18:52.229Z</updated>
+  <updated>2021-07-20T14:01:10.269Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>油猴 Tampermonkey 中 js 的数组、对象、map、set存储数据效率对比</title>
+    <link href="https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-set-cun-chu-shu-ju-xiao-lu-dui-bi/"/>
+    <id>https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-set-cun-chu-shu-ju-xiao-lu-dui-bi/</id>
+    <published>2021-07-20T13:55:54.000Z</published>
+    <updated>2021-07-20T14:01:10.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;油猴-Tampermonkey-中-js-的数组、对象、map、set存储数据效率对比&quot;&gt;&lt;a href=&quot;#油猴-Tampermonkey-中-js-的数组、对象、map、set存储数据效率对比&quot; class=&quot;headerlink&quot; title=&quot;油猴
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    
+    
+      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    
+      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    
+      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+  </entry>
   
   <entry>
     <title>《弗洛伊德及其后继者·现代精神分析思想史》摘抄与想法</title>
