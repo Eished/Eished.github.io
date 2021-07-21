@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    568
+                    818
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -494,8 +494,22 @@ https<span class="token punctuation">:</span><span class="token operator">/</spa
 <h2 id="hexo-主题-Matery-加速"><a href="#hexo-主题-Matery-加速" class="headerlink" title="hexo 主题 Matery 加速"></a>hexo 主题 Matery 加速</h2><h3 id="分析加载过慢的资源："><a href="#分析加载过慢的资源：" class="headerlink" title="分析加载过慢的资源："></a>分析加载过慢的资源：</h3><p><img src="/images/%E5%9B%BE%E7%89%87_49.Png" alt=""></p>
 <ol>
 <li>GitHub 加载过慢的主要是图片和 js 文件。</li>
-<li>找到这些资源链接，替换成 jsdelivr 链接。</li>
+<li>主题 <code>_config.yml</code> 中开启 jsDelivr 加速：</li>
 </ol>
+<pre class=" language-yml"><code class="language-yml"># CDN访问加速 
+# 第一次使用本功能，一定要先配置url，再`hexo cl && hexo g && hexo d`部署到GitHub的仓库，注意！必须是GitHub的仓库！
+# 如果必须要使用国内的coding或者gitee，可以采用双部署，同时将网站部署到两个仓库（其中一个必须是GitHub的仓库）
+# URL配置规则（例子如下）： https://cdn.jsdelivr.net/gh/你的GitHub用户名/你的仓库名
+# 如果想关闭此功能，将 url地址 注释或删除即可！
+#
+# 注：配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将 此项配置 注释或者删除掉
+# 更多关于访问速度优化，请查看：https://blog.sky03.cn/posts/42790.html
+jsDelivr:
+  url: https://cdn.jsdelivr.net/gh/eished/eished.github.io #https://github.com/eished/eished.github.io # https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io</code></pre>
+<h3 id="比较速度："><a href="#比较速度：" class="headerlink" title="比较速度："></a>比较速度：</h3><ul>
+<li>之前测试没禁用缓存，<strong>实际加载速度明显提升。</strong></li>
+</ul>
+<p><img src="/images/%E5%9B%BE%E7%89%87_53.Png" alt=""></p>
 
             </div>
             <hr/>
