@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-21T10:01:36.456Z</updated>
+  <updated>2021-07-22T06:29:44.868Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://iknow.fun/2021/07/21/shi-yong-jsdelivr-jia-su-github-zi-yuan-jia-kuai-bo-ke-da-kai-su-du/"/>
     <id>https://iknow.fun/2021/07/21/shi-yong-jsdelivr-jia-su-github-zi-yuan-jia-kuai-bo-ke-da-kai-su-du/</id>
     <published>2021-07-21T08:45:51.000Z</published>
-    <updated>2021-07-21T10:01:36.456Z</updated>
+    <updated>2021-07-22T06:29:44.868Z</updated>
     
     <summary type="html">
     
@@ -38,6 +38,8 @@
     
       <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
     
+    
+      <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
     
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
@@ -179,10 +181,10 @@
   
   <entry>
     <title>Tampermonkey 中使用 JavaScript 打包下载图片</title>
-    <link href="https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/"/>
-    <id>https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/</id>
+    <link href="https://iknow.fun/2021/07/08/tampermonkey-shi-yong-javascript-da-bao-xia-zai-tu-pian/"/>
+    <id>https://iknow.fun/2021/07/08/tampermonkey-shi-yong-javascript-da-bao-xia-zai-tu-pian/</id>
     <published>2021-07-08T10:54:52.000Z</published>
-    <updated>2021-07-08T12:32:37.807Z</updated>
+    <updated>2021-07-22T06:29:12.724Z</updated>
     
     <summary type="html">
     
@@ -202,9 +204,9 @@
     
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="javascript" scheme="https://iknow.fun/tags/javascript/"/>
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
@@ -315,7 +317,7 @@
     <link href="https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
     <id>https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</id>
     <published>2021-06-20T12:03:56.000Z</published>
-    <updated>2021-07-02T06:00:37.678Z</updated>
+    <updated>2021-07-22T06:28:28.461Z</updated>
     
     <summary type="html">
     
@@ -335,9 +337,9 @@
     
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="javascript" scheme="https://iknow.fun/tags/javascript/"/>
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
       <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
