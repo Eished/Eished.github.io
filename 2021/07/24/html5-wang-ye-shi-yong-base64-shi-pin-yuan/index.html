@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="Tampermonkey 中使用 JavaScript 打包下载图片, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
+    <meta name="keywords" content="HTML5 网页使用 Base64 视频源, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js C++">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Tampermonkey 中使用 JavaScript 打包下载图片 | iKnow&#39;s blog</title>
+    <title>HTML5 网页使用 Base64 视频源 | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/eished/eished.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/eished/eished.github.io/libs/awesome/css/all.css">
@@ -265,12 +265,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Tampermonkey 中使用 JavaScript 打包下载图片</h1>
+                    <h1 class="description center-align post-title">HTML5 网页使用 Base64 视频源</h1>
                 </div>
             </div>
         </div>
@@ -387,28 +387,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Web/">
-                                <span class="chip bg-color">Web</span>
+                            <a href="/tags/HTML5/">
+                                <span class="chip bg-color">HTML5</span>
                             </a>
                         
-                            <a href="/tags/JavaScript/">
-                                <span class="chip bg-color">JavaScript</span>
+                            <a href="/tags/Web/">
+                                <span class="chip bg-color">Web</span>
                             </a>
                         
                             <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                 <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/Tampermonkey/">
-                                <span class="chip bg-color">Tampermonkey</span>
-                            </a>
-                        
-                            <a href="/tags/Promise/">
-                                <span class="chip bg-color">Promise</span>
-                            </a>
-                        
-                            <a href="/tags/GM-xmlhttpRequest/">
-                                <span class="chip bg-color">GM_xmlhttpRequest</span>
+                            <a href="/tags/BASE64/">
+                                <span class="chip bg-color">BASE64</span>
                             </a>
                         
                     </div>
@@ -419,8 +411,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/JavaScript/" class="post-category">
-                                JavaScript
+                            <a href="/categories/HTML-CSS/" class="post-category">
+                                HTML/CSS
                             </a>
                         
                     </div>
@@ -432,7 +424,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-08
+                    2021-07-24
                 </div>
                 
 
@@ -441,14 +433,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    336
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    5 分
                 </div>
                 
 
@@ -463,69 +455,133 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Tampermonkey-例子："><a href="#Tampermonkey-例子：" class="headerlink" title="Tampermonkey 例子："></a>Tampermonkey 例子：</h1><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 引入插件：另存和压缩打包</span>
-<span class="token comment" spellcheck="true">// @require      https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js</span>
-<span class="token comment" spellcheck="true">// @require      https://cdn.jsdelivr.net/npm/jszip@3.6.0/dist/jszip.min.js</span>
+                <h2 id="HTML5-网页使用-Base64-视频源"><a href="#HTML5-网页使用-Base64-视频源" class="headerlink" title="HTML5 网页使用 Base64 视频源"></a>HTML5 网页使用 Base64 视频源</h2><h3 id="视频转-Base64，使用-FileReader-实现"><a href="#视频转-Base64，使用-FileReader-实现" class="headerlink" title="视频转 Base64，使用 FileReader 实现"></a>视频转 Base64，使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader" target="_blank" rel="noopener">FileReader</a> 实现</h3><p><strong><code>FileReader</code></strong> 对象允许Web应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/File" target="_blank" rel="noopener"><code>File</code></a> 或 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener"><code>Blob</code></a> 对象指定要读取的文件或数据。</p>
+<p>其中File对象可以是来自用户在一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input" target="_blank" rel="noopener">&lt;input&gt;</a>元素上选择文件后返回的<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileList" target="_blank" rel="noopener"><code>FileList</code></a>对象,也可以来自拖放操作生成的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/DataTransfer" target="_blank" rel="noopener"><code>DataTransfer</code></a>对象,还可以是来自在一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement" target="_blank" rel="noopener"><code>HTMLCanvasElement</code></a>上执行<code>mozGetAsFile()</code>方法后返回结果。</p>
+<p>重要提示： FileReader仅用于以安全的方式从用户（远程）系统读取文件内容 它不能用于从文件系统中按路径名简单地读取文件。 要在JavaScript中按路径名读取文件，应使用标准Ajax解决方案进行服务器端文件读取，如果读取跨域，则使用CORS权限。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a><strong>属性</strong></h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readyState" target="_blank" rel="noopener"><code>FileReader.readyState</code></a> 只读</p>
+<p>表示<code>FileReader</code>状态的数字。取值如下：</p>
+<table>
+<thead>
+<tr>
+<th>常量名</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>EMPTY</code></td>
+<td><code>0</code></td>
+<td>还没有加载任何数据.</td>
+</tr>
+<tr>
+<td><code>LOADING</code></td>
+<td><code>1</code></td>
+<td>数据正在被加载.</td>
+</tr>
+<tr>
+<td><code>DONE</code></td>
+<td><code>2</code></td>
+<td>已完成全部的读取请求.</td>
+</tr>
+</tbody></table>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/result" target="_blank" rel="noopener"><code>FileReader.result</code></a> 只读</p>
+<p>文件的内容。该属性仅在读取操作完成后才有效，数据的格式取决于使用哪个方法来启动读取操作。</p>
+<h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a><strong>事件</strong></h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/onload" target="_blank" rel="noopener"><code>FileReader.onload</code></a></p>
+<p>处理<code>load (en-US)</code>事件。该事件在读取操作完成时触发。</p>
+<blockquote>
+<p>因为 <code>FileReader</code> 继承自<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget" target="_blank" rel="noopener"><code>EventTarget</code></a>，所以所有这些事件也可以通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener"><code>addEventListener</code></a>方法使用。</p>
+</blockquote>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader#properties" target="_blank" rel="noopener">方法</a></strong></h4><ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/abort" target="_blank" rel="noopener"><code>FileReader.abort()</code></a></p>
+<p>中止读取操作。在返回时，<code>readyState</code>属性为<code>DONE</code>。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsArrayBuffer" target="_blank" rel="noopener"><code>FileReader.readAsArrayBuffer()</code></a></p>
+<p>开始读取指定的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener"><code>Blob</code></a>中的内容, 一旦完成, result 属性中保存的将是被读取文件的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer" target="_blank" rel="noopener"><code>ArrayBuffer</code></a> 数据对象.</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsBinaryString" target="_blank" rel="noopener"><code>FileReader.readAsBinaryString()</code></a> </p>
+<p>开始读取指定的<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener"><code>Blob</code></a>中的内容。一旦完成，<code>result</code>属性中将包含所读取文件的原始二进制数据。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsDataURL" target="_blank" rel="noopener"><code>FileReader.readAsDataURL()</code></a></p>
+<p>开始读取指定的<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener"><code>Blob</code></a>中的内容。一旦完成，<code>result</code>属性中将包含一个<code>data:</code> URL格式的Base64字符串以表示所读取文件的内容。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/FileReader/readAsText" target="_blank" rel="noopener"><code>FileReader.readAsText()</code></a></p>
+<p>开始读取指定的<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Blob" target="_blank" rel="noopener"><code>Blob</code></a>中的内容。一旦完成，<code>result</code>属性中将包含一个字符串以表示所读取的文件内容。</p>
+</li>
+</ul>
+<h3 id="Data-URLs"><a href="#Data-URLs" class="headerlink" title="Data URLs"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/Data_URIs" target="_blank" rel="noopener">Data URLs</a></h3><p>Data URLs 由四个部分组成：前缀(<code>data:</code>)、指示数据类型的MIME类型、如果非文本则为可选的<code>base64</code>标记、数据本身：</p>
+<pre><code>data:[&lt;mediatype&gt;][;base64],&lt;data&gt;</code></pre><p>mediatype 是个 MIME 类型的字符串，例如 “<code>image/jpeg</code>“ 表示 JPEG 图像文件。如果被省略，则默认值为 <code>text/plain;charset=US-ASCII</code></p>
+<p>如果数据是文本类型，你可以直接将文本嵌入 (根据文档类型，使用合适的实体字符或转义字符)。如果是二进制数据，你可以将数据进行base64编码之后再进行嵌入。</p>
+<p>A Data URI takes the format: 格式</p>
+<pre class=" language-html"><code class="language-html">data:[<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>MIME-type</span><span class="token punctuation">></span></span>][;charset=<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>encoding</span><span class="token punctuation">></span></span>][;base64],<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>data</span><span class="token punctuation">></span></span></code></pre>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME-type</a> specifies what type of data the URI contains. So if you wanted to provide a data URI for an image you would specify it as follows:</p>
+<p><code>&lt;MIME-type&gt;</code> 指定内容格式</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+9TXL0Y4OHwAAAABJRU5ErkJggg<span class="token punctuation">=</span><span class="token punctuation">=</span><span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>Red dot<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>The MIME type used here is <code>image/png</code> indicating that the encoded data is a PNG image.</p>
+<h4 id="Audio"><a href="#Audio" class="headerlink" title="Audio"></a>Audio</h4><p>Similarily, if you wanted to encode an Ogg audio file, you would use the MIME type <code>audio/ogg</code> as follows:</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">controls</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data:audio/ogg;base64,T2dnUwACAAAAAAAAAAA+..........+fm5nB6slBlZ3Fcha363d5ut7u3ni1rLoPf728l3KcK<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span></code></pre>
+<p>If you want to specify an MP3 file you would simply set the MIME type to <code>audio/mp3</code> and provide the encoded MP3 audio data string.</p>
+<p>See an example of a <a href="https://iandevlin.com/html5/data-uri/audio.php" target="_blank" rel="noopener">data URI audio source</a>.</p>
+<h4 id="Video"><a href="#Video" class="headerlink" title="Video"></a>Video</h4><p>Providing a data URI for an encoded video is just the same, providing the correct MIME type for the correct encoded data, and of course they can be used in conjunction with the <code>source</code> element:</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video/webm<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data:video/webm;base64,GkXfowEAAAAAAAAfQoaBAUL3gQFC8......jVOrhB9DtnVTrIMQTPc<span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>video/mp4<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>data:video/mp4;base64,AAAAHGZ0eXBtcDQyAAAAAG1wNDJpc29....../l/L+X8v5AAAAMgfDg<span class="token punctuation">=</span><span class="token punctuation">=</span><span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>See an example of a <a href="https://iandevlin.com/html5/data-uri/video.php" target="_blank" rel="noopener">data URI video source</a>.</p>
+<h4 id="Encoding-in-base64"><a href="#Encoding-in-base64" class="headerlink" title="Encoding in base64"></a>Encoding in base64</h4><p>Of course the code examples provided above don’t display the full data URI for any of the audio and video files as they would fill the entire page! To encode the data I simply used PHP‘s <code>base64_encode</code> function as follows:</p>
+<pre class=" language-php"><code class="language-php"><span class="token keyword">function</span> <span class="token function">getEncodedVideoString</span><span class="token punctuation">(</span><span class="token variable">$type</span><span class="token punctuation">,</span> <span class="token variable">$file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+   <span class="token keyword">return</span> <span class="token string">'data:video/'</span> <span class="token punctuation">.</span> <span class="token variable">$type</span> <span class="token punctuation">.</span> <span class="token string">';base64,'</span> <span class="token punctuation">.</span> <span class="token function">base64_encode</span><span class="token punctuation">(</span><span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$file</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Which was used by the HTML:</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">controls</span><span class="token punctuation">></span></span>
+   &lt;source type="video/webm" src="<span class="token prolog">&lt;?php echo getEncodedVideoString('webm', 'parrots-small.webm'); ?></span>">
+   &lt;source type="video/mp4" src="<span class="token prolog">&lt;?php echo getEncodedVideoString('mp4', 'parrots-small.mp4');?></span>">
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">></span></span></code></pre>
+<p>Of course you can use whatever you like to encode the files, this is just an example. And while you may not want nor need to base64 encode your audio and video files (<a href="http://davidbcalhoun.com/2011/when-to-base64-encode-images-and-when-not-to" target="_blank" rel="noopener">these reasons on why you might base64 encode images</a> might be just as relevant), it’s still good to know that you can should the need arise.</p>
+<h3 id="实现代码"><a href="#实现代码" class="headerlink" title="实现代码"></a>实现代码</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">genVideo</span><span class="token punctuation">(</span>base64Video<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> video <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'video'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  video<span class="token punctuation">.</span>style<span class="token punctuation">.</span>cssText <span class="token operator">=</span> <span class="token string">'width:200px'</span>
+  video<span class="token punctuation">.</span>id <span class="token operator">=</span> <span class="token string">'video_1'</span><span class="token punctuation">;</span>
+  video<span class="token punctuation">.</span>loop <span class="token operator">=</span> <span class="token string">'true'</span><span class="token punctuation">;</span>
+  video<span class="token punctuation">.</span>autoplay <span class="token operator">=</span> <span class="token string">'true'</span><span class="token punctuation">;</span>
+  video<span class="token punctuation">.</span>controls <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+  video<span class="token punctuation">.</span>src <span class="token operator">=</span> base64Video<span class="token punctuation">;</span>
+  <span class="token keyword">return</span> video<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
 
-<span class="token comment" spellcheck="true">// 批量下载 顺序下载 传入（图片链接数组，对应的带后缀的图片标题数组，文件夹名）</span>
-    <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">batchDownload</span><span class="token punctuation">(</span>imgsUrl<span class="token punctuation">,</span> imgsTitles<span class="token punctuation">,</span> folderName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">const</span> data <span class="token operator">=</span> imgsUrl<span class="token punctuation">;</span>
-      <span class="token keyword">const</span> zip <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">JSZip</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 压缩包</span>
-      <span class="token keyword">const</span> promises <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> index <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> index <span class="token operator">&lt;</span> data<span class="token punctuation">.</span>length<span class="token punctuation">;</span> index<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 异步需把 for 改为 forEach</span>
-        <span class="token keyword">const</span> item <span class="token operator">=</span> data<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span>
-        <span class="token keyword">const</span> promise <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">getData</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span> <span class="token string">"blob"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>data <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 下载文件, 并存成ArrayBuffer对象</span>
-          <span class="token keyword">const</span> file_name <span class="token operator">=</span> imgsTitles<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 获取文件名</span>
-          <span class="token comment" spellcheck="true">// （文件名，二进制流，多文件）</span>
-          zip<span class="token punctuation">.</span><span class="token function">file</span><span class="token punctuation">(</span>file_name<span class="token punctuation">,</span> data<span class="token punctuation">,</span> <span class="token punctuation">{</span>
-            binary<span class="token punctuation">:</span> <span class="token boolean">true</span>
-          <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 逐个添加文件</span>
-          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`第</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>index<span class="token operator">+</span><span class="token number">1</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">张，文件名：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file_name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">，大小：</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">parseInt</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>size <span class="token operator">/</span> <span class="token number">1024</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> Kb，下载完成！等待压缩...`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> 
-          <span class="token comment" spellcheck="true">// 处理错误 reject；不处理会打断 Promise.all</span>
-          console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        promises<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>promise<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-      Promise<span class="token punctuation">.</span><span class="token function">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">// 返回 promise 结果数组，处理结果中的错误</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> err<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          <span class="token keyword">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span> i <span class="token operator">+</span> <span class="token string">"文件缺失！"</span><span class="token punctuation">)</span>
-            <span class="token keyword">break</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        zip<span class="token punctuation">.</span><span class="token function">generateAsync</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-          type<span class="token punctuation">:</span> <span class="token string">"blob"</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>content <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// 生成二进制流</span>
-          <span class="token function">saveAs</span><span class="token punctuation">(</span>content<span class="token punctuation">,</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>folderName<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> [</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token punctuation">.</span>length<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">P]`</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 利用 file-saver 保存文件</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// 新键文件输入框元素</span>
+<span class="token keyword">const</span> input <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">"input"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+input<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">"file"</span><span class="token punctuation">;</span>
 
-    <span class="token comment" spellcheck="true">// GM_xmlhttpRequest GET异步通用模块</span>
-    <span class="token keyword">function</span> <span class="token function">getData</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> type <span class="token operator">=</span> <span class="token string">"document"</span><span class="token punctuation">,</span> usermethod <span class="token operator">=</span> <span class="token string">"GET"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
-        <span class="token function">GM_xmlhttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-          method<span class="token punctuation">:</span> usermethod<span class="token punctuation">,</span>
-          url<span class="token punctuation">:</span> url<span class="token punctuation">,</span>
-          responseType<span class="token punctuation">:</span> type<span class="token punctuation">,</span>
-          onload<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              <span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-              <span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
-          <span class="token punctuation">}</span><span class="token punctuation">,</span>
-          onerror<span class="token punctuation">:</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>error<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"网络错误"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span></code></pre>
-<p><a href="https://github.com/Eished/jkforum_helper" target="_blank" rel="noopener">项目完整代码</a></p>
+<span class="token comment" spellcheck="true">// 文件输入框插入位置</span>
+document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".inner"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>input<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+input<span class="token punctuation">.</span>onchange <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> files <span class="token operator">=</span> e<span class="token punctuation">.</span>target<span class="token punctuation">.</span>files<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// FileList</span>
+
+  <span class="token keyword">const</span> reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileReader</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  reader<span class="token punctuation">.</span><span class="token function">readAsDataURL</span><span class="token punctuation">(</span>files<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 转Base64</span>
+
+  reader<span class="token punctuation">.</span>onload <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">// const result = e.currentTarget.result; // 等同于reader.result</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"re:"</span><span class="token punctuation">,</span> reader<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> video <span class="token operator">=</span> <span class="token function">genVideo</span><span class="token punctuation">(</span>reader<span class="token punctuation">.</span>result<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 视频插入位置</span>
+    document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">".inner"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>video<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment" spellcheck="true">// 可根据Base64属性生成对应HTML元素</span>
+<span class="token keyword">function</span> <span class="token function">decode64</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">[</span>
+    type<span class="token punctuation">,</span>
+    data
+  <span class="token punctuation">]</span> <span class="token operator">=</span> e<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  type <span class="token operator">=</span> type<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">";"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">":"</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> type<span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 
             </div>
             <hr/>
@@ -551,7 +607,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/">https://iknow.fun/2021/07/08/shi-yong-javascript-da-bao-xia-zai-tu-pian/</a>
+                    <a href="https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/">https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -589,28 +645,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Web/">
-                                    <span class="chip bg-color">Web</span>
+                                <a href="/tags/HTML5/">
+                                    <span class="chip bg-color">HTML5</span>
                                 </a>
                             
-                                <a href="/tags/JavaScript/">
-                                    <span class="chip bg-color">JavaScript</span>
+                                <a href="/tags/Web/">
+                                    <span class="chip bg-color">Web</span>
                                 </a>
                             
                                 <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                     <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/Tampermonkey/">
-                                    <span class="chip bg-color">Tampermonkey</span>
-                                </a>
-                            
-                                <a href="/tags/Promise/">
-                                    <span class="chip bg-color">Promise</span>
-                                </a>
-                            
-                                <a href="/tags/GM-xmlhttpRequest/">
-                                    <span class="chip bg-color">GM_xmlhttpRequest</span>
+                                <a href="/tags/BASE64/">
+                                    <span class="chip bg-color">BASE64</span>
                                 </a>
                             
                         </div>
@@ -655,7 +703,7 @@
         repo: 'Eished.github.io',
         owner: 'Eished',
         admin: "Eished",
-        id: '2021-07-08T18-54-52',
+        id: '2021-07-24T19-28-03',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -679,43 +727,43 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/">
+                <a href="/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="querySelector 与 getElementById 性能比较">
+                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/15.jpg" class="responsive-img" alt="HTML5 网页使用 Base64 视频源">
                         
-                        <span class="card-title">querySelector 与 getElementById 性能比较</span>
+                        <span class="card-title">HTML5 网页使用 Base64 视频源</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1. querySelector 与 getElementById首先我们来比较 querySelector 与 getElementById 的差别，创建测试文件如下：
-&lt;!DOCTYPE html>
-&lt;html lang="
+                            HTML5 网页使用 Base64 视频源视频转 Base64，使用 FileReader 实现FileReader 对象允许Web应用程序异步读取存储在用户计算机上的文件（或原始数据缓冲区）的内容，使用 File 或 Blob 对象指定要
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/JavaScript/" class="post-category">
-                                    JavaScript
+                            <a href="/categories/HTML-CSS/" class="post-category">
+                                    HTML/CSS
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -727,12 +775,12 @@
                         <span class="chip bg-color">Web</span>
                     </a>
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
-                    </a>
-                    
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/BASE64/">
+                        <span class="chip bg-color">BASE64</span>
                     </a>
                     
                 </div>
@@ -746,36 +794,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/07/02/hexo-prism-dai-ma-gao-liang-wen-ti/">
+                <a href="/2021/07/21/shi-yong-jsdelivr-jia-su-github-zi-yuan-jia-kuai-bo-ke-da-kai-su-du/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="hexo prism 代码高亮问题">
+                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="使用 jsDelivr 加速 Github 资源，加快博客打开速度">
                         
-                        <span class="card-title">hexo prism 代码高亮问题</span>
+                        <span class="card-title">使用 jsDelivr 加速 Github 资源，加快博客打开速度</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            hexo prism 代码高亮问题hexo-prism-plugin 代码标注只支持小写英文，不支持符号、大写。
-prism 支持的语言： https://prismjs.com/#languages-list
-
-小写
-
-#include 
+                            GitHub CDN 使用说明在 GitHub 创建公开项目即可使用 jsDelivr 访问：
+We recommend using npm for projects that support it for better UX - npm 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Markdown/" class="post-category">
-                                    Markdown
+                            <a href="/categories/Git/" class="post-category">
+                                    Git
                                 </a>
                             
                             
@@ -785,12 +829,20 @@ prism 支持的语言： https://prismjs.com/#languages-list
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/Git/">
+                        <span class="chip bg-color">Git</span>
                     </a>
                     
-                    <a href="/tags/prism/">
-                        <span class="chip bg-color">prism</span>
+                    <a href="/tags/Web/">
+                        <span class="chip bg-color">Web</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/CDN/">
+                        <span class="chip bg-color">CDN</span>
                     </a>
                     
                 </div>
