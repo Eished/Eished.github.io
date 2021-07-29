@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-29T08:05:59.601Z</updated>
+  <updated>2021-07-29T08:25:08.009Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -17,11 +17,46 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>JavaScript Promise 并发控制下载</title>
+    <title>C\C++网络编程，从socket到epoll</title>
+    <link href="https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/"/>
+    <id>https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/</id>
+    <published>2021-07-29T08:20:15.000Z</published>
+    <updated>2021-07-29T08:25:08.009Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;虚拟机安装-ssh&quot;&gt;&lt;a href=&quot;#虚拟机安装-ssh&quot; class=&quot;headerlink&quot; title=&quot;虚拟机安装 ssh&quot;&gt;&lt;/a&gt;虚拟机安装 ssh&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code
+        
+      
+    
+    </summary>
+    
+    
+      <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
+    
+    
+      <category term="C" scheme="https://iknow.fun/tags/C/"/>
+    
+      <category term="C++" scheme="https://iknow.fun/tags/C/"/>
+    
+      <category term="网络编程" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="socket" scheme="https://iknow.fun/tags/socket/"/>
+    
+      <category term="epoll" scheme="https://iknow.fun/tags/epoll/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript Promise 并发控制下载文件的实现</title>
     <link href="https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/"/>
     <id>https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/</id>
     <published>2021-07-29T08:00:00.000Z</published>
-    <updated>2021-07-29T08:05:59.601Z</updated>
+    <updated>2021-07-29T08:16:36.842Z</updated>
     
     <summary type="html">
     
@@ -608,35 +643,6 @@
         
         
           &lt;h1 id=&quot;第1章-课程介绍与环境搭建&quot;&gt;&lt;a href=&quot;#第1章-课程介绍与环境搭建&quot; class=&quot;headerlink&quot; title=&quot;第1章 课程介绍与环境搭建&quot;&gt;&lt;/a&gt;第1章 课程介绍与环境搭建&lt;/h1&gt;&lt;p&gt; 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
-    
-    
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
-    
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript从入门到精通</title>
-    <link href="https://iknow.fun/2020/06/02/javascript-cong-ru-men-dao-jing-tong/"/>
-    <id>https://iknow.fun/2020/06/02/javascript-cong-ru-men-dao-jing-tong/</id>
-    <published>2020-06-02T08:13:38.000Z</published>
-    <updated>2020-06-02T09:08:59.528Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;JavaScript从入门到精通&quot;&gt;&lt;a href=&quot;#JavaScript从入门到精通&quot; class=&quot;headerlink&quot; title=&quot;JavaScript从入门到精通&quot;&gt;&lt;/a&gt;&lt;a
         
       
     
