@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-24T11:54:30.695Z</updated>
+  <updated>2021-07-29T08:05:59.601Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScript Promise 并发控制下载</title>
+    <link href="https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/"/>
+    <id>https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/</id>
+    <published>2021-07-29T08:00:00.000Z</published>
+    <updated>2021-07-29T08:05:59.601Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Promise-并发下载&quot;&gt;&lt;a href=&quot;#Promise-并发下载&quot; class=&quot;headerlink&quot; title=&quot;Promise 并发下载&quot;&gt;&lt;/a&gt;Promise 并发下载&lt;/h2&gt;&lt;h3 id=&quot;Promise-then&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    
+    
+      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    
+      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    
+  </entry>
   
   <entry>
     <title>HTML5 网页使用 Base64 视频源</title>
@@ -616,37 +649,6 @@
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
       <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo Front-matter 介绍</title>
-    <link href="https://iknow.fun/2020/06/02/hexo-front-matter-jie-shao/"/>
-    <id>https://iknow.fun/2020/06/02/hexo-front-matter-jie-shao/</id>
-    <published>2020-06-02T08:02:11.000Z</published>
-    <updated>2021-07-02T06:08:59.315Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;文章-Front-matter-介绍&quot;&gt;&lt;a href=&quot;#文章-Front-matter-介绍&quot; class=&quot;headerlink&quot; title=&quot;文章 Front-matter 介绍&quot;&gt;&lt;/a&gt;文章 Front-matter 介绍&lt;/h1&gt;&lt;h2
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Markdown" scheme="https://iknow.fun/categories/Markdown/"/>
-    
-    
-      <category term="Typora" scheme="https://iknow.fun/tags/Typora/"/>
-    
-      <category term="Markdown" scheme="https://iknow.fun/tags/Markdown/"/>
-    
-      <category term="Hexo" scheme="https://iknow.fun/tags/Hexo/"/>
     
   </entry>
   
