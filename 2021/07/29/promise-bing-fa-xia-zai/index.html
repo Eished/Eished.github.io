@@ -433,14 +433,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    944
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -623,7 +623,14 @@ promise<span class="token punctuation">.</span><span class="token function">then
 <span class="token function">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// NodeJS Promise并发控制 </span>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>简述一个简易实现思路：</p>
+<ol>
+<li>封装一个 ConcurrencyPromisePool 类</li>
+<li>方法有<code>all()</code>，和<code>Promise.prototype.all</code>类似。</li>
+<li>属性有 <code>limit</code>、<code>queue</code>。前者是并发上限，后者存放排队的 promise。</li>
+</ol>
+<p><strong>注意</strong>：第 2 点中，all 函数传入的是生成 Promise 的方法，而不是 Promise 实例。因为 Promise 一旦生成实例，会直接执行。所以要把这个执行交给 ConcurrencyPromisePool 来控制。</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// NodeJS Promise并发控制 </span>
 <span class="token comment" spellcheck="true">// https://xin-tan.com/2020-09-13-bing-fa-kong-zhi/</span>
 
 <span class="token keyword">class</span> <span class="token class-name">ConcurrencyPromisePool</span> <span class="token punctuation">{</span>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-07-29T08:25:08.009Z</updated>
+  <updated>2021-08-03T08:35:38.122Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,42 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>斗鱼直播脚本：自动切换最高画质或最低画质</title>
+    <link href="https://iknow.fun/2021/08/03/dou-yu-zhi-bo-cha-jian-zi-dong-qie-huan-zui-gao-hua-zhi-huo-zui-di-hua-zhi/"/>
+    <id>https://iknow.fun/2021/08/03/dou-yu-zhi-bo-cha-jian-zi-dong-qie-huan-zui-gao-hua-zhi-huo-zui-di-hua-zhi/</id>
+    <published>2021-08-03T08:19:06.000Z</published>
+    <updated>2021-08-03T08:35:38.122Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;思路：&quot;&gt;&lt;a href=&quot;#思路：&quot; class=&quot;headerlink&quot; title=&quot;思路：&quot;&gt;&lt;/a&gt;思路：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;播放控件是动态加载，找到元素把父级全 &lt;code&gt;console.log&lt;/code&gt;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    
+    
+      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    
+      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    
+      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+  </entry>
   
   <entry>
     <title>C\C++网络编程，从socket到epoll</title>
@@ -56,7 +92,7 @@
     <link href="https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/"/>
     <id>https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/</id>
     <published>2021-07-29T08:00:00.000Z</published>
-    <updated>2021-07-29T08:16:36.842Z</updated>
+    <updated>2021-07-29T08:43:57.492Z</updated>
     
     <summary type="html">
     
@@ -626,35 +662,6 @@
       <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
       <category term="Vue" scheme="https://iknow.fun/tags/Vue/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript ES6-10语法</title>
-    <link href="https://iknow.fun/2020/06/02/javascript-es6-10/"/>
-    <id>https://iknow.fun/2020/06/02/javascript-es6-10/</id>
-    <published>2020-06-02T08:18:11.000Z</published>
-    <updated>2021-06-28T14:47:56.579Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;第1章-课程介绍与环境搭建&quot;&gt;&lt;a href=&quot;#第1章-课程介绍与环境搭建&quot; class=&quot;headerlink&quot; title=&quot;第1章 课程介绍与环境搭建&quot;&gt;&lt;/a&gt;第1章 课程介绍与环境搭建&lt;/h1&gt;&lt;p&gt; 
-        
-      
-    
-    </summary>
-    
-    
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
-    
-    
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
-    
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
   </entry>
   
