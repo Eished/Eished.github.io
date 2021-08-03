@@ -342,7 +342,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    424
+                    439
                 </div>
                 
 
@@ -369,7 +369,12 @@
 <ul>
 <li>使用 <code>MutationObserver</code> 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。</li>
 <li>元素的 <code>className</code> 是框架动态生成，会变化，所有用属性选择器 <code>[value=&quot;画质 &quot;]</code> 找到元素。</li>
-<li>或者使用 <code>[class|=&quot;rate&quot;]</code> (带有 rate 前缀的元素)、<code>[class^=&quot;rate&quot;]</code> (以rate 开头的元素)</li>
+<li>或者使用属性选择器：<ul>
+<li><code>[class|=&quot;rate-&quot;]</code> (带有 rate- 前缀的元素)</li>
+<li><code>[class^=&quot;rate-&quot;]</code> (以 rate- 开头的元素)</li>
+<li><code>[class*=&quot;rate-&quot;]</code> (包含 rate- 的元素)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p><code>GM_setValue</code> 储存画质选项。</p>
