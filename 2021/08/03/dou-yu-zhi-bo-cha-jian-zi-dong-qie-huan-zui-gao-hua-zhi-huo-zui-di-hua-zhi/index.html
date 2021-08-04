@@ -366,8 +366,9 @@
             <div id="articleContent">
                 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
 <li><p>播放控件是动态加载，找到元素把父级全 <code>console.log</code> 确认加载顺序。</p>
+</li>
+<li><p>使用 <code>MutationObserver</code> 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。</p>
 <ul>
-<li>使用 <code>MutationObserver</code> 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。</li>
 <li>元素的 <code>className</code> 是框架动态生成，会变化，所以使用属性选择器 <code>[value=&quot;画质 &quot;]</code> 找到元素。</li>
 <li>或者使用：<ul>
 <li><code>[class|=&quot;rate-&quot;]</code> (带有 rate- 前缀的元素)</li>
@@ -630,7 +631,8 @@
 播放控件是动态加载，找到元素把父级全 console.log 确认加载顺序。
 
 使用 MutationObserver 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。
-元素的 className 是框架动态生成，会变
+
+元素的 className 是框架动态生成，会
                         
                     </div>
                     <div class="publish-info">
