@@ -342,7 +342,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    454
+                    507
                 </div>
                 
 
@@ -365,10 +365,8 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h2 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h2><ol>
-<li><p>播放控件是动态加载，找到元素把父级全 <code>console.log</code> 确认加载顺序。</p>
-</li>
-<li><p>使用 <code>MutationObserver</code> 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。</p>
-<ul>
+<li>播放控件是动态加载，找到元素把父级全 <code>console.log</code> 确认加载顺序。</li>
+<li>使用 <code>MutationObserver</code> 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。<ul>
 <li>元素的 <code>className</code> 是框架动态生成，会变化，所以使用属性选择器 <code>[value=&quot;画质 &quot;]</code> 找到元素。</li>
 <li>或者使用：<ul>
 <li><code>[class|=&quot;rate-&quot;]</code> (带有 rate- 前缀的元素)</li>
@@ -379,11 +377,11 @@
 </li>
 </ul>
 </li>
-<li><p><code>GM_setValue</code> 储存画质选项。</p>
-</li>
-<li><p><code>GM_registerMenuCommand</code> 菜单栏切换画质。</p>
-</li>
-<li><p>问题：没有找到元素后，不能自动关闭监听，虽不会再触发。</p>
+<li><code>GM_setValue</code> 储存画质选项。</li>
+<li><code>GM_registerMenuCommand</code> 菜单栏切换画质。</li>
+<li>问题：没有找到元素后，不能自动关闭监听，虽不会再触发。<ul>
+<li>观察器在内部对节点使用弱引用。也就是说，如果一个节点被从 DOM 中移除了，并且该节点变得不可访问，那么它就可以被垃圾回收。</li>
+</ul>
 </li>
 </ol>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ==UserScript==</span>
@@ -629,10 +627,8 @@
                         
                             思路：
 播放控件是动态加载，找到元素把父级全 console.log 确认加载顺序。
-
 使用 MutationObserver 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。
-
-元素的 className 是框架动态生成，会
+元素的 className 是框架动态生成，会变化
                         
                     </div>
                     <div class="publish-info">
@@ -690,9 +686,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/11.jpg" class="responsive-img" alt="C\C++网络编程，从socket到epoll">
+                        <img src="https://cdn.jsdelivr.net/gh/eished/eished.github.io/medias/featureimages/8.jpg" class="responsive-img" alt="C/C++网络编程，从socket到epoll">
                         
-                        <span class="card-title">C\C++网络编程，从socket到epoll</span>
+                        <span class="card-title">C/C++网络编程，从socket到epoll</span>
                     </div>
                 </a>
                 <div class="card-content article-content">

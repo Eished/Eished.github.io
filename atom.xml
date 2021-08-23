@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-08-04T14:09:37.583Z</updated>
+  <updated>2021-08-06T05:50:25.058Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://iknow.fun/2021/08/03/dou-yu-zhi-bo-cha-jian-zi-dong-qie-huan-zui-gao-hua-zhi-huo-zui-di-hua-zhi/"/>
     <id>https://iknow.fun/2021/08/03/dou-yu-zhi-bo-cha-jian-zi-dong-qie-huan-zui-gao-hua-zhi-huo-zui-di-hua-zhi/</id>
     <published>2021-08-03T08:19:06.000Z</published>
-    <updated>2021-08-04T14:09:37.583Z</updated>
+    <updated>2021-08-06T05:50:25.058Z</updated>
     
     <summary type="html">
     
@@ -30,7 +30,7 @@
         
         
           &lt;h2 id=&quot;思路：&quot;&gt;&lt;a href=&quot;#思路：&quot; class=&quot;headerlink&quot; title=&quot;思路：&quot;&gt;&lt;/a&gt;思路：&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;播放控件是动态加载，找到元素把父级全 &lt;code&gt;console.log&lt;/code&gt;
+&lt;li&gt;播放控件是动态加载，找到元素把父级全 &lt;code&gt;console.log&lt;/code&gt;
         
       
     
@@ -53,11 +53,11 @@
   </entry>
   
   <entry>
-    <title>C\C++网络编程，从socket到epoll</title>
+    <title>C/C++网络编程，从socket到epoll</title>
     <link href="https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/"/>
     <id>https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/</id>
     <published>2021-07-29T08:20:15.000Z</published>
-    <updated>2021-07-29T08:25:08.009Z</updated>
+    <updated>2021-08-23T02:44:52.667Z</updated>
     
     <summary type="html">
     
