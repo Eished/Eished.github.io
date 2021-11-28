@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2021-08-23T02:47:46.027Z</updated>
+  <updated>2021-11-28T12:32:54.244Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用百度AI接口ORC自动识别验证码</title>
+    <link href="https://iknow.fun/2021/11/28/orc-zi-dong-shi-bie-yan-zheng-ma/"/>
+    <id>https://iknow.fun/2021/11/28/orc-zi-dong-shi-bie-yan-zheng-ma/</id>
+    <published>2021-11-28T12:15:26.000Z</published>
+    <updated>2021-11-28T12:32:54.244Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;使用百度AI接口ORC自动识别验证码&quot;&gt;&lt;a href=&quot;#使用百度AI接口ORC自动识别验证码&quot; class=&quot;headerlink&quot; title=&quot;使用百度AI接口ORC自动识别验证码&quot;&gt;&lt;/a&gt;使用百度AI接口ORC自动识别验证码&lt;/h1&gt;&lt;h2
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>斗鱼直播油猴脚本：自动切换最高画质或最低画质</title>
@@ -632,36 +655,6 @@
       <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
       <category term="Node.js" scheme="https://iknow.fun/tags/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vue2.5从零基础入门到实战项目开发去哪儿网App</title>
-    <link href="https://iknow.fun/2020/06/02/vue2-5-cong-ling-ji-chu-ru-men-dao-shi-zhan-xiang-mu-kai-fa-qu-na-er-wang-app/"/>
-    <id>https://iknow.fun/2020/06/02/vue2-5-cong-ling-ji-chu-ru-men-dao-shi-zhan-xiang-mu-kai-fa-qu-na-er-wang-app/</id>
-    <published>2020-06-02T08:29:18.000Z</published>
-    <updated>2021-06-28T14:48:08.801Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;&lt;a href=&quot;https://github.com/Eished/vue-travel&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;项目代码&lt;/a&gt;&lt;/p&gt;
-&lt;h1 id=&quot;第1章-课程介绍&quot;&gt;&lt;a href=&quot;#第1章-课程介绍&quot;
-        
-      
-    
-    </summary>
-    
-    
-      <category term="Vue" scheme="https://iknow.fun/categories/Vue/"/>
-    
-    
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
-    
-      <category term="Vue" scheme="https://iknow.fun/tags/Vue/"/>
     
   </entry>
   
