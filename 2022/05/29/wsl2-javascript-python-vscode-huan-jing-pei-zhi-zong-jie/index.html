@@ -506,8 +506,8 @@
 <p><a href="https://zhuanlan.zhihu.com/p/414627975" target="_blank" rel="noopener">WSL2 内使用 windows 的 v2ray 代理配置方式</a></p>
 <p><a href="https://www.jianshu.com/p/ba2cf239ebe0" target="_blank" rel="noopener">https://www.jianshu.com/p/ba2cf239ebe0</a></p>
 <p><strong>出现的问题分析：</strong>可以双方 ping 通，不设置代理可以双方访问，设置代理就无法请求，v2ray 未收到请求。</p>
-<p>关闭所有防火墙，把端口号设置到 50000+后成功连接。再打开所有防火墙正常连接，重置防火墙后无法连接。</p>
-<p>多次测试后，关闭公用防火墙即可访问。定位关键问题：</p>
+<p>关闭所有防火墙正常连接，重置防火墙后无法连接。</p>
+<p>定位关键问题：</p>
 <ol>
 <li>高级安全 Windows Defender 防火墙</li>
 <li>本地计算机上的高级安全 Windows Defender 防火墙</li>
@@ -747,8 +747,8 @@ conda activate py36
 conda <span class="token function">install</span> jupyter
 jupyter notebook <span class="token comment" spellcheck="true"># 运行jupyter，用给出的链接可在Win10访问</span></code></pre>
 <h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 无法请求时使用</span>
-curl http://baidu.com
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 测试网络</span>
+curl baidu.com
 
 <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span>
 FIX WSL2 NETWORKING IN WINDOWS 10
