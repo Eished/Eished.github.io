@@ -469,7 +469,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
@@ -709,7 +709,9 @@ unset __conda_setup
 yarn global bin</code></pre>
 <h3 id="设置-ssh-秘钥权限"><a href="#设置-ssh-秘钥权限" class="headerlink" title="设置 ssh 秘钥权限"></a>设置 ssh 秘钥权限</h3><p>设置文件内所有文件</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> -R 700 ~/.ssh</code></pre>
-<h3 id="VSCode-ssh-remote"><a href="#VSCode-ssh-remote" class="headerlink" title="VSCode ssh remote"></a><a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VSCode ssh remote</a></h3><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">系统支持列表</a>，不支持 ubuntu32 位系统</p>
+<h3 id="配置-code-命令"><a href="#配置-code-命令" class="headerlink" title="配置 code 命令"></a>配置 code 命令</h3><p>.bashrc</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">alias</span> code<span class="token operator">=</span><span class="token string">"/mnt/c/Users/Kis/AppData/Local/Programs/Microsoft\ VS\ Code/Code.exe"</span></code></pre>
+<h3 id="VSCode-ssh-remote-非-WSL-时使用"><a href="#VSCode-ssh-remote-非-WSL-时使用" class="headerlink" title="VSCode ssh remote 非 WSL 时使用"></a><a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VSCode ssh remote</a> 非 WSL 时使用</h3><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">系统支持列表</a>，不支持 ubuntu32 位系统</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 代理设置</span>
 <span class="token comment" spellcheck="true"># export hostip=$(ip route | grep default | awk '{print $3}')</span>
 <span class="token function">export</span> hostip<span class="token operator">=</span><span class="token string">"192.168.1.101"</span>
