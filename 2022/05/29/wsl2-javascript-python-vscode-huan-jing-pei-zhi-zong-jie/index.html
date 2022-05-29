@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.9k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    11 分
                 </div>
                 
 
@@ -501,7 +501,8 @@
 </ul>
 </li>
 </ol>
-<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong><a href="https://segmentfault.com/a/1190000041463008" target="_blank" rel="noopener">WSL2 连接到宿主 Windows 程序的网络代理设置</a></strong> 最终测试成功</p>
+<p>重启命令</p>
+<pre><code>wsl -t Ubuntu-20.04</code></pre><h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong><a href="https://segmentfault.com/a/1190000041463008" target="_blank" rel="noopener">WSL2 连接到宿主 Windows 程序的网络代理设置</a></strong> 最终测试成功</p>
 <p><a href="https://zinglix.xyz/2020/04/18/wsl2-proxy/" target="_blank" rel="noopener">https://zinglix.xyz/2020/04/18/wsl2-proxy/</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/414627975" target="_blank" rel="noopener">WSL2 内使用 windows 的 v2ray 代理配置方式</a></p>
 <p><a href="https://www.jianshu.com/p/ba2cf239ebe0" target="_blank" rel="noopener">https://www.jianshu.com/p/ba2cf239ebe0</a></p>
@@ -515,7 +516,7 @@
 <li>把 wsl 的网卡防火墙关掉，重启可能会失效</li>
 </ol>
 <p><img src="/images/tianruo_2022-5-29-637893920717599123.png" alt="tianruo_2022-5-29-637893920717599123"></p>
-<p>.bashrc</p>
+<p>很多软件不支持 socks5，建议使用 http 协议代理<br>.bashrc</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># ~/.bashrc: executed by bash(1) for non-login shells.</span>
 <span class="token comment" spellcheck="true"># see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)</span>
 <span class="token comment" spellcheck="true"># for examples</span>
@@ -647,11 +648,6 @@ GIT_PS1_SHOWDIRTYSTATE=true
 GIT_PS1_SHOWSTASHSTATE=true
 GIT_PS1_SHOWUNTRACKEDFILES=true
 
-# Make X11 work in WSL
-export DISPLAY=<span class="token variable"><span class="token variable">$(</span><span class="token function">awk</span> '/nameserver / <span class="token punctuation">{</span>print $2<span class="token punctuation">;</span> exit<span class="token punctuation">}</span>' /etc/resolv.conf 2<span class="token operator">></span>/dev/null<span class="token variable">)</span></span>:0.0
-export LIBGL_ALWAYS_INDIRECT=1
-export BROWSER=wslview
-
 # SSH keychain
 # eval <span class="token variable"><span class="token variable">`</span>keychain --quiet --eval --agents <span class="token function">ssh</span> id_rsa<span class="token variable">`</span></span>
 
@@ -669,11 +665,11 @@ export NVM_DIR="</span><span class="token punctuation">$(</span><span class="tok
 
 # 代理设置
 export hostip=<span class="token variable"><span class="token variable">$(</span>ip route <span class="token operator">|</span> <span class="token function">grep</span> default <span class="token operator">|</span> <span class="token function">awk</span> '<span class="token punctuation">{</span>print $3<span class="token punctuation">}</span>'<span class="token variable">)</span></span>
-export hostport=58882 # 局域网连接端口
+export hostport=58883 # 局域网连接端口
 alias proxy='
-    export HTTPS_PROXY="</span>socks5://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
-    export HTTP_PROXY="</span>socks5://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
-    export ALL_PROXY="</span>socks5://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
+    export HTTPS_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
+    export HTTP_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
+    export ALL_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
     echo -e "</span>Acquire::http::Proxy \<span class="token string">"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
     <span class="token keyword">echo</span> -e <span class="token string">"Acquire::https::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
 <span class="token string">'
@@ -704,6 +700,8 @@ __conda_setup<span class="token operator">=</span><span class="token string">"<s
 unset __conda_setup
 <span class="token comment" spellcheck="true"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
 
+<span class="token function">alias</span> code<span class="token operator">=</span><span class="token string">"/mnt/c/Program\ Files/Microsoft\ VS\ Code/Code.exe"</span>
+
 </code></pre>
 <h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h3><pre class=" language-bash"><code class="language-bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh <span class="token operator">|</span> <span class="token function">bash</span></code></pre>
 <h3 id="yarn-全局访问"><a href="#yarn-全局访问" class="headerlink" title="yarn 全局访问"></a>yarn 全局访问</h3><p><a href="https://stackoverflow.com/questions/40317578/yarn-global-command-not-working" target="_blank" rel="noopener">https://stackoverflow.com/questions/40317578/yarn-global-command-not-working</a></p>
@@ -711,7 +709,33 @@ unset __conda_setup
 yarn global bin</code></pre>
 <h3 id="设置-ssh-秘钥权限"><a href="#设置-ssh-秘钥权限" class="headerlink" title="设置 ssh 秘钥权限"></a>设置 ssh 秘钥权限</h3><p>设置文件内所有文件</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> -R 700 ~/.ssh</code></pre>
-<h3 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span>  <span class="token function">passwd</span> root</code></pre>
+<h3 id="VSCode-ssh-remote"><a href="#VSCode-ssh-remote" class="headerlink" title="VSCode ssh remote"></a><a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VSCode ssh remote</a></h3><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">系统支持列表</a>，不支持 ubuntu32 位系统</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 代理设置</span>
+<span class="token comment" spellcheck="true"># export hostip=$(ip route | grep default | awk '{print $3}')</span>
+<span class="token function">export</span> hostip<span class="token operator">=</span><span class="token string">"192.168.1.101"</span>
+<span class="token function">export</span> hostport<span class="token operator">=</span>58883 <span class="token comment" spellcheck="true"># 局域网连接端口</span>
+<span class="token function">alias</span> proxy<span class="token operator">=</span><span class="token string">'
+    export HTTPS_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
+    export HTTP_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
+    export ALL_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
+    echo -e "Acquire::http::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+    echo -e "Acquire::https::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+'</span>
+<span class="token function">alias</span> unproxy<span class="token operator">=</span><span class="token string">'
+    unset HTTPS_PROXY;
+    unset HTTP_PROXY;
+    unset ALL_PROXY;
+    sudo sed -i -e '</span>/Acquire::http::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;
+    sudo sed -i -e '</span>/Acquire::https::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;'</span></code></pre>
+<pre><code>// 先卸载
+sudo apt-get remove openssh-server
+// 安装
+sudo apt-get install openssh-server
+
+//重启sshd服务
+sudo service ssh --full-restart
+
+sudo vim /etc/ssh/sshd_config</code></pre><h3 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span>  <span class="token function">passwd</span> root</code></pre>
 <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> python3-pip
 pip3 <span class="token function">install</span> virtualenv
 virtualenv venv
@@ -746,7 +770,11 @@ conda activate py36
 
 conda <span class="token function">install</span> jupyter
 jupyter notebook <span class="token comment" spellcheck="true"># 运行jupyter，用给出的链接可在Win10访问</span></code></pre>
-<h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
+<h3 id="pip-下载异常"><a href="#pip-下载异常" class="headerlink" title="pip 下载异常"></a><a href="https://github.com/microsoft/WSL/issues/6643" target="_blank" rel="noopener">pip 下载异常</a></h3><p>会等几分钟后再下载</p>
+<pre><code>DISPLAY= pip install &lt;packagename&gt;</code></pre><p>或者</p>
+<p><a href="https://stackoverflow.com/q/68369527" target="_blank" rel="noopener">Importing <code>keyring</code> taking very long in WSL2</a> is an already known problem, that has been <a href="https://github.com/jaraco/keyring/issues/531" target="_blank" rel="noopener">fixed in keyring versions ≥ 21.6.0</a>.</p>
+<p>Therefore, updating <code>keyring</code> to the latest version should solve the problem:</p>
+<pre><code>DISPLAY= pip install -U keyring</code></pre><h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 测试网络</span>
 curl baidu.com
 
