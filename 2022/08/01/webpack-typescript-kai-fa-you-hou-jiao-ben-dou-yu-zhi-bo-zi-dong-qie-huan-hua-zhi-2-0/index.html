@@ -465,14 +465,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    9 分
                 </div>
                 
 
@@ -519,31 +519,43 @@
 </ol>
 <h3 id="主要代码实现"><a href="#主要代码实现" class="headerlink" title="主要代码实现"></a>主要代码实现</h3><p><code>index.ts</code>：</p>
 <ul>
-<li><code>rid</code> 和播放器获取</li>
+<li>根据是否是开发环境决定是否执行</li>
 </ul>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">import</span> app <span class="token keyword">from</span> <span class="token string">'./app'</span><span class="token punctuation">;</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">import</span> app <span class="token keyword">from</span> <span class="token string">'@/app'</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> isTampermonkey <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@/lib/environment'</span><span class="token punctuation">;</span>
 
-<span class="token keyword">let</span> rid <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>search<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'rid'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> results <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/[\d]{1,10}/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-    rid <span class="token operator">=</span> results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
-    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'斗鱼直播助手：未找到直播间id'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>PRODUCTION<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token function">app</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment" spellcheck="true">// 本地开发时注入页面的js，设置为只在油猴环境运行。</span>
+  <span class="token comment" spellcheck="true">// 开启压缩后 webpack 在生产环境构建会把这部分代码删掉。</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isTampermonkey</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">app</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">const</span> videoSub <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.layout-Player-videoSub'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">if</span> <span class="token punctuation">(</span>rid <span class="token operator">&amp;&amp;</span> videoSub<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token function">app</span><span class="token punctuation">(</span>rid<span class="token punctuation">,</span> videoSub<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
 <p><code>app.ts</code>：</p>
 <ul>
 <li>主要逻辑实现</li>
 </ul>
 <p><a href="https://github.com/Eished/douyu-helper/blob/main/src/app.ts" target="_blank" rel="noopener">https://github.com/Eished/douyu-helper/blob/main/src/app.ts</a></p>
-<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token punctuation">(</span>rid<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> videoSub<span class="token punctuation">:</span> Element<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> rid <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">URLSearchParams</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>search<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'rid'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>rid<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> results <span class="token operator">=</span> window<span class="token punctuation">.</span>location<span class="token punctuation">.</span>pathname<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex">/[\d]{1,10}/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>results<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      rid <span class="token operator">=</span> results<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">const</span> videoSub <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.layout-Player-videoSub'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>rid <span class="token operator">&amp;&amp;</span> videoSub<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">autoSelectClarity</span><span class="token punctuation">(</span>rid<span class="token punctuation">,</span> videoSub<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> autoSelectClarity <span class="token operator">=</span> <span class="token punctuation">(</span>rid<span class="token punctuation">:</span> <span class="token keyword">string</span><span class="token punctuation">,</span> videoSub<span class="token punctuation">:</span> Element<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">const</span> Clarities <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'全局默认最高画质'</span><span class="token punctuation">,</span> <span class="token string">'全局默认最低画质'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> selectedClarity<span class="token punctuation">:</span> <span class="token keyword">string</span> <span class="token operator">|</span> undefined <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span>rid<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">const</span> defaultClarity<span class="token punctuation">:</span> <span class="token keyword">number</span> <span class="token operator">|</span> undefined <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">'defaultClarity'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -551,7 +563,7 @@
   <span class="token keyword">const</span> clickClarity <span class="token operator">=</span> <span class="token punctuation">(</span>li<span class="token punctuation">:</span> HTMLLIElement<span class="token punctuation">,</span> save <span class="token operator">=</span> <span class="token keyword">false</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
     <span class="token comment" spellcheck="true">// 阻止点击事件循环</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>li<span class="token punctuation">.</span>className<span class="token punctuation">.</span><span class="token function">includes</span><span class="token punctuation">(</span><span class="token string">'selected'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      save <span class="token operator">?</span> <span class="token function">GM_setValue</span><span class="token punctuation">(</span>rid<span class="token punctuation">,</span> li<span class="token punctuation">.</span>innerText<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      save <span class="token operator">?</span> <span class="token function">GM_setValue</span><span class="token punctuation">(</span>rid<span class="token punctuation">,</span> li<span class="token punctuation">.</span>innerText<span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
       li<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">;</span>
@@ -765,7 +777,74 @@ observer<span class="token punctuation">.</span><span class="token function">obs
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
 <h4 id="Webpack-配置的改进"><a href="#Webpack-配置的改进" class="headerlink" title="Webpack 配置的改进"></a>Webpack 配置的改进</h4><ul>
-<li>自动生成油猴头文件，以及生产环境和开发环境所需的不同参数</li>
+<li><p>自动生成油猴头文件，以及生产环境和开发环境所需的不同参数</p>
+</li>
+<li><p>热刷新解决方案：</p>
+<ul>
+<li><code>HtmlWebpackPlugin</code> 将<code>websocket</code>代码注入到打包好的 js 里面，再把 js 插入 html，<code>devServer</code> 和 <code>websocket</code> 客户端通信实现网页热刷新</li>
+<li>问题：<ul>
+<li>油猴脚本不需要通过 webpack 将 js 插入网页。</li>
+<li>造成重复运行相同代码，webpack 插入的 js 没有油猴环境，运行到调用油猴 API 时报错。</li>
+</ul>
+</li>
+<li>解决方案：在代码开始时里加上判断当前环境的函数。<ul>
+<li>问题：生产环境不需要这些代码。</li>
+<li>解决：让 webpack 在生产环境构建时删掉这些代码<ul>
+<li><code>DefinePlugin</code> 变量替换</li>
+<li><code>NormalModuleReplacementPlugin</code> 正则匹配替换</li>
+<li>这两个插件都能实现替换效果，<code>DefinePlugin</code> 能自动优化无法达到的分支，需要写的代码更少，所以使用这个完成。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>代码构建缓慢：</p>
+<ul>
+<li><p>之前很快：<code>webpack 5.72.0 compiled successfully in 1362 ms</code></p>
+<ul>
+<li>现在：<code>webpack 5.72.0 compiled successfully in 9335 ms</code></li>
+</ul>
+</li>
+<li><p>不设置 <code>devtool: &#39;source-map&#39;</code> 就恢复正常了</p>
+<ul>
+<li><code>development</code> 模式下默认是 <code>eval</code></li>
+<li><code>production</code> 模式下默认是 <code>false</code></li>
+</ul>
+</li>
+<li><p>文档介绍：<code>source-map build: slowest rebuild: slowest</code> 用于找到具体的报错位置</p>
+</li>
+<li><p>什么时候使用？</p>
+<blockquote>
+<p>（1）<strong>开发环境</strong>：需要考虑速度快，调试更友好</p>
+<ul>
+<li>速度快( <code>eval</code> &gt; <code>inline</code> &gt; <code>cheap</code> &gt;… )<ol>
+<li><code>eval-cheap-souce-map</code></li>
+<li><code>eval-source-map</code></li>
+</ol>
+</li>
+<li>调试更友好<ol>
+<li><code>souce-map</code></li>
+<li><code>cheap-module-souce-map</code></li>
+<li><code>cheap-souce-map</code></li>
+</ol>
+</li>
+</ul>
+<p><strong>最终得出最好的两种方案 –&gt; eval-source-map（完整度高，内联速度快） / eval-cheap-module-souce-map（错误提示忽略列但是包含其他信息，内联速度快）</strong></p>
+<p>（2）<strong>生产环境</strong>：需要考虑源代码要不要隐藏，调试要不要更友好</p>
+<ul>
+<li>内联会让代码体积变大，所以在生产环境不用内联</li>
+<li>隐藏源代码<ol>
+<li><code>nosources-source-map</code> 全部隐藏（打包后的代码与源代码）</li>
+<li><code>hidden-source-map</code> 只隐藏源代码，会提示构建后代码错误信息</li>
+</ol>
+</li>
+</ul>
+<p><strong>最终得出最好的两种方案 –&gt; source-map（最完整） / cheap-module-souce-map（错误提示一整行忽略列）</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
 </ul>
 
             </div>
