@@ -465,7 +465,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.4k
                 </div>
                 
 
@@ -846,6 +846,25 @@ observer<span class="token punctuation">.</span><span class="token function">obs
 </ul>
 </li>
 </ul>
+<h4 id="同步-Click-事件为什么不会死循环？"><a href="#同步-Click-事件为什么不会死循环？" class="headerlink" title="同步 Click 事件为什么不会死循环？"></a>同步 Click 事件为什么不会死循环？</h4><pre class=" language-typescript"><code class="language-typescript"><span class="token keyword">const</span> list <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'li'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+list<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>li<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+  li<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>e<span class="token punctuation">.</span>target <span class="token operator">===</span> li<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      i<span class="token operator">++</span><span class="token punctuation">;</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'第'</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">'次触发'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token comment" spellcheck="true">// li.click();</span>
+      <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        li<span class="token punctuation">.</span><span class="token function">click</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<p>这个问题的关键是每个方法上都有一个<strong>隐藏的标志</strong> <code>element.click()</code>。</p>
+<p><strong>每个元素都有一个关联的点击进行中标志，该标志最初未设置。</strong></p>
+<p>文档：<a href="https://html.spec.whatwg.org/multipage/interaction.html#dom-click" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/interaction.html#dom-click</a></p>
+<p>一旦这个方法被激活，这个标志就会从<code>progess Status == unset</code>到<code>progess Status == active</code> <em>（伪代码）</em></p>
+<p>（然后一旦它包含的代码被完全执行，它就会返回到它的初始状态）</p>
+<p>当此标志处于该<code>active</code>状态时，将忽略对该方法的任何调用。 </p>
 
             </div>
             <hr/>
