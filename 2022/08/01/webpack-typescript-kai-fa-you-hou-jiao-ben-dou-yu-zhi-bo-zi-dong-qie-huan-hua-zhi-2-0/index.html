@@ -859,7 +859,7 @@ list<span class="token punctuation">.</span><span class="token function">forEach
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<p>这个问题的关键是每个方法上都有一个<strong>隐藏的标志</strong> <code>element.click()</code>。</p>
+<p>这个问题的关键是每个 <code>element.click()</code> 方法上都有一个<strong>隐藏的标志</strong>。</p>
 <p><strong>每个元素都有一个关联的点击进行中标志，该标志最初未设置。</strong></p>
 <p>文档：<a href="https://html.spec.whatwg.org/multipage/interaction.html#dom-click" target="_blank" rel="noopener">https://html.spec.whatwg.org/multipage/interaction.html#dom-click</a></p>
 <p>一旦这个方法被激活，这个标志就会从<code>progess Status == unset</code>到<code>progess Status == active</code> <em>（伪代码）</em></p>
