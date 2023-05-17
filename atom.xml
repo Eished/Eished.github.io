@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2022-08-06T16:02:49.903Z</updated>
+  <updated>2023-05-17T17:49:36.483Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置多个Git账户通过HTTPS启用SSH连接</title>
+    <link href="https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/"/>
+    <id>https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/</id>
+    <published>2023-05-17T17:01:11.000Z</published>
+    <updated>2023-05-17T17:49:36.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;kex-exchange-identification-Connection-closed-by-remote-host-问题解决方案&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
+    
+      <category term="kex_exchange_identification" scheme="https://iknow.fun/tags/kex-exchange-identification/"/>
+    
+      <category term="GFW" scheme="https://iknow.fun/tags/GFW/"/>
+    
+  </entry>
   
   <entry>
     <title>【油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布</title>
@@ -689,36 +720,6 @@
       <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
       <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>《新标准日本语·初级》学习笔记</title>
-    <link href="https://iknow.fun/2021/06/07/xin-biao-zhun-ri-ben-yu-xue-xi-bi-ji/"/>
-    <id>https://iknow.fun/2021/06/07/xin-biao-zhun-ri-ben-yu-xue-xi-bi-ji/</id>
-    <published>2021-06-07T12:34:23.000Z</published>
-    <updated>2021-07-16T06:22:36.936Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;新标日初级上&quot;&gt;&lt;a href=&quot;#新标日初级上&quot; class=&quot;headerlink&quot; title=&quot;新标日初级上&quot;&gt;&lt;/a&gt;新标日初级上&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;完整版笔记地址:  &lt;a
-        
-      
-    
-    </summary>
-    
-    
-      <category term="读书笔记" scheme="https://iknow.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="日语" scheme="https://iknow.fun/tags/%E6%97%A5%E8%AF%AD/"/>
-    
-      <category term="语言学习" scheme="https://iknow.fun/tags/%E8%AF%AD%E8%A8%80%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
