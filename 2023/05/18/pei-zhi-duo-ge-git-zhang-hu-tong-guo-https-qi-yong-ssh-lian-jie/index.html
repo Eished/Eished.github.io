@@ -4,7 +4,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="配置多个Git账户通过HTTPS启用SSH连接, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
+    <meta name="keywords" content="配置多个Git账户在HTTPS端口使用SSH, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
     <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js C++">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>配置多个Git账户通过HTTPS启用SSH连接 | iKnow&#39;s blog</title>
+    <title>配置多个Git账户在HTTPS端口使用SSH | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -285,12 +285,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">配置多个Git账户通过HTTPS启用SSH连接</h1>
+                    <h1 class="description center-align post-title">配置多个Git账户在HTTPS端口使用SSH</h1>
                 </div>
             </div>
         </div>
@@ -453,14 +453,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    399
+                    466
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -477,10 +477,19 @@
             <div id="articleContent">
                 <h1 id="kex-exchange-identification-Connection-closed-by-remote-host-问题解决方案"><a href="#kex-exchange-identification-Connection-closed-by-remote-host-问题解决方案" class="headerlink" title="kex_exchange_identification: Connection closed by remote host 问题解决方案"></a>kex_exchange_identification: Connection closed by remote host 问题解决方案</h1><h2 id="造成的原因"><a href="#造成的原因" class="headerlink" title="造成的原因"></a>造成的原因</h2><p><a href="https://github.com/vernesong/OpenClash/issues/1960" target="_blank" rel="noopener">https://github.com/vernesong/OpenClash/issues/1960</a></p>
 <p>代理的节点服务商为了防止滥用把 22 出口端口屏蔽了。</p>
-<p>修改代理转发配置，不代理22端口，但是会造成clone不经过代理，非常慢。</p>
-<p>实测即使不启用代理，使用443端口clone也比22端口更快！</p>
-<h2 id="通过-HTTPS-启用-SSH-连接"><a href="#通过-HTTPS-启用-SSH-连接" class="headerlink" title="通过 HTTPS 启用 SSH 连接"></a><a href="https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https" target="_blank" rel="noopener">通过 HTTPS 启用 SSH 连接</a></h2><p>如果您能够通过 SSH 连接到<code>git@ssh.github.com</code>端口 443，您可以覆盖您的 SSH 设置以强制任何与 GitHub.com 的连接通过该服务器和端口运行。</p>
-<p>要在您的 SSH 配置文件中进行设置，请在 处编辑该文件<code>~/.ssh/config</code>，并添加以下部分：</p>
+<p>简单的解决方案：</p>
+<ol>
+<li>关闭代理软件</li>
+<li>或者修改代理软件转发配置，不代理22端口</li>
+<li>在HTTPS端口使用SSH</li>
+</ol>
+<p>前两种方法会造成clone不经过代理，下载非常慢。</p>
+<p>第三种方法实测即使不启用代理，使用443端口clone也比22端口更快。</p>
+<h2 id="在HTTPS端口使用SSH"><a href="#在HTTPS端口使用SSH" class="headerlink" title="在HTTPS端口使用SSH"></a><a href="https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https" target="_blank" rel="noopener">在HTTPS端口使用SSH</a></h2><p>要测试是否可以通过 HTTPS 端口进行 SSH，请运行以下 SSH 命令：</p>
+<pre class=" language-shell"><code class="language-shell">$ ssh -T -p 443 git@ssh.github.com
+> Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.</code></pre>
+<p>如果您能够通过 SSH 连接到<code>git@ssh.github.com</code>端口 443，您可以覆盖您的 SSH 设置以强制任何与 GitHub.com 的连接通过该服务器和端口运行。</p>
+<p>要设置 SSH 配置文件，请编辑该文件<code>~/.ssh/config</code>，并添加以下部分：</p>
 <pre><code>Host github.com
 Hostname ssh.github.com
 Port 443
@@ -668,9 +677,9 @@ IdentityFile ~/.ssh/id_test</code></pre>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="配置多个Git账户通过HTTPS启用SSH连接">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="配置多个Git账户在HTTPS端口使用SSH">
                         
-                        <span class="card-title">配置多个Git账户通过HTTPS启用SSH连接</span>
+                        <span class="card-title">配置多个Git账户在HTTPS端口使用SSH</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
