@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2023-05-17T18:11:01.397Z</updated>
+  <updated>2023-05-17T18:14:24.796Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>配置多个Git账户在HTTPS端口使用SSH</title>
+    <title>配置多个Git账户在HTTPS端口使用SSH连接Github</title>
     <link href="https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/"/>
     <id>https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/</id>
     <published>2023-05-17T17:01:11.000Z</published>
-    <updated>2023-05-17T18:11:01.397Z</updated>
+    <updated>2023-05-17T18:14:24.796Z</updated>
     
     <summary type="html">
     
