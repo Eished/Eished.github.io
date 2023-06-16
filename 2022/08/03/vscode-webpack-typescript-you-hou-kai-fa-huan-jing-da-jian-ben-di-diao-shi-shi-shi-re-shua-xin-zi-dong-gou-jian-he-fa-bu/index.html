@@ -502,7 +502,7 @@
 <li><p>在新建的脚本中修改文件引入路径：<code>// @require file://d:/web/douyu-helper/dist/douyu.dev.user.js</code></p>
 <ul>
 <li><p>或者修改开发环境油猴头文件配置信息：<code>config/dev.meta.json</code> 中的</p>
-<pre class="line-numbers language-none"><code class="language-none">&quot;require&quot;: [&quot;file:&#x2F;&#x2F;&lt;你的文件路径&gt;&#x2F;douyu-helper&#x2F;dist&#x2F;douyu.dev.user.js&quot;]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-json" data-language="json"><code class="language-json"><span class="token property">"require"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"file://&lt;你的文件路径>/douyu-helper/dist/douyu.dev.user.js"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 <li><p>修改完配置文件要重新启动项目，再复制重新生成的头文件。</p>
 </li>

@@ -447,7 +447,7 @@ wsl --set-version &amp;l">
 </li>
 </ol>
 <p>重启命令</p>
-<pre class="line-numbers language-none"><code class="language-none">wsl -t Ubuntu-20.04<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">-t</span> Ubuntu-20.04<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000041463008">WSL2 连接到宿主 Windows 程序的网络代理设置</a></strong> 最终测试成功</p>
 <p><a target="_blank" rel="noopener" href="https://zinglix.xyz/2020/04/18/wsl2-proxy/">https://zinglix.xyz/2020/04/18/wsl2-proxy/</a></p>
@@ -682,15 +682,15 @@ xterm*<span class="token operator">|</span>rxvt*<span class="token punctuation">
     sudo sed -i -e '</span>/Acquire::http::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;
     sudo sed -i -e '</span>/Acquire::https::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F; 先卸载
-sudo apt-get remove openssh-server
-&#x2F;&#x2F; 安装
-sudo apt-get install openssh-server
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">// 先卸载
+<span class="token function">sudo</span> <span class="token function">apt-get</span> remove openssh-server
+// 安装
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> openssh-server
 
-&#x2F;&#x2F;重启sshd服务
-sudo service ssh --full-restart
+//重启sshd服务
+<span class="token function">sudo</span> <span class="token function">service</span> <span class="token function">ssh</span> --full-restart
 
-sudo vim &#x2F;etc&#x2F;ssh&#x2F;sshd_config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token function">sudo</span> <span class="token function">vim</span> /etc/ssh/sshd_config<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span>  <span class="token function">passwd</span> root<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
@@ -737,7 +737,7 @@ jupyter notebook <span class="token comment"># 运行jupyter，用给出的链�
 <p>或者</p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/q/68369527">Importing <code>keyring</code> taking very long in WSL2</a> is an already known problem, that has been <a target="_blank" rel="noopener" href="https://github.com/jaraco/keyring/issues/531">fixed in keyring versions ≥ 21.6.0</a>.</p>
 <p>Therefore, updating <code>keyring</code> to the latest version should solve the problem:</p>
-<pre class="line-numbers language-none"><code class="language-none">DISPLAY&#x3D; pip install -U keyring<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable"><span class="token environment constant">DISPLAY</span></span><span class="token operator">=</span> pip <span class="token function">install</span> <span class="token parameter variable">-U</span> keyring<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 测试网络</span>
@@ -781,19 +781,19 @@ Restart Windows<span aria-hidden="true" class="line-numbers-rows"><span></span><
 <p><strong>二、迁移 windows10 Docker 目录</strong></p>
 <p>在 Windows PowerShell</p>
 <p><strong>1、关闭和 wsl</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">wsl --shutdown<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--shutdown</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>2、备份到处 docker data</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">wsl --export docker-desktop-data e:\docker-desktop-data.tar&lt;&#x2F;P&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--export</span> docker-desktop-data e:<span class="token punctuation">\</span>docker-desktop-data.tar<span class="token operator">&lt;</span>/P<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>3、注销 docker-desktop-data</strong></p>
-<pre class="line-numbers language-none"><code class="language-none">wsl --unregister docker-desktop-data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--unregister</span> docker-desktop-data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>4、重新导入 docker-desktop-data 到要存放的文件夹，我这边的文件夹为：e:\docker-desktop-data</p>
-<pre class="line-numbers language-none"><code class="language-none">wsl --import docker-desktop-data e:\docker-desktop-data\ e:\docker-desktop-data.tar --version 2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl <span class="token parameter variable">--import</span> docker-desktop-data e:<span class="token punctuation">\</span>docker-desktop-data<span class="token punctuation">\</span> e:<span class="token punctuation">\</span>docker-desktop-data.tar <span class="token parameter variable">--version</span> <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>5、重新设置 子系统 为 WSL2 –可以忽略此步骤</p>
-<pre class="line-numbers language-none"><code class="language-none">wsl --set-version Ubuntu-20.04 2<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl --set-version Ubuntu-20.04 <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
                 
             </div>
