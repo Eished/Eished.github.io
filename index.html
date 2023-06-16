@@ -13,21 +13,81 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <!-- index cover -->
+    <!-- <link rel="stylesheet preload" type="text/css" href="/css/indexcover.css"> -->
+    <style>
+        .carousel-control {
+            width: 45px;
+            height: 45px;
+            line-height: 55px;
+            border-radius: 45px;
+            background: transparent;
+            cursor: pointer;
+            z-index: 100;
+        }
+        
+        #prev-cover {
+            position: absolute;
+            top: 48%;
+            left: 8px;
+        }
+        
+        #next-cover {
+            position: absolute;
+            top: 48%;
+            right: 8px;;
+        }
+        
+        #prev-cover i {
+            margin-right: 3px;
+        }
+        
+        #next-cover i {
+            margin-left: 3px;
+        }
+        
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, .4);
+        }
+        
+        .carousel-control i {
+            color: #fff;
+            font-size: 2.4rem;
+        }
+    </style>
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -119,6 +179,11 @@
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
 
 
@@ -135,8 +200,6 @@
             
         </div>
     </div>
-
-    
 
     <ul class="menu-list mobile-menu-list">
         
@@ -282,47 +345,6 @@
 </header>
 
     
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
-
 
 
 <div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
@@ -335,7 +357,7 @@
         </div>
     
 
-    <div class="carousel-item red white-text bg-cover about-cover">
+    <div class="carousel-item  white-text bg-cover about-cover">
         <div class="container">
             <div class="row">
     <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
@@ -349,14 +371,20 @@
             <div class="description center-align">
                 
                 <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script src="/libs/typed/typed.js"></script>
                 <script>
                     var typed = new Typed("#subtitle", {
-                        strings: ['Never really desperate, only the lost of the soul.','Fear can hold you prisoner, hope can set you free.'],
+                        strings: [ 
+                            
+                                "从来没有真正的绝境, 只有心灵的迷途",
+                            
+                                "Fear can hold you prisoner, hope can set you free.",
+                            
+                        ],
                         startDelay: 300,
                         typeSpeed: 100,
                         loop: true,
-                        backSpeed: 100,
+                        backSpeed: 50,
                         showCursor: true
                     });
                 </script>
@@ -369,7 +397,15 @@
 
 <script>
     // 每天切换 banner 图.  Switch banner image every day.
-    $('.bg-cover').css('background-image', 'url(/medias/banner/4.jpg)');
+    var bannerUrl = "/medias/banner/" + new Date().getDay() + '.jpg';
+    $('.bg-cover').css('background-image', 'url(' + bannerUrl + ')');
+</script>
+<script>
+    
+      var bannerUrl = "/medias/featureimages/" + Math.floor(Math.random() * 24) + '.jpg';
+    
+    $('.bg-cover.about-cover').css('background-image', 'url(' + bannerUrl + ')');
+
 </script>
 
 
@@ -616,6 +652,7 @@ server 接收到 http
     <article id="articles" class="container articles">
         <div class="row article-row">
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/">
@@ -674,7 +711,9 @@ server 接收到 http
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/">
@@ -754,7 +793,9 @@ server 接收到 http
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2022/08/01/webpack-typescript-kai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/">
@@ -829,7 +870,9 @@ React + TypeScript + Ta
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2022/05/29/wsl2-javascript-python-vscode-huan-jing-pei-zhi-zong-jie/">
@@ -910,7 +953,9 @@ wsl --set-version &l
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2022/05/25/react-typescript-tailwindcss-kai-fa-you-hou-jiao-ben/">
@@ -996,7 +1041,9 @@ wsl --set-version &l
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/11/28/orc-zi-dong-shi-bie-yan-zheng-ma/">
@@ -1069,7 +1116,9 @@ wsl --set-version &l
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/08/03/dou-yu-zhi-bo-cha-jian-zi-dong-qie-huan-zui-gao-hua-zhi-huo-zui-di-hua-zhi/">
@@ -1135,7 +1184,9 @@ wsl --set-version &l
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/">
@@ -1205,7 +1256,9 @@ sudo service ssh status
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/07/29/promise-bing-fa-xia-zai/">
@@ -1265,7 +1318,9 @@ sudo service ssh status
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/">
@@ -1324,7 +1379,9 @@ sudo service ssh status
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/07/21/shi-yong-jsdelivr-jia-su-github-zi-yuan-jia-kuai-bo-ke-da-kai-su-du/">
@@ -1384,7 +1441,9 @@ We recommend using npm for projects that support it for better UX - npm
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
+             <!-- 隐藏某个文章 -->
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
                     <a href="/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-set-cun-chu-shu-ju-xiao-lu-dui-bi/">
@@ -1451,6 +1510,7 @@ We recommend using npm for projects that support it for better UX - npm
                     
                 </div>
             </div>
+              <!-- 隐藏某个文章 -->
             
         </div>
     </article>
@@ -1486,32 +1546,39 @@ We recommend using npm for projects that support it for better UX - npm
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            
+                <span id="year">2019-2023</span>
+            
             <a href="/about" target="_blank">iKnow</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
             <br>
             
             
             
+                
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
             <br>
+
+            <!-- 运行天数提醒. -->
             
             <br>
             
@@ -1566,11 +1633,120 @@ We recommend using npm for projects that support it for better UX - npm
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
 </script>
 
     <!-- 回到顶部按钮 -->
@@ -1587,6 +1763,24 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
 
     <!-- Baidu Analytics -->
 
@@ -1615,6 +1809,8 @@ $(function () {
 
     
 
+    <!--腾讯兔小巢-->
+    
     
 
     

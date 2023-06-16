@@ -5,7 +5,9 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="使用百度AI接口ORC自动识别验证码, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
-    <meta name="description" content="Web technology CSS HTML JavaScript Vue Node.js C++">
+    <meta name="description" content="使用百度 AI 接口 ORC 自动识别验证码百度 AI ORC 接口的使用https://cloud.baidu.com/doc/OCR/s/Ck3h7y2ia
+请求格式POST 方式调用
+注意：Content-Type 为applicat">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,21 +15,40 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
     <title>使用百度AI接口ORC自动识别验证码 | iKnow&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
+    
 
-    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
-    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
-    <link rel="stylesheet" type="text/css" href="/css/matery.css">
-    <link rel="stylesheet" type="text/css" href="/css/my.css">
 
-    <script src="/libs/jquery/jquery.min.js"></script>
+    <!-- bg-cover style     -->
+
+
+
+<link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+<link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+<link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+<link rel="stylesheet" type="text/css" href="/css/matery.css">
+<link rel="stylesheet" type="text/css" href="/css/my.css">
+<link rel="stylesheet" type="text/css" href="/css/dark.css" media="none" onload="if(media!='all')media='all'">
+
+
+
+
+    <link rel="stylesheet" href="/css/post.css">
+
+
+
+    
+
+
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
@@ -119,6 +140,11 @@
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
     </a>
   </li>
+  <li>
+    <a href="javascript:;" class="waves-effect waves-light" onclick="switchNightMode()" title="深色/浅色模式" >
+      <i id="sum-moon-icon" class="fas fa-sun" style="zoom: 0.85;"></i>
+    </a>
+  </li>
 </ul>
 
 
@@ -135,8 +161,6 @@
             
         </div>
     </div>
-
-    
 
     <ul class="menu-list mobile-menu-list">
         
@@ -390,6 +414,11 @@
             </div>
         </div>
         <hr class="clearfix">
+
+        
+
+        
+
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="使用百度-AI-接口-ORC-自动识别验证码"><a href="#使用百度-AI-接口-ORC-自动识别验证码" class="headerlink" title="使用百度 AI 接口 ORC 自动识别验证码"></a>使用百度 AI 接口 ORC 自动识别验证码</h1><h2 id="百度-AI-ORC-接口的使用"><a href="#百度-AI-ORC-接口的使用" class="headerlink" title="百度 AI ORC 接口的使用"></a>百度 AI ORC 接口的使用</h2><p><a href="https://cloud.baidu.com/doc/OCR/s/Ck3h7y2ia" target="_blank" rel="noopener">https://cloud.baidu.com/doc/OCR/s/Ck3h7y2ia</a></p>
@@ -690,6 +719,7 @@
     <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span></code></pre>
 
+                
             </div>
             <hr/>
 
@@ -843,6 +873,10 @@
 
     
 
+    
+
+    
+
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
@@ -862,10 +896,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            起因想给 jkforum_helper 油猴脚本加入前端 UI，用前端框架来开发提高开发效率。
-需求此脚本只需要一个页面，里面只有表单元素。
-
-技术选型TypeScript 类型检查可以提前发现代码问题，提高代码质量，以及更强大的代码补全，
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -950,10 +981,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            思路：
-播放控件是动态加载，找到元素把父级全 console.log 确认加载顺序。
-使用 MutationObserver 监听动态加载元素的父级，找到正确的子孙节点，然后点击画质选项。
-元素的 className 是框架动态生成，会变化
+                            
                         
                     </div>
                     <div class="publish-info">
@@ -1010,6 +1038,8 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+
 <!-- 代码语言 -->
 
 <script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
@@ -1025,12 +1055,6 @@
 <script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
-<!-- 代码块折行 -->
-
-<style type="text/css">
-code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
-</style>
-
 
     
 
@@ -1041,32 +1065,39 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 0px !important;">
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
-            <span id="year">2019</span>
+            
+                <span id="year">2019-2023</span>
+            
             <a href="/about" target="_blank">iKnow</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            
             <br>
             
             
             
+                
             
             
-            
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
             </span>
             
             
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
             </span>
             
             <br>
+
+            <!-- 运行天数提醒. -->
             
             <br>
             
@@ -1121,11 +1152,120 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
     </div>
 </div>
 
-<script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/search.xml", 'searchInput', 'searchResult');
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
 });
+</script>
+
+    <!-- 白天和黑夜主题 -->
+<div class="stars-con">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>  
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+        setTimeout(function () {
+            $('body').hasClass('DarkMode') 
+            ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')) 
+            : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+            
+            setTimeout(function () {
+            $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                $(this).remove()
+            })
+            }, 2e3)
+        })
+    }
 </script>
 
     <!-- 回到顶部按钮 -->
@@ -1142,6 +1282,24 @@ $(function () {
     <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
     <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
     <script src="/js/matery.js"></script>
+
+    
+
+    
+    
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
 
     <!-- Baidu Analytics -->
 
@@ -1170,6 +1328,8 @@ $(function () {
 
     
 
+    <!--腾讯兔小巢-->
+    
     
 
     
