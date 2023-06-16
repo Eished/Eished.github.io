@@ -54,7 +54,7 @@ prism 支持的语言： https://prismjs.com/#languages-list
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -377,7 +377,7 @@ prism 支持的语言： https://prismjs.com/#languages-list
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    84
+                    91
                 </div>
                 
 
@@ -399,6 +399,9 @@ prism 支持的语言： https://prismjs.com/#languages-list
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -409,35 +412,35 @@ prism 支持的语言： https://prismjs.com/#languages-list
 <ul>
 <li>小写</li>
 </ul>
-<pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp"><span class="token macro property"><span class="token directive-hash">#</span><span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
+	<span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>大写</li>
 </ul>
-<pre class=" language-CPP"><code class="language-CPP">#include <iostream>
+<pre class="line-numbers language-CPP" data-language="CPP"><code class="language-CPP">#include &lt;iostream&gt;
 int main()&#123;
-    return 0;
-&#125;
-</code></pre>
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>大写+符号</li>
 </ul>
-<pre class=" language-C++"><code class="language-C++">#include <iostream>
+<pre class="line-numbers language-C++" data-language="C++"><code class="language-C++">#include &lt;iostream&gt;
 int main()&#123;
-    return 0;
-&#125;
-</code></pre>
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <ul>
 <li>小写+符号</li>
 </ul>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;iostream&gt;
 int main()&#123;
-    return 0;
-&#125;
-</code></pre>
+	return 0;
+&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -533,33 +536,6 @@ int main()&#123;
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'b9cda0c484bb0e96f9b3',
-        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
-        repo: 'Eished.github.io',
-        owner: 'Eished',
-        admin: "Eished",
-        id: '2021-07-02T14-10-10',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -630,12 +606,12 @@ int main()&#123;
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/Promise/">
-                        <span class="chip bg-color">Promise</span>
-                    </a>
-                    
                     <a href="/tags/Tampermonkey/">
                         <span class="chip bg-color">Tampermonkey</span>
+                    </a>
+                    
+                    <a href="/tags/Promise/">
+                        <span class="chip bg-color">Promise</span>
                     </a>
                     
                     <a href="/tags/GM-xmlhttpRequest/">
@@ -722,6 +698,9 @@ int main()&#123;
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

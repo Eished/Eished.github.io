@@ -62,7 +62,7 @@ Markd">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -413,6 +413,9 @@ Markd">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -513,19 +516,19 @@ Markd">
 </ol>
 </blockquote>
 <p>以下为文章的 <code>Front-matter</code> 示例。</p>
-<h2 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h2><pre><code>---
+<h2 id="最简示例"><a href="#最简示例" class="headerlink" title="最简示例"></a>最简示例</h2><pre class="line-numbers language-none"><code class="language-none">---
 title: typora-vue-theme主题介绍
 date: 2018-09-07 09:25:00
----
-</code></pre>
-<h2 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h2><pre><code>---
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="最全示例"><a href="#最全示例" class="headerlink" title="最全示例"></a>最全示例</h2><pre class="line-numbers language-none"><code class="language-none">---
 title: typora-vue-theme主题介绍
 date: 2018-09-07 09:25:00
 author: 赵奇
-img: /source/images/xxx.jpg
+img: &#x2F;source&#x2F;images&#x2F;xxx.jpg
 top: true
 cover: true
-coverImg: /images/1.jpg
+coverImg: &#x2F;images&#x2F;1.jpg
 password: 8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92
 toc: false
 mathjax: false
@@ -534,18 +537,20 @@ categories: Markdown
 tags:
   - Typora
   - Markdown
----
-</code></pre>
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h1 id="Hexo-指令"><a href="#Hexo-指令" class="headerlink" title="Hexo 指令"></a>Hexo 指令</h1><iframe src="https://www.youtube.com/embed/mgdXi5npArQ" frameborder="0" loading="lazy" allowfullscreen="" style="box-sizing: inherit; margin: 1em 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; font-size: 15px; vertical-align: baseline;"></iframe>
 
-<h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><pre><code>$ hexo init [folder]
-</code></pre>
+<h2 id="init"><a href="#init" class="headerlink" title="init"></a>init</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo init [folder]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>新建一个网站。如果没有设置 <code>folder</code> ，Hexo 默认在目前的文件夹建立网站。</p>
-<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><pre><code>$ hexo new [layout] &lt;title&gt;
-</code></pre>
+<h2 id="new"><a href="#new" class="headerlink" title="new"></a>new</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo new [layout] &lt;title&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>新建一篇文章。如果没有设置 <code>layout</code> 的话，默认使用 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">_config.yml</a> 中的 <code>default_layout</code> 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
-<pre><code>$ hexo new &quot;post title with whitespace&quot;
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo new &quot;post title with whitespace&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <table>
 <thead>
 <tr>
@@ -567,15 +572,15 @@ tags:
 </tr>
 </tbody></table>
 <p>默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 <code>index.md</code> 文件。你可以使用 <code>--path</code> 参数来覆盖上述行为、自行决定文件的目录：</p>
-<pre><code>hexo new page --path about/me &quot;About me&quot;
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">hexo new page --path about&#x2F;me &quot;About me&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>以上命令会创建一个 <code>source/about/me.md</code> 文件，同时 Front Matter 中的 title 为 <code>&quot;About me&quot;</code></p>
 <p>注意！title 是必须指定的！如果你这么做并不能达到你的目的：</p>
-<pre><code>hexo new page --path about/me
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">hexo new page --path about&#x2F;me<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>此时 Hexo 会创建 <code>source/_posts/about/me.md</code>，同时 <code>me.md</code> 的 Front Matter 中的 title 为 <code>&quot;page&quot;</code>。这是因为在上述命令中，hexo-cli 将 <code>page</code> 视为指定文章的标题、并采用默认的 <code>layout</code>。</p>
-<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><pre><code>$ hexo generate
-</code></pre>
+<h2 id="generate"><a href="#generate" class="headerlink" title="generate"></a>generate</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>生成静态文件。</p>
 <table>
 <thead>
@@ -606,13 +611,13 @@ tags:
 </tr>
 </tbody></table>
 <p>该命令可以简写为</p>
-<pre><code>$ hexo g
-</code></pre>
-<h2 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h2><pre><code>$ hexo publish [layout] &lt;filename&gt;
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo g<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="publish"><a href="#publish" class="headerlink" title="publish"></a>publish</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo publish [layout] &lt;filename&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>发表草稿。</p>
-<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><pre><code>$ hexo server
-</code></pre>
+<h2 id="server"><a href="#server" class="headerlink" title="server"></a>server</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>启动服务器。默认情况下，访问网址为： <code>http://localhost:4000/</code>。</p>
 <table>
 <thead>
@@ -634,8 +639,8 @@ tags:
 <td align="left">启动日记记录，使用覆盖记录格式</td>
 </tr>
 </tbody></table>
-<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><pre><code>$ hexo deploy
-</code></pre>
+<h2 id="deploy"><a href="#deploy" class="headerlink" title="deploy"></a>deploy</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo deploy<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>部署网站。</p>
 <table>
 <thead>
@@ -650,10 +655,10 @@ tags:
 </tr>
 </tbody></table>
 <p>该命令可以简写为：</p>
-<pre><code>$ hexo d
-</code></pre>
-<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><pre><code>$ hexo render &lt;file1&gt; [file2] ...
-</code></pre>
+<pre class="line-numbers language-none"><code class="language-none">$ hexo d<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h2 id="render"><a href="#render" class="headerlink" title="render"></a>render</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo render &lt;file1&gt; [file2] ...<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>渲染文件。</p>
 <table>
 <thead>
@@ -667,47 +672,47 @@ tags:
 <td align="left">设置输出路径</td>
 </tr>
 </tbody></table>
-<h2 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h2><pre><code>$ hexo migrate &lt;type&gt;
-</code></pre>
+<h2 id="migrate"><a href="#migrate" class="headerlink" title="migrate"></a>migrate</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo migrate &lt;type&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>从其他博客系统 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/migration">迁移内容</a>。</p>
-<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><pre><code>$ hexo clean
-</code></pre>
+<h2 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo clean<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>清除缓存文件 (<code>db.json</code>) 和已生成的静态文件 (<code>public</code>)。</p>
 <p>在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。</p>
-<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><pre><code>$ hexo list &lt;type&gt;
-</code></pre>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo list &lt;type&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>列出网站资料。</p>
-<h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><pre><code>$ hexo version
-</code></pre>
+<h2 id="version"><a href="#version" class="headerlink" title="version"></a>version</h2><pre class="line-numbers language-none"><code class="language-none">$ hexo version<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>显示 Hexo 版本。</p>
-<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><h3 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h3><pre><code>$ hexo --safe
-</code></pre>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><h3 id="安全模式"><a href="#安全模式" class="headerlink" title="安全模式"></a>安全模式</h3><pre class="line-numbers language-none"><code class="language-none">$ hexo --safe<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>在安全模式下，不会载入插件和脚本。当您在安装新插件遭遇问题时，可以尝试以安全模式重新执行。</p>
-<h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><pre><code>$ hexo --debug
-</code></pre>
+<h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><pre class="line-numbers language-none"><code class="language-none">$ hexo --debug<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>在终端中显示调试信息并记录到 <code>debug.log</code>。当您碰到问题时，可以尝试用调试模式重新执行一次，并 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues/new">提交调试信息到 GitHub</a>。</p>
-<h3 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h3><pre><code>$ hexo --silent
-</code></pre>
+<h3 id="简洁模式"><a href="#简洁模式" class="headerlink" title="简洁模式"></a>简洁模式</h3><pre class="line-numbers language-none"><code class="language-none">$ hexo --silent<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>隐藏终端信息。</p>
-<h3 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h3><pre><code># 使用 custom.yml 代替默认的 _config.yml
+<h3 id="自定义配置文件的路径"><a href="#自定义配置文件的路径" class="headerlink" title="自定义配置文件的路径"></a>自定义配置文件的路径</h3><pre class="line-numbers language-none"><code class="language-none"># 使用 custom.yml 代替默认的 _config.yml
 $ hexo server --config custom.yml
 
 # 使用 custom.yml 和 custom2.json，其中 custom2.json 优先级更高
-$ hexo generate --config custom.yml,custom2.json,custom3.yml
-</code></pre>
+$ hexo generate --config custom.yml,custom2.json,custom3.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>自定义配置文件的路径，指定这个参数后将不再使用默认的 <code>_config.yml</code>。<br>你可以使用一个 YAML 或 JSON 文件的路径，也可以使用逗号分隔（无空格）的多个 YAML 或 JSON 文件的路径。例如：</p>
-<pre><code># 使用 custom.yml 代替默认的 _config.yml
+<pre class="line-numbers language-none"><code class="language-none"># 使用 custom.yml 代替默认的 _config.yml
 $ hexo server --config custom.yml
 
 # 使用 custom.yml, custom2.json 和 custom3.yml，其中 custom3.yml 优先级最高，其次是 custom2.json
-$ hexo generate --config custom.yml,custom2.json,custom3.yml
-</code></pre>
+$ hexo generate --config custom.yml,custom2.json,custom3.yml<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>当你指定了多个配置文件以后，Hexo 会按顺序将这部分配置文件合并成一个 <code>_multiconfig.yml</code>。如果遇到重复的配置，排在后面的文件的配置会覆盖排在前面的文件的配置。这个原则适用于任意数量、任意深度的 YAML 和 JSON 文件。</p>
-<h3 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h3><pre><code>$ hexo --draft
-</code></pre>
+<h3 id="显示草稿"><a href="#显示草稿" class="headerlink" title="显示草稿"></a>显示草稿</h3><pre class="line-numbers language-none"><code class="language-none">$ hexo --draft<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>显示 <code>source/_drafts</code> 文件夹中的草稿文章。</p>
-<h3 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h3><pre><code>$ hexo --cwd /path/to/cwd
-</code></pre>
+<h3 id="自定义-CWD"><a href="#自定义-CWD" class="headerlink" title="自定义 CWD"></a>自定义 CWD</h3><pre class="line-numbers language-none"><code class="language-none">$ hexo --cwd &#x2F;path&#x2F;to&#x2F;cwd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>自定义当前工作目录（Current working directory）的路径。</p>
 
                 
@@ -806,33 +811,6 @@ $ hexo generate --config custom.yml,custom2.json,custom3.yml
             
         </div>
     </div>
-
-    
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'b9cda0c484bb0e96f9b3',
-        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
-        repo: 'Eished.github.io',
-        owner: 'Eished',
-        admin: "Eished",
-        id: '2020-06-02T16-02-11',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
 
     
 
@@ -969,6 +947,9 @@ $ hexo generate --config custom.yml,custom2.json,custom3.yml
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

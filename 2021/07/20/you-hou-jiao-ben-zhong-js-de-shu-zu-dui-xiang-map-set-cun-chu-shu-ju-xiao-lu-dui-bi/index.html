@@ -5,11 +5,11 @@
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
     <meta name="keywords" content="油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比, Web, technology, CSS, HTML, JavaScript, Vue, C, C++, cpp">
-    <meta name="description" content="油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比数组存对象和 Set 集合存对象：  const thrSet = new Set();
-  let arr = [];
-  let i = 0;
+    <meta name="description" content="油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比数组存对象和 Set 集合存对象：const thrSet = new Set();
+let arr = [];
+let i = 0;
 
- ">
+while (">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -55,7 +55,7 @@
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -392,14 +392,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    947
+                    921
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    4 分
                 </div>
                 
 
@@ -414,83 +414,86 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比"><a href="#油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比" class="headerlink" title="油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比"></a>油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比</h2><h3 id="数组存对象和-Set-集合存对象："><a href="#数组存对象和-Set-集合存对象：" class="headerlink" title="数组存对象和 Set 集合存对象："></a>数组存对象和 Set 集合存对象：</h3><pre class=" language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <h2 id="油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比"><a href="#油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比" class="headerlink" title="油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比"></a>油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比</h2><h3 id="数组存对象和-Set-集合存对象："><a href="#数组存对象和-Set-集合存对象：" class="headerlink" title="数组存对象和 Set 集合存对象："></a>数组存对象和 Set 集合存对象：</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
 
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      tid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touseruid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touser<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyLen<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      randomTime<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 相当于整个数组遍历一遍，增加时间</span>
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">tid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touseruid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touser</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyLen</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">randomTime</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+  thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 相当于整个数组遍历一遍，增加时间</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> <span class="token keyword">set</span> <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> set <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>setset:14.48185546875ms </p>
 <p>setarr: 11. 010986328125ms </p>
 <p>getset:4.697821484375ms </p>
 <p>staRrr:4.72599765625ms </p>
 <p><strong>差距很小</strong></p>
-<h3 id="数组存数组和-Set-集合存数组："><a href="#数组存数组和-Set-集合存数组：" class="headerlink" title="数组存数组和 Set 集合存数组："></a>数组存数组和 Set 集合存数组：</h3><pre class=" language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      tid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touseruid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touser<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyLen<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      randomTime<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 相当于整个数组遍历一遍，增加时间</span>
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="数组存数组和-Set-集合存数组："><a href="#数组存数组和-Set-集合存数组：" class="headerlink" title="数组存数组和 Set 集合存数组："></a>数组存数组和 Set 集合存数组：</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">tid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touseruid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touser</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyLen</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">randomTime</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+  thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 相当于整个数组遍历一遍，增加时间</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>setset:2.466964453125ms </p>
 <p>setAr:4.576171875ms </p>
 <p>getset:2.852978515625ms </p>
@@ -501,39 +504,39 @@
 <p>getset:2.888916015625ms </p>
 <p>staRr:3.433837898625ms</p>
 <p><strong>差距很小</strong></p>
-<h3 id="数组存数组和-Map-映射存数组："><a href="#数组存数组和-Map-映射存数组：" class="headerlink" title="数组存数组和 Map 映射存数组："></a>数组存数组和 Map 映射存数组：</h3><pre class=" language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      tid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touseruid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touser<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyLen<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      randomTime<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    thrSet<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 相当于整个数组遍历一遍，增加时间</span>
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h3 id="数组存数组和-Map-映射存数组："><a href="#数组存数组和-Map-映射存数组：" class="headerlink" title="数组存数组和 Map 映射存数组："></a>数组存数组和 Map 映射存数组：</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">tid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touseruid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touser</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyLen</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">randomTime</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+  thrSet<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 相当于整个数组遍历一遍，增加时间</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>strAp:4.163818359375ms </p>
 <p>setAr:4.93693515625ms</p>
 <p>getMap:4.588878125ms </p>
@@ -549,25 +552,25 @@
 <p>getMap:3.6669921875ms</p>
 <p>staRr:2.56298828125ms</p>
 <p><strong>差距很小</strong></p>
-<h3 id="数组存对象和-Map-映射存对象："><a href="#数组存对象和-Map-映射存对象：" class="headerlink" title="数组存对象和 Map 映射存对象："></a>数组存对象和 Map 映射存对象：</h3><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">launch1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<h3 id="数组存对象和-Map-映射存对象："><a href="#数组存对象和-Map-映射存对象：" class="headerlink" title="数组存对象和 Map 映射存对象："></a>数组存对象和 Map 映射存对象：</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">launch1</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Map</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      tid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touseruid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touser<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyLen<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      randomTime<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    thrSet<span class="token punctuation">.</span><span class="token keyword">set</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+      <span class="token literal-property property">tid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">touseruid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">touser</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">replyIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">replyLen</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">randomTime</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span>
+    thrSet<span class="token punctuation">.</span><span class="token function">set</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
     arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
     i<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
   console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setthrSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 相当于整个数组遍历一遍，增加时间</span>
+  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 相当于整个数组遍历一遍，增加时间</span>
   console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setthrSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setMap'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -584,16 +587,16 @@
   console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">function</span> <span class="token function">launch2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">launch2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
 
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
 
-<span class="token keyword">function</span> <span class="token function">swRePic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">function</span> <span class="token function">swRePic</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"kkk"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>setthrSet: 0.6669921875 ms</p>
 <p>strAp:12.662841796875ms </p>
 <p>setAr:11.68382734375ms </p>
@@ -606,39 +609,39 @@
 <p>getMap: 7.79296875ms </p>
 <p>staRr:6.92587899625ms</p>
 <p><strong>差距很小</strong></p>
-<h2 id="油猴脚本中，数组存储比对象高效吗？"><a href="#油猴脚本中，数组存储比对象高效吗？" class="headerlink" title="油猴脚本中，数组存储比对象高效吗？"></a>油猴脚本中，数组存储比对象高效吗？</h2><h3 id="数组存数组和-Set-集合存对象："><a href="#数组存数组和-Set-集合存对象：" class="headerlink" title="数组存数组和 Set 集合存对象："></a>数组存数组和 Set 集合存对象：</h3><pre class=" language-javascript"><code class="language-javascript">  <span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-      tid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touseruid<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      touser<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyIndex<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      replyLen<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-      randomTime<span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    i<span class="token operator">++</span><span class="token punctuation">;</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 相当于整个数组遍历一遍，增加时间</span>
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<h2 id="油猴脚本中，数组存储比对象高效吗？"><a href="#油猴脚本中，数组存储比对象高效吗？" class="headerlink" title="油猴脚本中，数组存储比对象高效吗？"></a>油猴脚本中，数组存储比对象高效吗？</h2><h3 id="数组存数组和-Set-集合存对象："><a href="#数组存数组和-Set-集合存对象：" class="headerlink" title="数组存数组和 Set 集合存对象："></a>数组存数组和 Set 集合存对象：</h3><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> thrSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+<span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> <span class="token number">10000</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> thread <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">tid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touseruid</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">touser</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyIndex</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">replyLen</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">randomTime</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span>
+  thrSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>thread<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  arr<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  i<span class="token operator">++</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span>
+<span class="token keyword">let</span> setarr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>thrSet<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 相当于整个数组遍历一遍，增加时间</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">,</span> setarr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">GM_setValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">,</span> arr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'setArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> se <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"thrSet"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getSet'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-  console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> ar <span class="token operator">=</span> <span class="token function">GM_getValue</span><span class="token punctuation">(</span><span class="token string">"arr"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'getArr'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>用数组代替对象？</strong></p>
 <p>setset:13.416015625ms </p>
 <p>setarr:2.85791815625ms </p>
@@ -784,33 +787,6 @@
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'b9cda0c484bb0e96f9b3',
-        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
-        repo: 'Eished.github.io',
-        owner: 'Eished',
-        admin: "Eished",
-        id: '2021-07-20T21-55-54',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -953,6 +929,9 @@
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

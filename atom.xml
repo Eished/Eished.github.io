@@ -233,9 +233,9 @@
     
     <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
-    
     <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
     <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
@@ -289,7 +289,7 @@
       
         
         
-    <summary type="html">&lt;h2 id=&quot;虚拟机安装-ssh&quot;&gt;&lt;a href=&quot;#虚拟机安装-ssh&quot; class=&quot;headerlink&quot; title=&quot;虚拟机安装 ssh&quot;&gt;&lt;/a&gt;虚拟机安装 ssh&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code</summary>
+    <summary type="html">&lt;h2 id=&quot;虚拟机安装-ssh&quot;&gt;&lt;a href=&quot;#虚拟机安装-ssh&quot; class=&quot;headerlink&quot; title=&quot;虚拟机安装 ssh&quot;&gt;&lt;/a&gt;虚拟机安装 ssh&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;</summary>
         
       
     
@@ -537,7 +537,7 @@
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Tampermonkey-例子：&quot;&gt;&lt;a href=&quot;#Tampermonkey-例子：&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 例子：&quot;&gt;&lt;/a&gt;Tampermonkey 例子：&lt;/h1&gt;&lt;pre class=&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Tampermonkey-例子：&quot;&gt;&lt;a href=&quot;#Tampermonkey-例子：&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 例子：&quot;&gt;&lt;/a&gt;Tampermonkey 例子：&lt;/h1&gt;&lt;pre</summary>
         
       
     
@@ -552,9 +552,9 @@
     
     <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
-    
     <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
     <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
@@ -677,9 +677,9 @@
     
     <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
-    
     <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
     <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     

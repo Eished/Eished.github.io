@@ -53,7 +53,7 @@
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -400,6 +400,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -451,14 +454,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="1-5-初始化项目"><a href="#1-5-初始化项目" class="headerlink" title="1-5 初始化项目"></a>1-5 初始化项目</h2><h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><pre><code>npx es10-cli create projectName // 创建模板文件命令
-</code></pre>
+<h2 id="1-5-初始化项目"><a href="#1-5-初始化项目" class="headerlink" title="1-5 初始化项目"></a>1-5 初始化项目</h2><h3 id="初始化项目"><a href="#初始化项目" class="headerlink" title="初始化项目"></a>初始化项目</h3><pre class="line-numbers language-none"><code class="language-none">npx es10-cli create projectName &#x2F;&#x2F; 创建模板文件命令<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 <p>启动项目</p>
-<pre><code>cd projectName
+<pre class="line-numbers language-none"><code class="language-none">cd projectName
 npm install
 npm start
-touch static/lesson2-1.js // 新建文件命令
-</code></pre>
+touch static&#x2F;lesson2-1.js &#x2F;&#x2F; 新建文件命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h2 id="1-6-编辑器配置"><a href="#1-6-编辑器配置" class="headerlink" title="1-6 编辑器配置"></a>1-6 编辑器配置</h2><p>VS code 插件 beautify 和 ESLint</p>
 <h1 id="第2章-ES6基础知识"><a href="#第2章-ES6基础知识" class="headerlink" title="第2章 ES6基础知识"></a>第2章 ES6基础知识</h1><p>  ES6语法相对于ES5有了非常大的改变，让原生 JavaScript 能力再上一个台阶，这个章节会分门别类进行讲述，单纯讲语法既乏味也不利于记忆更不知道如何运用，我们以应用场景开场分别给出ES5和ES6两种不同的解决方案，循序渐进剖析语法…</p>
 <h2 id="Let-amp-Const"><a href="#Let-amp-Const" class="headerlink" title="Let &amp; Const"></a>Let &amp; Const</h2><h3 id="2-1-作用域（1）"><a href="#2-1-作用域（1）" class="headerlink" title="2-1 作用域（1）"></a>2-1 作用域（1）</h3><ol>
@@ -584,9 +587,9 @@ touch static/lesson2-1.js // 新建文件命令
 </blockquote>
 </li>
 </ol>
-<h3 id="2-8-Array-from（如何将伪数组转换成数组？）"><a href="#2-8-Array-from（如何将伪数组转换成数组？）" class="headerlink" title="2-8 Array.from（如何将伪数组转换成数组？）"></a>2-8 Array.from（如何将伪数组转换成数组？）</h3><h4 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h4><pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// collection</span>
-<span class="token keyword">let</span> imgs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span>slice<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>doncument<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// NodeList</span>
-</code></pre>
+<h3 id="2-8-Array-from（如何将伪数组转换成数组？）"><a href="#2-8-Array-from（如何将伪数组转换成数组？）" class="headerlink" title="2-8 Array.from（如何将伪数组转换成数组？）"></a>2-8 Array.from（如何将伪数组转换成数组？）</h3><h4 id="ES5"><a href="#ES5" class="headerlink" title="ES5"></a>ES5</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> args <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span> <span class="token comment">// collection</span>
+<span class="token keyword">let</span> imgs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>doncument<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'img'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// NodeList</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <h4 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h4><ul>
 <li><p>Array.from(arrayLike, mapFn, thisArg)</p>
 <blockquote>
@@ -594,16 +597,18 @@ touch static/lesson2-1.js // 新建文件命令
 </blockquote>
 </li>
 </ul>
-<pre class=" language-js"><code class="language-js">Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token keyword">from</span> <span class="token comment" spellcheck="true">// ES6 新增方法</span>
-Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> mapFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 语法 伪数组，函数返回值，this指向</span>
-<span class="token keyword">let</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>from <span class="token comment">// ES6 新增方法</span>
+Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> mapFn<span class="token punctuation">,</span> thisArg<span class="token punctuation">)</span> <span class="token comment">// 语法 伪数组，函数返回值，this指向</span>
+<span class="token keyword">let</span> args <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>arguments<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="什么叫伪数组"><a href="#什么叫伪数组" class="headerlink" title="什么叫伪数组"></a>什么叫伪数组</h4><ol>
 <li>按照索引方式存储数据</li>
 <li>具有 length 属性</li>
 </ol>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">from</span><span class="token punctuation">(</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> length<span class="token punctuation">:</span> <span class="token number">5</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">length</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+
 <h3 id="2-9-Array-of-fill（如何生成新数组？）"><a href="#2-9-Array-of-fill（如何生成新数组？）" class="headerlink" title="2-9 Array.of-fill（如何生成新数组？）"></a>2-9 Array.of-fill（如何生成新数组？）</h3><p>ES6 新方法</p>
 <ul>
 <li><p>Array(5) ：初始化长度为5的数组</p>
@@ -615,15 +620,17 @@ Array<span class="token punctuation">.</span><span class="token keyword">from</s
 <li><p>Array.fill(value,start,end)：填充数据</p>
 </li>
 </ul>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// Array.prototype.of</span>
-<span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">67</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// Array.prototype.of</span>
+<span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">67</span><span class="token punctuation">)</span>
 
-<span class="token comment" spellcheck="true">// Array.prototype.fill</span>
+<span class="token comment">// Array.prototype.fill</span>
 <span class="token keyword">let</span> array <span class="token operator">=</span> <span class="token function">Array</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
 
-Array<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span>start<span class="token punctuation">,</span>end<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 语法 填充值，起始位，截止值。 默认填充所有元素</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+Array<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span>value<span class="token punctuation">,</span>start<span class="token punctuation">,</span>end<span class="token punctuation">)</span> <span class="token comment">// 语法 填充值，起始位，截止值。 默认填充所有元素</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array<span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">9</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="2-10-Find-amp-FindIndex（如何查找数组？）"><a href="#2-10-Find-amp-FindIndex（如何查找数组？）" class="headerlink" title="2-10 Find&amp;FindIndex（如何查找数组？）"></a>2-10 Find&amp;FindIndex（如何查找数组？）</h3><ul>
 <li><p>array.filter(fn)：ES5，返回符合fn 条件的所有值，没有则为空</p>
 </li>
@@ -632,63 +639,67 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><p>Array.findIndex()：ES6，返回位置，未找到则-1</p>
 </li>
 </ul>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token keyword">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">67</span><span class="token punctuation">)</span>
-<span class="token keyword">let</span> find <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">let</span> array <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">of</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">67</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> find <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> item <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">0</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">// 查找下标</span>
-<span class="token keyword">let</span> find <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token comment">// 查找下标</span>
+<span class="token keyword">let</span> find <span class="token operator">=</span> array<span class="token punctuation">.</span><span class="token function">findIndex</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">item</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">return</span> item <span class="token operator">===</span> <span class="token number">0</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>find<span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>find<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h2 id="Class-Update"><a href="#Class-Update" class="headerlink" title="Class Update"></a>Class Update</h2><h3 id="2-12-Class基础语法（怎么声明一个类？）"><a href="#2-12-Class基础语法（怎么声明一个类？）" class="headerlink" title="2-12 Class基础语法（怎么声明一个类？）"></a>2-12 Class基础语法（怎么声明一个类？）</h3><h4 id="ES5中怎么声明一个类"><a href="#ES5中怎么声明一个类" class="headerlink" title="ES5中怎么声明一个类"></a>ES5中怎么声明一个类</h4><ul>
-<li><pre class=" language-JS"><code class="language-JS">let Animal = function (type) &#123;
+<li><pre><code class="JS">let Animal = function (type) &#123;
   this.type = type
 &#125;
 
 Animal.prototype.eat = function () &#123;
-  console.log('you are eatting food hello');
+  console.log(&#39;you are eatting food hello&#39;);
 &#125;
-let dog = new Animal('food')
-let cat = new Animal('fish')
+let dog = new Animal(&#39;food&#39;)
+let cat = new Animal(&#39;fish&#39;)
 
 console.log(dog)
 console.log(cat)
 
 // 修改实例对象原型链上的方法
 cat.constructor.prototype.eat = function () &#123;
-  console.log('error')
+  console.log(&#39;error&#39;)
 &#125;
 dog.eat()
 cat.eat()
-</code></pre>
-</li>
-</ul>
-<h4 id="ES6中声明一个类"><a href="#ES6中声明一个类" class="headerlink" title="ES6中声明一个类"></a>ES6中声明一个类</h4><ul>
-<li><pre class=" language-JS"><code class="language-JS">class Animal &#123;
-  constructor(type) &#123;
-    this.type = type
+<pre class="line-numbers language-none"><code class="language-none">
+  
+
+#### ES6中声明一个类
+
+- &#96;&#96;&#96;JS
+  class Animal &#123;
+    constructor(type) &#123;
+      this.type &#x3D; type
+    &#125;
+    eat() &#123;
+      console.log(&#39;i am food&#39;)
+    &#125;
   &#125;
-  eat() &#123;
-    console.log('i am food')
+  
+  let dog &#x3D; new Animal(&#39;food&#39;)
+  let cat &#x3D; new Animal(&#39;fish&#39;)
+  
+  console.log(dog)
+  console.log(cat)
+  
+  &#x2F;&#x2F; 修改实例对象原型链上的方法
+  cat.constructor.prototype.eat &#x3D; function () &#123;
+    console.log(&#39;error&#39;)
   &#125;
-&#125;
-
-let dog = new Animal('food')
-let cat = new Animal('fish')
-
-console.log(dog)
-console.log(cat)
-
-// 修改实例对象原型链上的方法
-cat.constructor.prototype.eat = function () &#123;
-  console.log('error')
-&#125;
-dog.eat()
-cat.eat()
-
-console.log(typeof Animal);
+  dog.eat()
+  cat.eat()
+  
+  console.log(typeof Animal);<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </code></pre>
 </li>
 </ul>
@@ -785,33 +796,6 @@ console.log(typeof Animal);
             
         </div>
     </div>
-
-    
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'b9cda0c484bb0e96f9b3',
-        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
-        repo: 'Eished.github.io',
-        owner: 'Eished',
-        admin: "Eished",
-        id: '2020-06-02T16-18-11',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
 
     
 
@@ -948,6 +932,9 @@ console.log(typeof Animal);
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->

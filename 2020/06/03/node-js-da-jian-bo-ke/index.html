@@ -56,7 +56,7 @@ server 接收到 http">
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+</head>
 
 
 <body>
@@ -381,7 +381,7 @@ server 接收到 http">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.6k
+                    3.5k
                 </div>
                 
 
@@ -403,6 +403,9 @@ server 接收到 http">
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.min.css">
+        
 
         
 
@@ -421,109 +424,109 @@ server 接收到 http">
 <li>post 请求和 postdata</li>
 <li>路由（接口、地址）</li>
 </ul>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
     res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello world!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//浏览器访问 http://localhost:8000/</span>
-</code></pre>
+<span class="token comment">//浏览器访问 http://localhost:8000/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="Node-js-处理-get-请求"><a href="#Node-js-处理-get-请求" class="headerlink" title="Node.js 处理 get 请求"></a>Node.js 处理 get 请求</h4><ul>
 <li>get  请求，客户端向 server 端获取数据，如查询博客列表</li>
 <li>通过 querystring 来传递数据，如 a.html?a&#x3D;100&amp;b&#x3D;200</li>
 <li>浏览器直接访问，发送 get 请求</li>
 </ul>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span>res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>method<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//GET</span>
-    <span class="token keyword">const</span> url <span class="token operator">=</span> req<span class="token punctuation">.</span>url <span class="token comment" spellcheck="true">//获取请求的完整 URL</span>
-    <span class="token comment" spellcheck="true">//关键解析[0]是'?'前的内容, [1]是'?'后内容</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span>res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>method<span class="token punctuation">)</span> <span class="token comment">//GET</span>
+    <span class="token keyword">const</span> url <span class="token operator">=</span> req<span class="token punctuation">.</span>url <span class="token comment">//获取请求的完整 URL</span>
+    <span class="token comment">//关键解析[0]是'?'前的内容, [1]是'?'后内容</span>
     req<span class="token punctuation">.</span>query <span class="token operator">=</span> querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>query<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//将 querystring 返回</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>query<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将 querystring 返回</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//浏览器访问 http://localhost:8000/</span>
-</code></pre>
+<span class="token comment">//浏览器访问 http://localhost:8000/</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="Node-js-处理-post-请求"><a href="#Node-js-处理-post-请求" class="headerlink" title="Node.js 处理 post 请求"></a>Node.js 处理 post 请求</h4><ul>
 <li>post 请求，即客户端要像服务端传递数据，如新建博客</li>
 <li>通过 post data 传递数据，后面解释</li>
 <li>浏览器无法直接模拟，需要手写JS，或者使用 postman app</li>
 </ul>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span> 
-        <span class="token comment" spellcheck="true">// POST 必须大写</span>
-        <span class="token comment" spellcheck="true">//数据格式</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span> 
+        <span class="token comment">// POST 必须大写</span>
+        <span class="token comment">//数据格式</span>
         console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'content-type: '</span><span class="token punctuation">,</span> req<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'content-type'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//接收数据</span>
+        <span class="token comment">//接收数据</span>
         <span class="token keyword">let</span> postData <span class="token operator">=</span> <span class="token string">''</span>
-        <span class="token comment" spellcheck="true">//开始接收数据</span>
-        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> chunk <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            postData <span class="token operator">+</span><span class="token operator">=</span> chunk<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//结束数据接收</span>
-        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span>， <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment">//开始接收数据</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+			postData <span class="token operator">+=</span> chunk<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token comment">//结束数据接收</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token function">，</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'postData:'</span><span class="token punctuation">,</span> postData<span class="token punctuation">)</span>
-            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello world!'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//在这里返回，因为是异步</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>
-</code></pre>
+            res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token string">'hello world!'</span><span class="token punctuation">)</span> <span class="token comment">//在这里返回，因为是异步</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="Node-js-处理路由"><a href="#Node-js-处理路由" class="headerlink" title="Node.js 处理路由"></a>Node.js 处理路由</h4><ul>
 <li><code>https://github.com/username/xxx</code> 每个斜线后面的唯一标识就是路由</li>
 </ul>
-<h4 id="Node-js-综合应用"><a href="#Node-js-综合应用" class="headerlink" title="Node.js 综合应用"></a>Node.js 综合应用</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
+<h4 id="Node-js-综合应用"><a href="#Node-js-综合应用" class="headerlink" title="Node.js 综合应用"></a>Node.js 综合应用</h4><pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> querystring <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'querystring'</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
     <span class="token keyword">const</span> method <span class="token operator">=</span> req<span class="token punctuation">.</span>method
     <span class="token keyword">const</span> url <span class="token operator">=</span> req<span class="token punctuation">.</span>url
-    <span class="token keyword">const</span> path <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment" spellcheck="true">//重点：split('?'[0])语法弄清楚</span>
+    <span class="token keyword">const</span> path <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token comment">//重点：split('?'[0])语法弄清楚</span>
     <span class="token keyword">const</span> query <span class="token operator">=</span> querystring<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>url<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
-    <span class="token comment" spellcheck="true">//设置返回值格式为 JSON</span>
+    <span class="token comment">//设置返回值格式为 JSON</span>
     res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-type'</span><span class="token punctuation">,</span> <span class="token string">'application/json'</span><span class="token punctuation">)</span>
     
-    <span class="token comment" spellcheck="true">//返回的数据</span>
-    <span class="token keyword">const</span> resData <span class="token operator">=</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment">//返回的数据</span>
+    <span class="token keyword">const</span> resData <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
         method<span class="token punctuation">,</span>
         url<span class="token punctuation">,</span>
         path<span class="token punctuation">,</span>
         query
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    <span class="token comment" spellcheck="true">//返回</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'GET'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token comment">//返回</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'GET'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
         res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
-            JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>query<span class="token punctuation">)</span>
+            <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>req<span class="token punctuation">.</span>query<span class="token punctuation">)</span>
         <span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
     
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>req<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'POST'</span><span class="token punctuation">)</span><span class="token punctuation">&#123;</span>
         <span class="token keyword">let</span> postData <span class="token operator">=</span> <span class="token string">''</span>
-        <span class="token comment" spellcheck="true">//res.on('data')指每次发送的数据</span>
-        <span class="token comment" spellcheck="true">//chunk 逐步接收数据 req绑定一个data方法 chunk是变量</span>
-        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> chunk <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            postData <span class="token operator">+</span><span class="token operator">=</span> chunk<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">//req.on(end)数据发送完成；</span>
-        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token comment">//res.on('data')指每次发送的数据</span>
+        <span class="token comment">//chunk 逐步接收数据 req绑定一个data方法 chunk是变量</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'data'</span><span class="token punctuation">,</span> <span class="token parameter">chunk</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            postData <span class="token operator">+=</span> chunk<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+        <span class="token comment">//req.on(end)数据发送完成；</span>
+        req<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'end'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'postData:'</span><span class="token punctuation">,</span> postData<span class="token punctuation">)</span>
             console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'resData:'</span><span class="token punctuation">,</span> resData<span class="token punctuation">)</span>
             resData<span class="token punctuation">.</span>postData <span class="token operator">=</span> postData
-            <span class="token comment" spellcheck="true">//返回</span>
+            <span class="token comment">//返回</span>
             res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
-                JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>resData<span class="token punctuation">)</span>
+                <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>resData<span class="token punctuation">)</span>
             <span class="token punctuation">)</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
 
 server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">300</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'OK'</span><span class="token punctuation">)</span>
-</code></pre>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'OK'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h3 id="搭建开发环境"><a href="#搭建开发环境" class="headerlink" title="搭建开发环境"></a>搭建开发环境</h3><ul>
 <li>从零搭建，不使用框架</li>
 <li>使用 nodemon 监测文件变化，自动重启 node</li>
@@ -544,71 +547,73 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ol>
 <p><strong>新建文件夹blog_1，在里面新建bin文件夹和app.js，在bin里面新建<a target="_blank" rel="noopener" href="http://www.js文件/">www.js文件</a></strong></p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// package.json 代码 注意： =不能有空格</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-  <span class="token string">"name"</span><span class="token punctuation">:</span> <span class="token string">"blog_1"</span><span class="token punctuation">,</span>
-  <span class="token string">"version"</span><span class="token punctuation">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
-  <span class="token string">"description"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-  <span class="token string">"main"</span><span class="token punctuation">:</span> <span class="token string">"www.js"</span><span class="token punctuation">,</span>
-  <span class="token string">"scripts"</span><span class="token punctuation">:</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token string">"test"</span><span class="token punctuation">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
-    <span class="token string">"dev"</span><span class="token punctuation">:</span> <span class="token string">"cross-env NODE_ENV=dev nodemon ./bin/www.js"</span><span class="token punctuation">,</span>
-    <span class="token string">"prd"</span><span class="token punctuation">:</span> <span class="token string">"cross-env NODE_ENV=production nodemon ./bin/www.js"</span>
-  <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">,</span>
-  <span class="token string">"author"</span><span class="token punctuation">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
-  <span class="token string">"license"</span><span class="token punctuation">:</span> <span class="token string">"ISC"</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-</code></pre>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// ./bin/www.js 代码</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// package.json 代码 注意： =不能有空格</span>
+<span class="token punctuation">&#123;</span>
+  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"blog_1"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"description"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"main"</span><span class="token operator">:</span> <span class="token string">"www.js"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token string-property property">"test"</span><span class="token operator">:</span> <span class="token string">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"dev"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=dev nodemon ./bin/www.js"</span><span class="token punctuation">,</span>
+    <span class="token string-property property">"prd"</span><span class="token operator">:</span> <span class="token string">"cross-env NODE_ENV=production nodemon ./bin/www.js"</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"author"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"license"</span><span class="token operator">:</span> <span class="token string">"ISC"</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// ./bin/www.js 代码</span>
 <span class="token keyword">const</span> http <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http'</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> PORT <span class="token operator">=</span> <span class="token number">300</span>
+<span class="token keyword">const</span> <span class="token constant">PORT</span> <span class="token operator">=</span> <span class="token number">300</span>
 <span class="token keyword">const</span> serverHandle <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'../app'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> server <span class="token operator">=</span> http<span class="token punctuation">.</span><span class="token function">createServer</span><span class="token punctuation">(</span>serverHandle<span class="token punctuation">)</span>
-server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span>PORT<span class="token punctuation">)</span>
-</code></pre>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// app.js 代码</span>
+server<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// app.js 代码</span>
 <span class="token keyword">const</span> handleBlogRouter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./src/router/blog'</span><span class="token punctuation">)</span>
 <span class="token keyword">const</span> handleUserRouter <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'./src/router/user'</span><span class="token punctuation">)</span>
 
-<span class="token keyword">const</span> serverHandle <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//设置返回值格式 JSON</span>
-    res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-type'</span><span class="token punctuation">,</span> <span class="token string">'application/json'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token function-variable function">serverHandle</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token comment">//设置返回值格式 JSON</span>
+	res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Content-type'</span><span class="token punctuation">,</span> <span class="token string">'application/json'</span><span class="token punctuation">)</span>
 
-    <span class="token comment" spellcheck="true">// const resData = &amp;#123;</span>
-    <span class="token comment" spellcheck="true">// 	name: 'zhang',</span>
-    <span class="token comment" spellcheck="true">// 	site: 'imooc',</span>
-    <span class="token comment" spellcheck="true">// 	env: process.env.NODE_ENV</span>
-    <span class="token comment" spellcheck="true">// &amp;#125;</span>
+	<span class="token comment">// const resData = &#123;</span>
+	<span class="token comment">// 	name: 'zhang',</span>
+	<span class="token comment">// 	site: 'imooc',</span>
+	<span class="token comment">// 	env: process.env.NODE_ENV</span>
+	<span class="token comment">// &#125;</span>
 
-    <span class="token comment" spellcheck="true">// res.end(</span>
-    <span class="token comment" spellcheck="true">// 	JSON.stringify(resData)</span>
-    <span class="token comment" spellcheck="true">// )</span>
-    
-    <span class="token comment" spellcheck="true">//处理 blog 路由</span>
-    <span class="token keyword">const</span> blogData <span class="token operator">=</span> <span class="token function">handleBlogRouter</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>blogData<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
-            JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>blogData<span class="token punctuation">)</span>
-        <span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//处理 user 路由</span>
-    <span class="token keyword">const</span> userData <span class="token operator">=</span> <span class="token function">handleUserRouter</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>userData<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
-            JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>userData<span class="token punctuation">)</span>
-        <span class="token punctuation">)</span>
-        <span class="token keyword">return</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">//未命中路由，返回404</span>
-    res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span><span class="token string">"Content-type"</span><span class="token punctuation">:</span> <span class="token string">"text/plain"</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span class="token punctuation">)</span>
-    res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"404 Not Found\n"</span><span class="token punctuation">)</span>
-    res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+	<span class="token comment">// res.end(</span>
+	<span class="token comment">// 	JSON.stringify(resData)</span>
+	<span class="token comment">// )</span>
+	
+	<span class="token comment">//处理 blog 路由</span>
+	<span class="token keyword">const</span> blogData <span class="token operator">=</span> <span class="token function">handleBlogRouter</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>blogData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
+			<span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>blogData<span class="token punctuation">)</span>
+		<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token comment">//处理 user 路由</span>
+	<span class="token keyword">const</span> userData <span class="token operator">=</span> <span class="token function">handleUserRouter</span><span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>userData<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span>
+			<span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>userData<span class="token punctuation">)</span>
+		<span class="token punctuation">)</span>
+		<span class="token keyword">return</span>
+	<span class="token punctuation">&#125;</span>
+	<span class="token comment">//未命中路由，返回404</span>
+	res<span class="token punctuation">.</span><span class="token function">writeHead</span><span class="token punctuation">(</span><span class="token number">404</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span><span class="token string-property property">"Content-type"</span><span class="token operator">:</span> <span class="token string">"text/plain"</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+	res<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span><span class="token string">"404 Not Found\n"</span><span class="token punctuation">)</span>
+	res<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
 
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> serverHandle
-</code></pre>
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> serverHandle<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="开发接口"><a href="#开发接口" class="headerlink" title="开发接口"></a>开发接口</h3><h4 id="初始化路由"><a href="#初始化路由" class="headerlink" title="初始化路由"></a>初始化路由</h4><ul>
 <li>初始化路由：根据之前设计方案，做出路由</li>
 <li>返回假数据：将路由和数据处理分离，以符合设计原则</li>
@@ -667,34 +672,34 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </tr>
 </tbody></table>
 <p>具体代码：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ./src/router/user.js</span>
-<span class="token keyword">const</span> handleUserRouter <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> method <span class="token operator">=</span> req<span class="token punctuation">.</span>method <span class="token comment" spellcheck="true">//GET POST</span>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// ./src/router/user.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleUserRouter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">const</span> method <span class="token operator">=</span> req<span class="token punctuation">.</span>method <span class="token comment">//GET POST</span>
 
-    <span class="token comment" spellcheck="true">//登录</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/api/user/login'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            msg<span class="token punctuation">:</span> <span class="token string">'这是登录的接口'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-
-module<span class="token punctuation">.</span>exports <span class="token operator">=</span> handleUserRouter
-
-<span class="token comment" spellcheck="true">// ./src/router/blog.js</span>
-<span class="token keyword">const</span> handleUserRouter <span class="token operator">=</span> <span class="token punctuation">(</span>req<span class="token punctuation">,</span> res<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token keyword">const</span> method <span class="token operator">=</span> req<span class="token punctuation">.</span>method <span class="token comment" spellcheck="true">//GET POST</span>
-
-    <span class="token comment" spellcheck="true">//登录</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/api/user/login'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">return</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-            msg<span class="token punctuation">:</span> <span class="token string">'这是登录的接口'</span>
-        <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+	<span class="token comment">//登录</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/api/user/login'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'这是登录的接口'</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
 
 module<span class="token punctuation">.</span>exports <span class="token operator">=</span> handleUserRouter
-</code></pre>
+
+<span class="token comment">// ./src/router/blog.js</span>
+<span class="token keyword">const</span> <span class="token function-variable function">handleUserRouter</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+	<span class="token keyword">const</span> method <span class="token operator">=</span> req<span class="token punctuation">.</span>method <span class="token comment">//GET POST</span>
+
+	<span class="token comment">//登录</span>
+	<span class="token keyword">if</span> <span class="token punctuation">(</span>method <span class="token operator">===</span> <span class="token string">'POST'</span> <span class="token operator">&amp;&amp;</span> req<span class="token punctuation">.</span>path <span class="token operator">===</span> <span class="token string">'/api/user/login'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+		<span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+			<span class="token literal-property property">msg</span><span class="token operator">:</span> <span class="token string">'这是登录的接口'</span>
+		<span class="token punctuation">&#125;</span>
+	<span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> handleUserRouter<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="开发路由-博客列表"><a href="#开发路由-博客列表" class="headerlink" title="开发路由 博客列表"></a>开发路由 博客列表</h4><ol>
 <li><p>业务分层 拆分业务</p>
 <ul>
@@ -758,32 +763,32 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <h4 id="MySQL-安装："><a href="#MySQL-安装：" class="headerlink" title="MySQL 安装："></a>MySQL 安装：</h4><ul>
 <li>解压，打开根目录初始化<code>my.ini</code> 文件， 自行创建在安装根目录下创建<code>my.ini</code></li>
 </ul>
-<pre class=" language-ini"><code class="language-ini"><span class="token selector">  [mysqld]</span>
-  # 设置3306端口
-<span class="token constant">  port</span><span class="token attr-value"><span class="token punctuation">=</span>3306</span>
-  # 设置mysql的安装目录
-<span class="token constant">  basedir</span><span class="token attr-value"><span class="token punctuation">=</span>C:\Program Files\MySQL</span>
-  # 设置mysql数据库的数据的存放目录
-<span class="token constant">  datadir</span><span class="token attr-value"><span class="token punctuation">=</span>C:\Program Files\MySQL\Data</span>
-  # 允许最大连接数
-<span class="token constant">  max_connections</span><span class="token attr-value"><span class="token punctuation">=</span>200</span>
-  # 允许连接失败的次数。
-<span class="token constant">  max_connect_errors</span><span class="token attr-value"><span class="token punctuation">=</span>10</span>
-  # 服务端使用的字符集默认为utf8mb4
-<span class="token constant">  character-set-server</span><span class="token attr-value"><span class="token punctuation">=</span>utf8mb4</span>
-  # 创建新表时将使用的默认存储引擎
-<span class="token constant">  default-storage-engine</span><span class="token attr-value"><span class="token punctuation">=</span>INNODB</span>
-  # 默认使用“mysql_native_password”插件认证
-  #mysql_native_password
-<span class="token constant">  default_authentication_plugin</span><span class="token attr-value"><span class="token punctuation">=</span>mysql_native_password</span>
-<span class="token selector">  [mysql]</span>
-  # 设置mysql客户端默认字符集
-<span class="token constant">  default-character-set</span><span class="token attr-value"><span class="token punctuation">=</span>utf8mb4</span>
-<span class="token selector">  [client]</span>
-  # 设置mysql客户端连接服务端时默认使用的端口
-<span class="token constant">  port</span><span class="token attr-value"><span class="token punctuation">=</span>3306</span>
-<span class="token constant">  default-character-set</span><span class="token attr-value"><span class="token punctuation">=</span>utf8mb4</span>
-</code></pre>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">mysqld</span><span class="token punctuation">]</span></span>
+<span class="token comment"># 设置3306端口</span>
+<span class="token key attr-name">port</span><span class="token punctuation">=</span><span class="token value attr-value">3306</span>
+<span class="token comment"># 设置mysql的安装目录</span>
+<span class="token key attr-name">basedir</span><span class="token punctuation">=</span><span class="token value attr-value">C:\Program Files\MySQL</span>
+<span class="token comment"># 设置mysql数据库的数据的存放目录</span>
+<span class="token key attr-name">datadir</span><span class="token punctuation">=</span><span class="token value attr-value">C:\Program Files\MySQL\Data</span>
+<span class="token comment"># 允许最大连接数</span>
+<span class="token key attr-name">max_connections</span><span class="token punctuation">=</span><span class="token value attr-value">200</span>
+<span class="token comment"># 允许连接失败的次数。</span>
+<span class="token key attr-name">max_connect_errors</span><span class="token punctuation">=</span><span class="token value attr-value">10</span>
+<span class="token comment"># 服务端使用的字符集默认为utf8mb4</span>
+<span class="token key attr-name">character-set-server</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4</span>
+<span class="token comment"># 创建新表时将使用的默认存储引擎</span>
+<span class="token key attr-name">default-storage-engine</span><span class="token punctuation">=</span><span class="token value attr-value">INNODB</span>
+<span class="token comment"># 默认使用“mysql_native_password”插件认证</span>
+<span class="token comment">#mysql_native_password</span>
+<span class="token key attr-name">default_authentication_plugin</span><span class="token punctuation">=</span><span class="token value attr-value">mysql_native_password</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">mysql</span><span class="token punctuation">]</span></span>
+<span class="token comment"># 设置mysql客户端默认字符集</span>
+<span class="token key attr-name">default-character-set</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4</span>
+<span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">client</span><span class="token punctuation">]</span></span>
+<span class="token comment"># 设置mysql客户端连接服务端时默认使用的端口</span>
+<span class="token key attr-name">port</span><span class="token punctuation">=</span><span class="token value attr-value">3306</span>
+<span class="token key attr-name">default-character-set</span><span class="token punctuation">=</span><span class="token value attr-value">utf8mb4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 <p>   配置文件中的路径要和实际存放的路径一致（要手动创建Data文件夹） </p>
 <ul>
 <li><p>打开系统设置，配置环境变量 &#96; Path &#x3D; ‘解压目录’\bin</p>
@@ -928,15 +933,13 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 </ul>
 <h4 id="Crontab"><a href="#Crontab" class="headerlink" title="Crontab"></a>Crontab</h4><ul>
 <li><p>设置定时任务，格式：<code> ***** command</code> </p>
-<pre><code>  *分钟*小时*天*月*星期 command脚本命令
-</code></pre>
-</li>
+<pre class="line-numbers language-none"><code class="language-none">*分钟*小时*天*月*星期 command脚本命令<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
 </ul>
-<pre><code>  
+<pre class="line-numbers language-none"><code class="language-none">  
 - 将 access.log 拷贝并重命名为 2019-02-10.access.log 
   
-  - 清空 access.log 文件，继续积累日志
-</code></pre>
+  - 清空 access.log 文件，继续积累日志<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
 <h4 id="代码演示"><a href="#代码演示" class="headerlink" title="代码演示"></a>代码演示</h4><h3 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h3><ul>
 <li>日志对 server 的重要性</li>
 <li>IO 性能瓶颈，使用 stream 提高性能， node.js 中如何操作</li>
@@ -1142,33 +1145,6 @@ module<span class="token punctuation">.</span>exports <span class="token operato
     </div>
 
     
-        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
-
-<div class="card gitalk-card" data-aos="fade-up">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
-    </div>
-    <div id="gitalk-container" class="card-content"></div>
-</div>
-
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: 'b9cda0c484bb0e96f9b3',
-        clientSecret: 'bdebd1183e2a88dcbac10b64c14d5d1da391c07b',
-        repo: 'Eished.github.io',
-        owner: 'Eished',
-        admin: "Eished",
-        id: '2020-06-03T22-50-45',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
-
-    gitalk.render('gitalk-container');
-</script>
-
-    
 
     
 
@@ -1307,6 +1283,9 @@ module<span class="token punctuation">.</span>exports <span class="token operato
 <!-- 代码块功能依赖 -->
 <script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
+
+  <!-- 是否加载使用自带的 prismjs. -->
+  <script type="text/javascript" src="/libs/prism/prism.min.js"></script>
 
 
 <!-- 代码语言 -->
