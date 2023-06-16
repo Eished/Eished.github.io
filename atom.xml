@@ -3,7 +3,7 @@
   <title>iKnow&#39;s blog</title>
   
   <subtitle>I want to know...</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="https://iknow.fun/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
   <updated>2023-05-18T05:12:44.175Z</updated>
@@ -23,29 +23,27 @@
     <published>2023-05-17T17:01:11.000Z</published>
     <updated>2023-05-18T05:12:44.175Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;kex-exchange-identification-Connection-closed-by-remote-host-问题解决方案&quot;&gt;&lt;a
+    <summary type="html">&lt;h1 id=&quot;kex-exchange-identification-Connection-closed-by-remote-host-问题解决方案&quot;&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
+    <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
+    <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
     
-      <category term="kex_exchange_identification" scheme="https://iknow.fun/tags/kex-exchange-identification/"/>
+    <category term="kex_exchange_identification" scheme="https://iknow.fun/tags/kex-exchange-identification/"/>
     
-      <category term="GFW" scheme="https://iknow.fun/tags/GFW/"/>
+    <category term="GFW" scheme="https://iknow.fun/tags/GFW/"/>
     
-      <category term="openWrt" scheme="https://iknow.fun/tags/openWrt/"/>
+    <category term="openWrt" scheme="https://iknow.fun/tags/openWrt/"/>
     
   </entry>
   
@@ -56,37 +54,35 @@
     <published>2022-08-02T16:06:24.000Z</published>
     <updated>2022-08-06T16:02:49.903Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;【油猴脚本开发进阶】VSCode-Webpack-TypeScript-油猴开发环境搭建，支持本地调试、实时热刷新、自动构建和自动发布更新&quot;&gt;&lt;a
+    <summary type="html">&lt;h2 id=&quot;【油猴脚本开发进阶】VSCode-Webpack-TypeScript-油猴开发环境搭建，支持本地调试、实时热刷新、自动构建和自动发布更新&quot;&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
+    <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
     
-      <category term="VSCode" scheme="https://iknow.fun/tags/VSCode/"/>
+    <category term="VSCode" scheme="https://iknow.fun/tags/VSCode/"/>
     
-      <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
+    <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
     
   </entry>
   
@@ -97,35 +93,33 @@
     <published>2022-07-31T18:55:59.000Z</published>
     <updated>2022-08-04T15:54:01.745Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;Webpack-TypeScript-开发油猴脚本：斗鱼直播自动切换画质-2-0&quot;&gt;&lt;a href=&quot;#Webpack-TypeScript-开发油猴脚本：斗鱼直播自动切换画质-2-0&quot; class=&quot;headerlink&quot; title=&quot;Webpack +
+    <summary type="html">&lt;h2 id=&quot;Webpack-TypeScript-开发油猴脚本：斗鱼直播自动切换画质-2-0&quot;&gt;&lt;a href=&quot;#Webpack-TypeScript-开发油猴脚本：斗鱼直播自动切换画质-2-0&quot; class=&quot;headerlink&quot; title=&quot;Webpack +</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
+    <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
     
-      <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
+    <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
     
   </entry>
   
@@ -136,38 +130,36 @@
     <published>2022-05-28T16:22:36.000Z</published>
     <updated>2022-06-04T04:45:54.421Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h3 id=&quot;基础设置&quot;&gt;&lt;a href=&quot;#基础设置&quot; class=&quot;headerlink&quot; title=&quot;基础设置&quot;&gt;&lt;/a&gt;基础设置&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;a
+    <summary type="html">&lt;h3 id=&quot;基础设置&quot;&gt;&lt;a href=&quot;#基础设置&quot; class=&quot;headerlink&quot; title=&quot;基础设置&quot;&gt;&lt;/a&gt;基础设置&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="WSL2" scheme="https://iknow.fun/tags/WSL2/"/>
+    <category term="WSL2" scheme="https://iknow.fun/tags/WSL2/"/>
     
-      <category term="Python" scheme="https://iknow.fun/tags/Python/"/>
+    <category term="Python" scheme="https://iknow.fun/tags/Python/"/>
     
-      <category term="VSCode" scheme="https://iknow.fun/tags/VSCode/"/>
+    <category term="VSCode" scheme="https://iknow.fun/tags/VSCode/"/>
     
-      <category term="proxy" scheme="https://iknow.fun/tags/proxy/"/>
+    <category term="proxy" scheme="https://iknow.fun/tags/proxy/"/>
     
-      <category term="ubuntu" scheme="https://iknow.fun/tags/ubuntu/"/>
+    <category term="ubuntu" scheme="https://iknow.fun/tags/ubuntu/"/>
     
   </entry>
   
@@ -178,41 +170,39 @@
     <published>2022-05-24T17:31:22.000Z</published>
     <updated>2022-07-31T18:54:52.518Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;想给 &lt;a href=&quot;https://github.com/Eished/jkforum_helper&quot; target=&quot;_blank&quot;
+    <summary type="html">&lt;h2 id=&quot;起因&quot;&gt;&lt;a href=&quot;#起因&quot; class=&quot;headerlink&quot; title=&quot;起因&quot;&gt;&lt;/a&gt;起因&lt;/h2&gt;&lt;p&gt;想给 &lt;a href=&quot;https://github.com/Eished/jkforum_helper&quot; target=&quot;_blank&quot;</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
+    <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
-      <category term="Tailwindcss" scheme="https://iknow.fun/tags/Tailwindcss/"/>
+    <category term="Tailwindcss" scheme="https://iknow.fun/tags/Tailwindcss/"/>
     
-      <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
+    <category term="TypeScript" scheme="https://iknow.fun/tags/TypeScript/"/>
     
-      <category term="React" scheme="https://iknow.fun/tags/React/"/>
+    <category term="React" scheme="https://iknow.fun/tags/React/"/>
     
-      <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
+    <category term="Webpack" scheme="https://iknow.fun/tags/Webpack/"/>
     
   </entry>
   
@@ -223,35 +213,33 @@
     <published>2021-11-28T12:15:26.000Z</published>
     <updated>2021-11-28T13:02:45.532Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;使用百度-AI-接口-ORC-自动识别验证码&quot;&gt;&lt;a href=&quot;#使用百度-AI-接口-ORC-自动识别验证码&quot; class=&quot;headerlink&quot; title=&quot;使用百度 AI 接口 ORC 自动识别验证码&quot;&gt;&lt;/a&gt;使用百度 AI 接口 ORC
+    <summary type="html">&lt;h1 id=&quot;使用百度-AI-接口-ORC-自动识别验证码&quot;&gt;&lt;a href=&quot;#使用百度-AI-接口-ORC-自动识别验证码&quot; class=&quot;headerlink&quot; title=&quot;使用百度 AI 接口 ORC 自动识别验证码&quot;&gt;&lt;/a&gt;使用百度 AI 接口 ORC</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
-      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
+    <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
-      <category term="ORC" scheme="https://iknow.fun/tags/ORC/"/>
+    <category term="ORC" scheme="https://iknow.fun/tags/ORC/"/>
     
   </entry>
   
@@ -262,32 +250,30 @@
     <published>2021-08-03T08:19:06.000Z</published>
     <updated>2021-08-23T02:47:46.027Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;思路：&quot;&gt;&lt;a href=&quot;#思路：&quot; class=&quot;headerlink&quot; title=&quot;思路：&quot;&gt;&lt;/a&gt;思路：&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;播放控件是动态加载，找到元素把父级全 &lt;code&gt;console.log&lt;/code&gt;
+    <summary type="html">&lt;h2 id=&quot;思路：&quot;&gt;&lt;a href=&quot;#思路：&quot; class=&quot;headerlink&quot; title=&quot;思路：&quot;&gt;&lt;/a&gt;思路：&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;播放控件是动态加载，找到元素把父级全 &lt;code&gt;console.log&lt;/code&gt;</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
   </entry>
   
@@ -298,31 +284,29 @@
     <published>2021-07-29T08:20:15.000Z</published>
     <updated>2021-08-23T02:44:52.667Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;虚拟机安装-ssh&quot;&gt;&lt;a href=&quot;#虚拟机安装-ssh&quot; class=&quot;headerlink&quot; title=&quot;虚拟机安装 ssh&quot;&gt;&lt;/a&gt;虚拟机安装 ssh&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code
+    <summary type="html">&lt;h2 id=&quot;虚拟机安装-ssh&quot;&gt;&lt;a href=&quot;#虚拟机安装-ssh&quot; class=&quot;headerlink&quot; title=&quot;虚拟机安装 ssh&quot;&gt;&lt;/a&gt;虚拟机安装 ssh&lt;/h2&gt;&lt;pre class=&quot; language-shell&quot;&gt;&lt;code</summary>
         
       
     
-    </summary>
     
     
-      <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
+    <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
     
     
-      <category term="C" scheme="https://iknow.fun/tags/C/"/>
+    <category term="C" scheme="https://iknow.fun/tags/C/"/>
     
-      <category term="C++" scheme="https://iknow.fun/tags/C/"/>
+    <category term="C++" scheme="https://iknow.fun/tags/C/"/>
     
-      <category term="socket" scheme="https://iknow.fun/tags/socket/"/>
+    <category term="socket" scheme="https://iknow.fun/tags/socket/"/>
     
-      <category term="epoll" scheme="https://iknow.fun/tags/epoll/"/>
+    <category term="epoll" scheme="https://iknow.fun/tags/epoll/"/>
     
-      <category term="网络编程" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    <category term="网络编程" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -333,29 +317,27 @@
     <published>2021-07-29T08:00:00.000Z</published>
     <updated>2021-07-29T08:43:57.492Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;Promise-并发下载&quot;&gt;&lt;a href=&quot;#Promise-并发下载&quot; class=&quot;headerlink&quot; title=&quot;Promise 并发下载&quot;&gt;&lt;/a&gt;Promise 并发下载&lt;/h2&gt;&lt;h3 id=&quot;Promise-then&quot;&gt;&lt;a
+    <summary type="html">&lt;h2 id=&quot;Promise-并发下载&quot;&gt;&lt;a href=&quot;#Promise-并发下载&quot; class=&quot;headerlink&quot; title=&quot;Promise 并发下载&quot;&gt;&lt;/a&gt;Promise 并发下载&lt;/h2&gt;&lt;h3 id=&quot;Promise-then&quot;&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
   </entry>
   
@@ -366,29 +348,27 @@
     <published>2021-07-24T11:28:03.000Z</published>
     <updated>2022-10-05T18:18:53.946Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;HTML5-网页使用-Base64-音频或视频源&quot;&gt;&lt;a href=&quot;#HTML5-网页使用-Base64-音频或视频源&quot; class=&quot;headerlink&quot; title=&quot;HTML5 网页使用 Base64 音频或视频源&quot;&gt;&lt;/a&gt;HTML5 网页使用
+    <summary type="html">&lt;h2 id=&quot;HTML5-网页使用-Base64-音频或视频源&quot;&gt;&lt;a href=&quot;#HTML5-网页使用-Base64-音频或视频源&quot; class=&quot;headerlink&quot; title=&quot;HTML5 网页使用 Base64 音频或视频源&quot;&gt;&lt;/a&gt;HTML5 网页使用</summary>
         
       
     
-    </summary>
     
     
-      <category term="HTML/CSS" scheme="https://iknow.fun/categories/HTML-CSS/"/>
+    <category term="HTML/CSS" scheme="https://iknow.fun/categories/HTML-CSS/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="BASE64" scheme="https://iknow.fun/tags/BASE64/"/>
+    <category term="BASE64" scheme="https://iknow.fun/tags/BASE64/"/>
     
   </entry>
   
@@ -399,29 +379,27 @@
     <published>2021-07-21T08:45:51.000Z</published>
     <updated>2021-07-24T11:44:00.844Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;GitHub-CDN-使用说明&quot;&gt;&lt;a href=&quot;#GitHub-CDN-使用说明&quot; class=&quot;headerlink&quot; title=&quot;GitHub CDN 使用说明&quot;&gt;&lt;/a&gt;GitHub CDN 使用说明&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;在 GitHub
+    <summary type="html">&lt;h2 id=&quot;GitHub-CDN-使用说明&quot;&gt;&lt;a href=&quot;#GitHub-CDN-使用说明&quot; class=&quot;headerlink&quot; title=&quot;GitHub CDN 使用说明&quot;&gt;&lt;/a&gt;GitHub CDN 使用说明&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;在 GitHub</summary>
         
       
     
-    </summary>
     
     
-      <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
+    <category term="Git" scheme="https://iknow.fun/categories/Git/"/>
     
     
-      <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
+    <category term="Git" scheme="https://iknow.fun/tags/Git/"/>
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="CDN" scheme="https://iknow.fun/tags/CDN/"/>
+    <category term="CDN" scheme="https://iknow.fun/tags/CDN/"/>
     
   </entry>
   
@@ -432,31 +410,29 @@
     <published>2021-07-20T13:55:54.000Z</published>
     <updated>2021-07-20T14:08:17.814Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比&quot;&gt;&lt;a href=&quot;#油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比&quot; class=&quot;headerlink&quot; title=&quot;油猴
+    <summary type="html">&lt;h2 id=&quot;油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比&quot;&gt;&lt;a href=&quot;#油猴-Tampermonkey-中-js-的数组、对象、map、set-存储数据效率对比&quot; class=&quot;headerlink&quot; title=&quot;油猴</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
   </entry>
   
@@ -467,25 +443,23 @@
     <published>2021-07-16T05:54:52.000Z</published>
     <updated>2021-07-16T06:18:52.229Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h3 id=&quot;2020-12-31&quot;&gt;&lt;a href=&quot;#2020-12-31&quot; class=&quot;headerlink&quot;
+    <summary type="html">&lt;h3 id=&quot;2020-12-31&quot;&gt;&lt;a href=&quot;#2020-12-31&quot; class=&quot;headerlink&quot;</summary>
         
       
     
-    </summary>
     
     
-      <category term="读书笔记" scheme="https://iknow.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <category term="读书笔记" scheme="https://iknow.fun/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="哲学" scheme="https://iknow.fun/tags/%E5%93%B2%E5%AD%A6/"/>
+    <category term="哲学" scheme="https://iknow.fun/tags/%E5%93%B2%E5%AD%A6/"/>
     
-      <category term="心理学" scheme="https://iknow.fun/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
+    <category term="心理学" scheme="https://iknow.fun/tags/%E5%BF%83%E7%90%86%E5%AD%A6/"/>
     
   </entry>
   
@@ -496,29 +470,27 @@
     <published>2021-07-13T12:52:00.000Z</published>
     <updated>2021-07-20T14:08:01.188Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;高性能-JavaScript-之-DOM-篇&quot;&gt;&lt;a href=&quot;#高性能-JavaScript-之-DOM-篇&quot; class=&quot;headerlink&quot; title=&quot;高性能 JavaScript 之 DOM 篇&quot;&gt;&lt;/a&gt;&lt;a
+    <summary type="html">&lt;h1 id=&quot;高性能-JavaScript-之-DOM-篇&quot;&gt;&lt;a href=&quot;#高性能-JavaScript-之-DOM-篇&quot; class=&quot;headerlink&quot; title=&quot;高性能 JavaScript 之 DOM 篇&quot;&gt;&lt;/a&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
   </entry>
   
@@ -529,29 +501,27 @@
     <published>2021-07-13T08:39:33.000Z</published>
     <updated>2021-07-16T06:28:44.294Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;1-querySelector-与-getElementById&quot;&gt;&lt;a href=&quot;#1-querySelector-与-getElementById&quot; class=&quot;headerlink&quot; title=&quot;1. querySelector 与
+    <summary type="html">&lt;h2 id=&quot;1-querySelector-与-getElementById&quot;&gt;&lt;a href=&quot;#1-querySelector-与-getElementById&quot; class=&quot;headerlink&quot; title=&quot;1. querySelector 与</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
+    <category term="HTML5" scheme="https://iknow.fun/tags/HTML5/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
   </entry>
   
@@ -562,33 +532,31 @@
     <published>2021-07-08T10:54:52.000Z</published>
     <updated>2021-08-03T09:02:41.554Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;Tampermonkey-例子：&quot;&gt;&lt;a href=&quot;#Tampermonkey-例子：&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 例子：&quot;&gt;&lt;/a&gt;Tampermonkey 例子：&lt;/h1&gt;&lt;pre class=&quot;
+    <summary type="html">&lt;h1 id=&quot;Tampermonkey-例子：&quot;&gt;&lt;a href=&quot;#Tampermonkey-例子：&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 例子：&quot;&gt;&lt;/a&gt;Tampermonkey 例子：&lt;/h1&gt;&lt;pre class=&quot;</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
-      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
+    <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
   </entry>
   
@@ -599,25 +567,23 @@
     <published>2021-07-02T06:10:10.000Z</published>
     <updated>2021-08-03T09:02:11.846Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;hexo-prism-代码高亮问题&quot;&gt;&lt;a href=&quot;#hexo-prism-代码高亮问题&quot; class=&quot;headerlink&quot; title=&quot;hexo prism 代码高亮问题&quot;&gt;&lt;/a&gt;hexo prism
+    <summary type="html">&lt;h1 id=&quot;hexo-prism-代码高亮问题&quot;&gt;&lt;a href=&quot;#hexo-prism-代码高亮问题&quot; class=&quot;headerlink&quot; title=&quot;hexo prism 代码高亮问题&quot;&gt;&lt;/a&gt;hexo prism</summary>
         
       
     
-    </summary>
     
     
-      <category term="Markdown" scheme="https://iknow.fun/categories/Markdown/"/>
+    <category term="Markdown" scheme="https://iknow.fun/categories/Markdown/"/>
     
     
-      <category term="Hexo" scheme="https://iknow.fun/tags/Hexo/"/>
+    <category term="Hexo" scheme="https://iknow.fun/tags/Hexo/"/>
     
-      <category term="prism" scheme="https://iknow.fun/tags/prism/"/>
+    <category term="prism" scheme="https://iknow.fun/tags/prism/"/>
     
   </entry>
   
@@ -628,32 +594,30 @@
     <published>2021-07-02T05:15:58.000Z</published>
     <updated>2021-08-23T02:46:52.424Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;cpp-实现学生信息管理系统&quot;&gt;&lt;a href=&quot;#cpp-实现学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;cpp 实现学生信息管理系统&quot;&gt;&lt;/a&gt;cpp 实现学生信息管理系统&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a
+    <summary type="html">&lt;h1 id=&quot;cpp-实现学生信息管理系统&quot;&gt;&lt;a href=&quot;#cpp-实现学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;cpp 实现学生信息管理系统&quot;&gt;&lt;/a&gt;cpp 实现学生信息管理系统&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
         
       
     
-    </summary>
     
     
-      <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
+    <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
     
     
-      <category term="信息管理系统" scheme="https://iknow.fun/tags/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
+    <category term="信息管理系统" scheme="https://iknow.fun/tags/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
     
-      <category term="C" scheme="https://iknow.fun/tags/C/"/>
+    <category term="C" scheme="https://iknow.fun/tags/C/"/>
     
-      <category term="C++" scheme="https://iknow.fun/tags/C/"/>
+    <category term="C++" scheme="https://iknow.fun/tags/C/"/>
     
-      <category term="实践" scheme="https://iknow.fun/tags/%E5%AE%9E%E8%B7%B5/"/>
+    <category term="实践" scheme="https://iknow.fun/tags/%E5%AE%9E%E8%B7%B5/"/>
     
-      <category term="考试" scheme="https://iknow.fun/tags/%E8%80%83%E8%AF%95/"/>
+    <category term="考试" scheme="https://iknow.fun/tags/%E8%80%83%E8%AF%95/"/>
     
   </entry>
   
@@ -664,27 +628,25 @@
     <published>2021-06-24T06:55:01.000Z</published>
     <updated>2021-06-28T14:47:28.829Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h2 id=&quot;准备的软件&quot;&gt;&lt;a href=&quot;#准备的软件&quot; class=&quot;headerlink&quot;
+    <summary type="html">&lt;h2 id=&quot;准备的软件&quot;&gt;&lt;a href=&quot;#准备的软件&quot; class=&quot;headerlink&quot;</summary>
         
       
     
-    </summary>
     
     
-      <category term="计算机网络" scheme="https://iknow.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    <category term="计算机网络" scheme="https://iknow.fun/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="局域网" scheme="https://iknow.fun/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    <category term="局域网" scheme="https://iknow.fun/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
     
-      <category term="FTP" scheme="https://iknow.fun/tags/FTP/"/>
+    <category term="FTP" scheme="https://iknow.fun/tags/FTP/"/>
     
-      <category term="网络" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C/"/>
+    <category term="网络" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -695,33 +657,31 @@
     <published>2021-06-20T12:03:56.000Z</published>
     <updated>2021-07-22T11:57:18.713Z</updated>
     
-    <summary type="html">
     
       
       
         
         
-          &lt;h1 id=&quot;Tampermonkey-语法&quot;&gt;&lt;a href=&quot;#Tampermonkey-语法&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 语法&quot;&gt;&lt;/a&gt;Tampermonkey 语法&lt;/h1&gt;&lt;h2
+    <summary type="html">&lt;h1 id=&quot;Tampermonkey-语法&quot;&gt;&lt;a href=&quot;#Tampermonkey-语法&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 语法&quot;&gt;&lt;/a&gt;Tampermonkey 语法&lt;/h1&gt;&lt;h2</summary>
         
       
     
-    </summary>
     
     
-      <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
     
     
-      <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
+    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
-      <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
+    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-      <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
+    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
-      <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
+    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
     
-      <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
+    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
     
-      <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
+    <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
   </entry>
   
