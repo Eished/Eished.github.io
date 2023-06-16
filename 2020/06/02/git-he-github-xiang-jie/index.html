@@ -407,24 +407,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git和GitHub详解"><a href="#Git和GitHub详解" class="headerlink" title="Git和GitHub详解"></a><a href="https://github.com/Eished/git_notes" target="_blank" rel="noopener">Git和GitHub详解</a></h1><h2 id="（一）Git基础"><a href="#（一）Git基础" class="headerlink" title="（一）Git基础"></a>（一）Git基础</h2><h3 id="Git-下载和安装"><a href="#Git-下载和安装" class="headerlink" title="Git 下载和安装"></a>Git 下载和安装</h3><ul>
-<li>下载地址： <a href="https://git-scm.com/downloads" target="_blank" rel="noopener">https://git-scm.com/downloads</a></li>
+                <h1 id="Git和GitHub详解"><a href="#Git和GitHub详解" class="headerlink" title="Git和GitHub详解"></a><a target="_blank" rel="noopener" href="https://github.com/Eished/git_notes">Git和GitHub详解</a></h1><h2 id="（一）Git基础"><a href="#（一）Git基础" class="headerlink" title="（一）Git基础"></a>（一）Git基础</h2><h3 id="Git-下载和安装"><a href="#Git-下载和安装" class="headerlink" title="Git 下载和安装"></a>Git 下载和安装</h3><ul>
+<li>下载地址： <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
 <li>使用默认值安装</li>
 <li>资源管理器内单击鼠标右键选择 <code>Git Bash Here</code></li>
 <li>输入<code>git --version</code> 检查是否安装成功</li>
 </ul>
 <h3 id="Git-基本工作流程"><a href="#Git-基本工作流程" class="headerlink" title="Git 基本工作流程"></a>Git 基本工作流程</h3><blockquote>
-<p><a href="https://camo.githubusercontent.com/b3a8463c493afefb96ed483106ceea6966782b27/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363303938376266316330613f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/b3a8463c493afefb96ed483106ceea6966782b27/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363303938376266316330613f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" alt="git操作通用流程"></a></p>
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/b3a8463c493afefb96ed483106ceea6966782b27/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363303938376266316330613f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31"><img src="https://camo.githubusercontent.com/b3a8463c493afefb96ed483106ceea6966782b27/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363303938376266316330613f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" alt="git操作通用流程"></a></p>
 <p>主要涉及到四个关键点：</p>
 <ol>
 <li>工作区：本地电脑存放项目文件的地方，比如learnGitProject文件夹；</li>
-<li>暂存区（Index/Stage）：在使用git管理项目文件的时候，其本地的项目文件会多出一个.git的文件夹，将这个.git文件夹称之为版本库。其中.git文件夹中包含了两个部分，一个是暂存区（Index或者Stage）,顾名思义就是暂时存放文件的地方，通常使用add命令将工作区的文件添加到暂存区里；</li>
+<li>暂存区（Index&#x2F;Stage）：在使用git管理项目文件的时候，其本地的项目文件会多出一个.git的文件夹，将这个.git文件夹称之为版本库。其中.git文件夹中包含了两个部分，一个是暂存区（Index或者Stage）,顾名思义就是暂时存放文件的地方，通常使用add命令将工作区的文件添加到暂存区里；</li>
 <li>本地仓库：.git文件夹里还包括git自动创建的master分支，并且将HEAD指针指向master分支。使用commit命令可以将暂存区中的文件添加到本地仓库中；</li>
 <li>远程仓库：不是在本地仓库中，项目代码在远程git服务器上，比如项目放在github上，就是一个远程仓库，通常使用clone命令将远程仓库拷贝到本地仓库中，开发后推送到远程仓库中即可；</li>
 </ol>
 <p>更细节的来看：</p>
-<p><a href="https://camo.githubusercontent.com/9d199e09df4405718621937e8798cba7cf1964fb/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363306537653731316463373f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" target="_blank" rel="noopener"><img src="https://camo.githubusercontent.com/9d199e09df4405718621937e8798cba7cf1964fb/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363306537653731316463373f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" alt="git几个核心区域间的关系"></a></p>
-<p>日常开发时代码实际上放置在工作区中，也就是本地的XXX.java这些文件，通过add等这些命令将代码文教提交给暂存区（Index/Stage），也就意味着代码全权交给了git进行管理，之后通过commit等命令将暂存区提交给master分支上，也就是意味打了一个版本，也可以说代码提交到了本地仓库中。另外，团队协作过程中自然而然还涉及到与远程仓库的交互。</p>
+<p><a target="_blank" rel="noopener" href="https://camo.githubusercontent.com/9d199e09df4405718621937e8798cba7cf1964fb/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363306537653731316463373f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31"><img src="https://camo.githubusercontent.com/9d199e09df4405718621937e8798cba7cf1964fb/68747470733a2f2f757365722d676f6c642d63646e2e786974752e696f2f323031382f342f32352f313632666363306537653731316463373f696d61676556696577322f302f772f313238302f682f3936302f666f726d61742f776562702f69676e6f72652d6572726f722f31" alt="git几个核心区域间的关系"></a></p>
+<p>日常开发时代码实际上放置在工作区中，也就是本地的XXX.java这些文件，通过add等这些命令将代码文教提交给暂存区（Index&#x2F;Stage），也就意味着代码全权交给了git进行管理，之后通过commit等命令将暂存区提交给master分支上，也就是意味打了一个版本，也可以说代码提交到了本地仓库中。另外，团队协作过程中自然而然还涉及到与远程仓库的交互。</p>
 <p>因此，经过这样的分析，git命令可以分为这样的逻辑进行理解和记忆：</p>
 <ol>
 <li><p>git管理配置的命令；</p>
@@ -437,7 +437,7 @@
 <li><p>本地仓库与远程仓库的交互。</p>
 </li>
 </ol>
-<p>作者：你听___ 链接：<a href="https://juejin.im/post/5ae072906fb9a07a9e4ce596" target="_blank" rel="noopener">https://juejin.im/post/5ae072906fb9a07a9e4ce596</a> 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+<p>作者：你听___ 链接：<a target="_blank" rel="noopener" href="https://juejin.im/post/5ae072906fb9a07a9e4ce596">https://juejin.im/post/5ae072906fb9a07a9e4ce596</a> 来源：掘金 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 </blockquote>
 <table>
 <thead>
@@ -505,7 +505,7 @@
 </blockquote>
 <ol>
 <li>将工作区中的项目文件使用git进行管理，即创建一个新的本地仓库：<code>git init</code>；</li>
-<li>从远程git仓库复制项目：<code>git clone</code>; 克隆项目时如果想定义新的项目名，可以在clone命令后指定新的项目名：<code>git clone git://github.com/wasd/example.git NewName</code>；</li>
+<li>从远程git仓库复制项目：<code>git clone </code>; 克隆项目时如果想定义新的项目名，可以在clone命令后指定新的项目名：<code>git clone git://github.com/wasd/example.git NewName</code>；</li>
 </ol>
 </blockquote>
 </li>
@@ -516,7 +516,7 @@
 </blockquote>
 <ol>
 <li>查询当前工作区所有文件的状态：<code>git status</code>;</li>
-<li>比较工作区中当前文件和暂存区之间的差异，也就是修改之后还没有暂存的内容：git diff；指定文件在工作区和暂存区上差异比较：<code>git diff</code>;</li>
+<li>比较工作区中当前文件和暂存区之间的差异，也就是修改之后还没有暂存的内容：git diff；指定文件在工作区和暂存区上差异比较：<code>git diff </code>;</li>
 </ol>
 </blockquote>
 </li>
@@ -562,22 +562,22 @@
 </li>
 <li><p>将文件从暂存区中删除：<code>git rm --cached 文件名</code></p>
 </li>
-<li><p>将git仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：<code>git reset --hard commitID</code></p>
+<li><p>将git仓库中指定的更新记录恢复出来，并且覆盖暂存区和工作目录：<code> git reset --hard commitID</code></p>
 </li>
 <li><blockquote>
 <blockquote>
 <p>撤销</p>
 </blockquote>
 <ol>
-<li>删除工作区文件，并且也从暂存区删除对应文件的记录：<code>git rm</code>;</li>
-<li>从暂存区中删除文件，但是工作区依然还有该文件:<code>git rm --cached</code>;</li>
+<li>删除工作区文件，并且也从暂存区删除对应文件的记录：<code>git rm </code>;</li>
+<li>从暂存区中删除文件，但是工作区依然还有该文件:<code>git rm --cached </code>;</li>
 <li>取消暂存区已经暂存的文件：<code>git reset HEAD ...</code>;</li>
 <li>撤销上一次对文件的操作：<code>git checkout --</code>。要确定上一次对文件的修改不再需要，如果想保留上一次的修改以备以后继续工作，可以使用stashing和分支来处理；</li>
 <li>隐藏当前变更，以便能够切换分支：<code>git stash</code>；</li>
 <li>查看当前所有的储藏：<code>git stash list</code>；</li>
-<li>应用最新的储藏：<code>git stash apply</code>，如果想应用更早的储藏：<code>git stash apply stash@{2}</code>；重新应用被暂存的变更，需要加上<code>--index</code>参数：<code>git stash apply --index</code>;</li>
-<li>使用apply命令只是应用储藏，而内容仍然还在栈上，需要移除指定的储藏：<code>git stash drop stash{0}</code>；如果使用pop命令不仅可以重新应用储藏，还可以立刻从堆栈中清除：<code>git stash pop</code>;</li>
-<li>在某些情况下，你可能想应用储藏的修改，在进行了一些其他的修改后，又要取消之前所应用储藏的修改。Git没有提供类似于 stash unapply 的命令，但是可以通过取消该储藏的补丁达到同样的效果：<code>git stash show -p stash@{0} | git apply -R</code>；同样的，如果你沒有指定具体的某个储藏，Git 会选择最近的储藏：<code>git stash show -p | git apply -R</code>；</li>
+<li>应用最新的储藏：<code>git stash apply</code>，如果想应用更早的储藏：<code>git stash apply stash@&#123;2&#125;</code>；重新应用被暂存的变更，需要加上<code>--index</code>参数：<code>git stash apply --index</code>;</li>
+<li>使用apply命令只是应用储藏，而内容仍然还在栈上，需要移除指定的储藏：<code>git stash drop stash&#123;0&#125;</code>；如果使用pop命令不仅可以重新应用储藏，还可以立刻从堆栈中清除：<code>git stash pop</code>;</li>
+<li>在某些情况下，你可能想应用储藏的修改，在进行了一些其他的修改后，又要取消之前所应用储藏的修改。Git没有提供类似于 stash unapply 的命令，但是可以通过取消该储藏的补丁达到同样的效果：<code>git stash show -p stash@&#123;0&#125; | git apply -R</code>；同样的，如果你沒有指定具体的某个储藏，Git 会选择最近的储藏：<code>git stash show -p | git apply -R</code>；</li>
 </ol>
 <blockquote>
 <p>更新文件</p>
@@ -588,7 +588,7 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="点击去GitHub查看完整版"><a href="#点击去GitHub查看完整版" class="headerlink" title="点击去GitHub查看完整版"></a><a href="https://github.com/Eished/git_notes" target="_blank" rel="noopener">点击去GitHub查看完整版</a></h2>
+<h2 id="点击去GitHub查看完整版"><a href="#点击去GitHub查看完整版" class="headerlink" title="点击去GitHub查看完整版"></a><a target="_blank" rel="noopener" href="https://github.com/Eished/git_notes">点击去GitHub查看完整版</a></h2>
                 
             </div>
             <hr/>

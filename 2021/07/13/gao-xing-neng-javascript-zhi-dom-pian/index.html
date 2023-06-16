@@ -342,16 +342,16 @@
                     
                     <div class="article-tag">
                         
+                            <a href="/tags/HTML5/">
+                                <span class="chip bg-color">HTML5</span>
+                            </a>
+                        
                             <a href="/tags/Web/">
                                 <span class="chip bg-color">Web</span>
                             </a>
                         
                             <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                 <span class="chip bg-color">前端</span>
-                            </a>
-                        
-                            <a href="/tags/HTML5/">
-                                <span class="chip bg-color">HTML5</span>
                             </a>
                         
                             <a href="/tags/JavaScript/">
@@ -415,7 +415,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="高性能-JavaScript-之-DOM-篇"><a href="#高性能-JavaScript-之-DOM-篇" class="headerlink" title="高性能 JavaScript 之 DOM 篇"></a><a href="https://segmentfault.com/a/1190000020808364" target="_blank" rel="noopener">高性能 JavaScript 之 DOM 篇</a></h1><p><a href="https://segmentfault.com/u/hison" target="_blank" rel="noopener"><strong>Hison</strong></a>发布于 2019-10-26</p>
+                <h1 id="高性能-JavaScript-之-DOM-篇"><a href="#高性能-JavaScript-之-DOM-篇" class="headerlink" title="高性能 JavaScript 之 DOM 篇"></a><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000020808364">高性能 JavaScript 之 DOM 篇</a></h1><p><a target="_blank" rel="noopener" href="https://segmentfault.com/u/hison"><strong>Hison</strong></a>发布于 2019-10-26</p>
 <p>本篇文章主要分享一下操作DOM时的一些细节，来提高页面性能。<br>首先我们来思考以下几个问题。</p>
 <ol>
 <li>如何获取页面中所有<code>class</code>为<code>div1</code>和<code>div2</code>的<code>div</code>元素。</li>
@@ -428,38 +428,40 @@
 <span class="token keyword">var</span> errs <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
     divs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     className <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> len <span class="token operator">=</span> divs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">,</span> len <span class="token operator">=</span> divs<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> len<span class="token punctuation">;</span> i <span class="token operator">++</span> <span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     className <span class="token operator">=</span> divs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span>className<span class="token punctuation">;</span>
-    <span class="token keyword">if</span> <span class="token punctuation">(</span>className <span class="token operator">===</span> <span class="token string">'div1'</span> <span class="token operator">||</span> className <span class="token operator">===</span> <span class="token string">'div2'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>className <span class="token operator">===</span> <span class="token string">'div1'</span> <span class="token operator">||</span> className <span class="token operator">===</span> <span class="token string">'div2'</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
         errs<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>divs<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 看起来中规中矩，好像没什么大问题。</span>
 <span class="token comment" spellcheck="true">// 但是现在我会这么写</span>
 <span class="token keyword">var</span> errs2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'div.div1, div.div2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-<span class="token comment" spellcheck="true">// 用querySelectorAll,表面上看缩短了很多代码量，其实它的作用还不止这个。接下来我们引出第二个问题。</span></code></pre>
+<span class="token comment" spellcheck="true">// 用querySelectorAll,表面上看缩短了很多代码量，其实它的作用还不止这个。接下来我们引出第二个问题。</span>
+</code></pre>
 <hr>
 <h2 id="问题二：你了解HTMLCollection和NodeList吗？有什么区别？"><a href="#问题二：你了解HTMLCollection和NodeList吗？有什么区别？" class="headerlink" title="问题二：你了解HTMLCollection和NodeList吗？有什么区别？"></a>问题二：你了解HTMLCollection和NodeList吗？有什么区别？</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 我们先来看两段代码。想一下这两段代码有什么区别。</span>
 <span class="token comment" spellcheck="true">// 片段一</span>
 <span class="token keyword">var</span> all <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 
 <span class="token comment" spellcheck="true">// 片段二</span>
 <span class="token keyword">var</span> all2 <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all2<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> all2<span class="token punctuation">.</span>length <span class="token punctuation">;</span> i <span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     document<span class="token punctuation">.</span>body<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <p>你可以分别复制一下这两段代码在你的浏览器中运行，看看有什么区别没有。前提是你的页面中至少有一个div。否则不会进入到循环中去。</p>
 <ul>
 <li>运行完之后你会发现，片段一运行完之后页面崩溃了。片段二正常如期运行。为什么呢？<ul>
-<li>因为用<code>getElementsByTagName</code>方法获取到的是<code>HTMLCollection</code>, 而<strong><code>HTMLCollection</code>是实时获取的</strong>，也就是说，每次循环时请求<code>all.length</code>，都会重新去触发一次<code>getElementsByTagName</code>方法。导致<code>all.length</code>每次循环之后都会加1。最终造成了死循环。</li>
-<li>而用<code>querySelectorAll</code>方法获取到的结果是<code>NodeList</code>，<strong><code>NodeList</code>不是实时获取的</strong>。</li>
+<li>因为用<code>getElementsByTagName</code>方法获取到的是<code>HTMLCollection</code>, 而**<code>HTMLCollection</code>是实时获取的**，也就是说，每次循环时请求<code>all.length</code>，都会重新去触发一次<code>getElementsByTagName</code>方法。导致<code>all.length</code>每次循环之后都会加1。最终造成了死循环。</li>
+<li>而用<code>querySelectorAll</code>方法获取到的结果是<code>NodeList</code>，**<code>NodeList</code>不是实时获取的**。</li>
 <li>也正是因为这个原因，我们推荐使用<code>querySelector</code>去代替<code>getElementBy</code>方法。实时获取会造成页面不断重排，这极大的降低了性能。</li>
-<li>另外：除了<code>getElementByXXX</code>方法外，<code>document.images</code>/<code>document.links</code>等方法返回的也是<code>HTMLCollection</code>。</li>
+<li>另外：除了<code>getElementByXXX</code>方法外，<code>document.images</code>&#x2F;<code>document.links</code>等方法返回的也是<code>HTMLCollection</code>。</li>
 </ul>
 </li>
 </ul>
@@ -499,19 +501,20 @@
 </ul>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 片段一</span>
 console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'test1'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印结果80ms左右</span>
 
 <span class="token comment" spellcheck="true">// 片段二</span>
 console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span>
 <span class="token keyword">let</span> count <span class="token operator">=</span> <span class="token string">''</span>
-<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     count <span class="token operator">+</span><span class="token operator">=</span> i<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
 document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'div1'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>innerHTML<span class="token operator">+</span><span class="token operator">=</span> count<span class="token punctuation">;</span>
-console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印结果0.3ms左右</span></code></pre>
+console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span><span class="token string">'test3'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 打印结果0.3ms左右</span>
+</code></pre>
 <p>一个是不停的访问DOM，并修改内容，一个是先把内容缓存起来，只访问一次。打印出来时间相差好几百倍。</p>
 <hr>
 <h2 id="最后：说几个可以提高效率和性能的小细节。"><a href="#最后：说几个可以提高效率和性能的小细节。" class="headerlink" title="最后：说几个可以提高效率和性能的小细节。"></a>最后：说几个可以提高效率和性能的小细节。</h2><p>用正确的DOM属性。</p>
@@ -523,7 +526,8 @@ console<span class="token punctuation">.</span><span class="token function">time
 <span class="token comment" spellcheck="true">// firstElementChild → firstChild</span>
 <span class="token comment" spellcheck="true">// lastElementChild → lastChild</span>
 <span class="token comment" spellcheck="true">// nextElementSibling → nextSibling</span>
-<span class="token comment" spellcheck="true">// previousElementSibling → previousSibling</span></code></pre>
+<span class="token comment" spellcheck="true">// previousElementSibling → previousSibling</span>
+</code></pre>
 <p>需要给大量元素分发事件时，采取事件委托。因为浏览器不仅不需要分发很多事件，而且需要跟踪每个事件处理器，这也会占用更多内存。</p>
 
                 
@@ -589,16 +593,16 @@ console<span class="token punctuation">.</span><span class="token function">time
                     
                         <div class="article-tag">
                             
+                                <a href="/tags/HTML5/">
+                                    <span class="chip bg-color">HTML5</span>
+                                </a>
+                            
                                 <a href="/tags/Web/">
                                     <span class="chip bg-color">Web</span>
                                 </a>
                             
                                 <a href="/tags/%E5%89%8D%E7%AB%AF/">
                                     <span class="chip bg-color">前端</span>
-                                </a>
-                            
-                                <a href="/tags/HTML5/">
-                                    <span class="chip bg-color">HTML5</span>
                                 </a>
                             
                                 <a href="/tags/JavaScript/">
@@ -766,16 +770,16 @@ console<span class="token punctuation">.</span><span class="token function">time
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                     <a href="/tags/JavaScript/">

@@ -385,7 +385,7 @@ We recommend using npm for projects that support it for better UX - npm ">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    818
+                    819
                 </div>
                 
 
@@ -417,33 +417,39 @@ We recommend using npm for projects that support it for better UX - npm ">
 <p>We use a permanent S3 storage to ensure all files remain available even if GitHub goes down, or a repository or a release is deleted by its author. Files are fetched directly from GitHub only the first time, or when S3 goes down.</p>
 <p>Load any GitHub release, commit, or branch:</p>
 <p><strong>基本格式：</strong></p>
-<pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>user<span class="token operator">/</span>repo@version<span class="token operator">/</span>file</code></pre>
+<pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>user<span class="token operator">/</span>repo@version<span class="token operator">/</span>file
+</code></pre>
 <pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>用户名<span class="token operator">/</span>仓库名@版本号<span class="token operator">/</span>文件路径
 
 例如：
 https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token operator">/</span>jkforum_helper@<span class="token number">0.5</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">/</span>video<span class="token operator">/</span>light<span class="token punctuation">.</span>mp4
 
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token operator">/</span>JavaScript_notes<span class="token operator">/</span>JavaScript_code<span class="token operator">/</span>lib<span class="token operator">/</span>move<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js</code></pre>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token operator">/</span>JavaScript_notes<span class="token operator">/</span>JavaScript_code<span class="token operator">/</span>lib<span class="token operator">/</span>move<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
+</code></pre>
 <p>Load an exact version of a file:</p>
 <p><strong>精确版本号：</strong></p>
 <pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3.2</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@32b00373b3f42e5cdcb709df53f3b08b7184a944<span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js</code></pre>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@32b00373b3f42e5cdcb709df53f3b08b7184a944<span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
+</code></pre>
 <p>Use a version range instead of an exact version:</p>
 <p><strong>范围版本号：</strong></p>
 <pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3.2</span><span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3</span><span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js</code></pre>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3</span><span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
+</code></pre>
 <p>If you use this feature and a file you requested is not available in the newest release, the link will keep working thanks to our version-fallback feature. We’ll continue to serve the file from older release instead of failing with a 404 error.</p>
 <p>Omit the version completely or use “latest” to load the latest one (not recommended for production usage):</p>
 <p><strong>忽略版本号，使用最新版（不推荐生产环境使用）：</strong></p>
 <pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@latest<span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery<span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js</code></pre>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery<span class="token operator">/</span>dist<span class="token operator">/</span>jquery<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
+</code></pre>
 <p>Requesting the latest version (as opposed to “latest major” or “latest minor”) is dangerous because major versions usually come with breaking changes. Only do this if you really know what you are doing.</p>
-<p>Add “.min” to any JS/CSS file to get a minified version - if one doesn’t exist, we’ll generate it for you. All generated files come with source maps and can be easily used during development:</p>
+<p>Add “.min” to any JS&#x2F;CSS file to get a minified version - if one doesn’t exist, we’ll generate it for you. All generated files come with source maps and can be easily used during development:</p>
 <p><strong>自动生成 JS 压缩文件：<code>文件名.min.js</code></strong></p>
 <pre class=" language-javascript"><code class="language-javascript">https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3.2</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token operator">/</span>src<span class="token operator">/</span>core<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
 
 例如：
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token operator">/</span>jkforum_helper@<span class="token number">0.5</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">/</span>main<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js</code></pre>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token operator">/</span>jkforum_helper@<span class="token number">0.5</span><span class="token punctuation">.</span><span class="token number">8</span><span class="token operator">/</span>main<span class="token punctuation">.</span>min<span class="token punctuation">.</span>js
+</code></pre>
 <p>Minifying a large file can take several seconds. However, we store all generated files in our permanent storage, so this delay only applies to the first few requests.</p>
 <p>Get a directory listing:</p>
 <p><strong>获取文件目录：</strong></p>
@@ -451,8 +457,9 @@ https<span class="token punctuation">:</span><span class="token operator">/</spa
 https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>jquery<span class="token operator">/</span>jquery@<span class="token number">3.2</span><span class="token punctuation">.</span><span class="token number">1</span><span class="token regex">/dist/</span>
 
 例如：
-https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token regex">/jkforum_helper/</span></code></pre>
-<h2 id="hexo-主题-Matery-加速"><a href="#hexo-主题-Matery-加速" class="headerlink" title="hexo 主题 Matery 加速"></a>hexo 主题 Matery 加速</h2><h3 id="分析加载过慢的资源："><a href="#分析加载过慢的资源：" class="headerlink" title="分析加载过慢的资源："></a>分析加载过慢的资源：</h3><p><img src="/images/%E5%9B%BE%E7%89%87_49.Png" alt=""></p>
+https<span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span>cdn<span class="token punctuation">.</span>jsdelivr<span class="token punctuation">.</span>net<span class="token operator">/</span>gh<span class="token operator">/</span>eished<span class="token regex">/jkforum_helper/</span>
+</code></pre>
+<h2 id="hexo-主题-Matery-加速"><a href="#hexo-主题-Matery-加速" class="headerlink" title="hexo 主题 Matery 加速"></a>hexo 主题 Matery 加速</h2><h3 id="分析加载过慢的资源："><a href="#分析加载过慢的资源：" class="headerlink" title="分析加载过慢的资源："></a>分析加载过慢的资源：</h3><p><img src="/images/%E5%9B%BE%E7%89%87_49.Png"></p>
 <ol>
 <li>GitHub 加载过慢的主要是图片和 js 文件。</li>
 <li>主题 <code>_config.yml</code> 中开启 jsDelivr 加速：</li>
@@ -466,11 +473,12 @@ https<span class="token punctuation">:</span><span class="token operator">/</spa
 # 注：配置了此项，就代表着本地调试的时候，网站依然会去GitHub请求资源（原来的资源），本地调试的时候记得将 此项配置 注释或者删除掉
 # 更多关于访问速度优化，请查看：https://blog.sky03.cn/posts/42790.html
 jsDelivr:
-  url: https://cdn.jsdelivr.net/gh/eished/eished.github.io #https://github.com/eished/eished.github.io # https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io</code></pre>
+  url: https://cdn.jsdelivr.net/gh/eished/eished.github.io #https://github.com/eished/eished.github.io # https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io
+</code></pre>
 <h3 id="比较速度："><a href="#比较速度：" class="headerlink" title="比较速度："></a>比较速度：</h3><ul>
 <li>之前测试没禁用缓存，<strong>实际加载速度明显提升。</strong></li>
 </ul>
-<p><img src="/images/%E5%9B%BE%E7%89%87_53.Png" alt=""></p>
+<p><img src="/images/%E5%9B%BE%E7%89%87_53.Png"></p>
 
                 
             </div>
@@ -659,16 +667,16 @@ jsDelivr:
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                     <a href="/tags/BASE64/">
@@ -720,16 +728,16 @@ jsDelivr:
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                     <a href="/tags/JavaScript/">

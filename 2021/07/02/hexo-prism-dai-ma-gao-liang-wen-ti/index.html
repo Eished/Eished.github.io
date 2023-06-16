@@ -377,7 +377,7 @@ prism 支持的语言： https://prismjs.com/#languages-list
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    74
+                    84
                 </div>
                 
 
@@ -405,35 +405,39 @@ prism 支持的语言： https://prismjs.com/#languages-list
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h1 id="hexo-prism-代码高亮问题"><a href="#hexo-prism-代码高亮问题" class="headerlink" title="hexo prism 代码高亮问题"></a>hexo prism 代码高亮问题</h1><p><code>hexo-prism-plugin</code> 代码标注只支持小写英文，不支持符号、大写。</p>
-<p>prism 支持的语言： <a href="https://prismjs.com/#languages-list" target="_blank" rel="noopener">https://prismjs.com/#languages-list</a></p>
+<p>prism 支持的语言： <a target="_blank" rel="noopener" href="https://prismjs.com/#languages-list">https://prismjs.com/#languages-list</a></p>
 <ul>
 <li>小写</li>
 </ul>
 <pre class=" language-cpp"><code class="language-cpp"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;iostream></span></span>
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
 <ul>
 <li>大写</li>
 </ul>
 <pre class=" language-CPP"><code class="language-CPP">#include <iostream>
-int main(){
+int main()&#123;
     return 0;
-}</code></pre>
+&#125;
+</code></pre>
 <ul>
 <li>大写+符号</li>
 </ul>
 <pre class=" language-C++"><code class="language-C++">#include <iostream>
-int main(){
+int main()&#123;
     return 0;
-}</code></pre>
+&#125;
+</code></pre>
 <ul>
 <li>小写+符号</li>
 </ul>
 <pre class=" language-c++"><code class="language-c++">#include <iostream>
-int main(){
+int main()&#123;
     return 0;
-}</code></pre>
+&#125;
+</code></pre>
 
                 
             </div>
@@ -626,12 +630,12 @@ int main(){
                         <span class="chip bg-color">JavaScript</span>
                     </a>
                     
-                    <a href="/tags/Tampermonkey/">
-                        <span class="chip bg-color">Tampermonkey</span>
-                    </a>
-                    
                     <a href="/tags/Promise/">
                         <span class="chip bg-color">Promise</span>
+                    </a>
+                    
+                    <a href="/tags/Tampermonkey/">
+                        <span class="chip bg-color">Tampermonkey</span>
                     </a>
                     
                     <a href="/tags/GM-xmlhttpRequest/">

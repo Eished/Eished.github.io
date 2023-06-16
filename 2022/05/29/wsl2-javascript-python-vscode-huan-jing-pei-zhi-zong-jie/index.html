@@ -356,16 +356,16 @@ wsl --set-version &amp;l">
                                 <span class="chip bg-color">JavaScript</span>
                             </a>
                         
+                            <a href="/tags/VSCode/">
+                                <span class="chip bg-color">VSCode</span>
+                            </a>
+                        
                             <a href="/tags/WSL2/">
                                 <span class="chip bg-color">WSL2</span>
                             </a>
                         
                             <a href="/tags/Python/">
                                 <span class="chip bg-color">Python</span>
-                            </a>
-                        
-                            <a href="/tags/VSCode/">
-                                <span class="chip bg-color">VSCode</span>
                             </a>
                         
                             <a href="/tags/proxy/">
@@ -406,14 +406,14 @@ wsl --set-version &amp;l">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    12 分
                 </div>
                 
 
@@ -434,20 +434,22 @@ wsl --set-version &amp;l">
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <h3 id="基础设置"><a href="#基础设置" class="headerlink" title="基础设置"></a>基础设置</h3><ol>
-<li><a href="https://dowww.spencerwoo.com/1-preparations/1-1-installation.html" target="_blank" rel="noopener">在 Windows 上用 WSL 优雅开发</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/345645621" target="_blank" rel="noopener">限制 wsl2 占用过多内存</a></li>
-<li><a href="https://solidspoon.xyz/2021/02/17/%E9%85%8D%E7%BD%AEWSL2%E4%BD%BF%E7%94%A8Windows%E4%BB%A3%E7%90%86%E4%B8%8A%E7%BD%91/" target="_blank" rel="noopener">配置 WSL2 使用 Windows 代理上网</a></li>
-<li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl-config" target="_blank" rel="noopener">WSL 中的高级设置配置</a></li>
-<li><a href="https://docs.microsoft.com/zh-cn/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2" target="_blank" rel="noopener">将版本从 WSL 1 升级到 WSL 2</a><ul>
+<li><a target="_blank" rel="noopener" href="https://dowww.spencerwoo.com/1-preparations/1-1-installation.html">在 Windows 上用 WSL 优雅开发</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/345645621">限制 wsl2 占用过多内存</a></li>
+<li><a target="_blank" rel="noopener" href="https://solidspoon.xyz/2021/02/17/%E9%85%8D%E7%BD%AEWSL2%E4%BD%BF%E7%94%A8Windows%E4%BB%A3%E7%90%86%E4%B8%8A%E7%BD%91/">配置 WSL2 使用 Windows 代理上网</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl-config">WSL 中的高级设置配置</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2">将版本从 WSL 1 升级到 WSL 2</a><ul>
 <li><code>wsl --set-version &lt;ubuntu名字&gt; 2</code></li>
 </ul>
 </li>
 </ol>
 <p>重启命令</p>
-<pre><code>wsl -t Ubuntu-20.04</code></pre><h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong><a href="https://segmentfault.com/a/1190000041463008" target="_blank" rel="noopener">WSL2 连接到宿主 Windows 程序的网络代理设置</a></strong> 最终测试成功</p>
-<p><a href="https://zinglix.xyz/2020/04/18/wsl2-proxy/" target="_blank" rel="noopener">https://zinglix.xyz/2020/04/18/wsl2-proxy/</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/414627975" target="_blank" rel="noopener">WSL2 内使用 windows 的 v2ray 代理配置方式</a></p>
-<p><a href="https://www.jianshu.com/p/ba2cf239ebe0" target="_blank" rel="noopener">https://www.jianshu.com/p/ba2cf239ebe0</a></p>
+<pre><code>wsl -t Ubuntu-20.04
+</code></pre>
+<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><p><strong><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000041463008">WSL2 连接到宿主 Windows 程序的网络代理设置</a></strong> 最终测试成功</p>
+<p><a target="_blank" rel="noopener" href="https://zinglix.xyz/2020/04/18/wsl2-proxy/">https://zinglix.xyz/2020/04/18/wsl2-proxy/</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/414627975">WSL2 内使用 windows 的 v2ray 代理配置方式</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ba2cf239ebe0">https://www.jianshu.com/p/ba2cf239ebe0</a></p>
 <p><strong>出现的问题分析：</strong>可以双方 ping 通，不设置代理可以双方访问，设置代理就无法请求，v2ray 未收到请求。</p>
 <p>关闭所有防火墙正常连接，重置防火墙后无法连接。</p>
 <p>定位关键问题：</p>
@@ -494,7 +496,7 @@ HISTFILESIZE<span class="token operator">=</span>2000
 <span class="token punctuation">[</span> -x /usr/bin/lesspipe <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">eval</span> <span class="token string">"<span class="token variable"><span class="token variable">$(</span>SHELL<span class="token operator">=</span>/bin/sh lesspipe<span class="token variable">)</span></span>"</span>
 
 <span class="token comment" spellcheck="true"># set variable identifying the chroot you work in (used in the prompt below)</span>
-<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${debian_chroot:-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -r /etc/debian_chroot <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+<span class="token keyword">if</span> <span class="token punctuation">[</span> -z <span class="token string">"$&amp;#123;debian_chroot:-&amp;#125;"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">[</span> -r /etc/debian_chroot <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
     debian_chroot<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token function">cat</span> /etc/debian_chroot<span class="token variable">)</span></span>
 <span class="token keyword">fi</span>
 
@@ -520,16 +522,16 @@ esac
 <span class="token keyword">fi</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$color_prompt</span>"</span> <span class="token operator">=</span> <span class="token function">yes</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
-    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[0;35m\]<span class="token variable"><span class="token variable">$(</span>__git_ps1 " <span class="token punctuation">[</span>%s<span class="token punctuation">]</span>"<span class="token variable">)</span></span>\[\033[00m\] \$ '</span>
+    PS1<span class="token operator">=</span><span class="token string">'$&amp;#123;debian_chroot:+(<span class="token variable">$debian_chroot</span>)&amp;#125;\[\033[01;32m\]\u:\[\033[01;34m\]\w\[\033[0;35m\]<span class="token variable"><span class="token variable">$(</span>__git_ps1 " <span class="token punctuation">[</span>%s<span class="token punctuation">]</span>"<span class="token variable">)</span></span>\[\033[00m\] \$ '</span>
 <span class="token keyword">else</span>
-    PS1<span class="token operator">=</span><span class="token string">'<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h: \w <span class="token variable"><span class="token variable">$(</span>__git_ps1 " <span class="token punctuation">[</span>%s<span class="token punctuation">]</span>"<span class="token variable">)</span></span> \$ '</span>
+    PS1<span class="token operator">=</span><span class="token string">'$&amp;#123;debian_chroot:+(<span class="token variable">$debian_chroot</span>)&amp;#125;\u@\h: \w <span class="token variable"><span class="token variable">$(</span>__git_ps1 " <span class="token punctuation">[</span>%s<span class="token punctuation">]</span>"<span class="token variable">)</span></span> \$ '</span>
 <span class="token keyword">fi</span>
 unset color_prompt force_color_prompt
 
 <span class="token comment" spellcheck="true"># If this is an xterm set the title to user@host:dir</span>
 <span class="token keyword">case</span> <span class="token string">"<span class="token variable">$TERM</span>"</span> <span class="token keyword">in</span>
 xterm*<span class="token operator">|</span>rxvt*<span class="token punctuation">)</span>
-    PS1<span class="token operator">=</span><span class="token string">"\[\e]0;<span class="token variable">${debian_chroot:+($debian_chroot)}</span>\u@\h: \w \a\]<span class="token variable">$PS1</span>"</span>
+    PS1<span class="token operator">=</span><span class="token string">"\[\e]0;$&amp;#123;debian_chroot:+(<span class="token variable">$debian_chroot</span>)&amp;#125;\u@\h: \w \a\]<span class="token variable">$PS1</span>"</span>
     <span class="token punctuation">;</span><span class="token punctuation">;</span>
 *<span class="token punctuation">)</span>
     <span class="token punctuation">;</span><span class="token punctuation">;</span>
@@ -602,18 +604,18 @@ if [ -d ~/.project_env ]; then
     fi
 fi
 
-export NVM_DIR="</span><span class="token punctuation">$(</span><span class="token punctuation">[</span> -z <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME-}</span>"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">printf</span> %s <span class="token string">"<span class="token variable">${HOME}</span>/.nvm"</span> <span class="token operator">||</span> <span class="token function">printf</span> %s <span class="token string">"<span class="token variable">${XDG_CONFIG_HOME}</span>/nvm"</span><span class="token punctuation">)</span><span class="token string">"
+export NVM_DIR="</span><span class="token punctuation">$(</span><span class="token punctuation">[</span> -z <span class="token string">"$&amp;#123;XDG_CONFIG_HOME-&amp;#125;"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token function">printf</span> %s <span class="token string">"$&amp;#123;HOME&amp;#125;/.nvm"</span> <span class="token operator">||</span> <span class="token function">printf</span> %s <span class="token string">"$&amp;#123;XDG_CONFIG_HOME&amp;#125;/nvm"</span><span class="token punctuation">)</span><span class="token string">"
 [ -s "</span><span class="token variable">$NVM_DIR</span>/nvm.sh<span class="token string">" ] &amp;&amp; \. "</span><span class="token variable">$NVM_DIR</span>/nvm.sh<span class="token string">" # This loads nvm
 
 # 代理设置
-export hostip=<span class="token variable"><span class="token variable">$(</span>ip route <span class="token operator">|</span> <span class="token function">grep</span> default <span class="token operator">|</span> <span class="token function">awk</span> '<span class="token punctuation">{</span>print $3<span class="token punctuation">}</span>'<span class="token variable">)</span></span>
+export hostip=<span class="token variable"><span class="token variable">$(</span>ip route <span class="token operator">|</span> <span class="token function">grep</span> default <span class="token operator">|</span> <span class="token function">awk</span> '<span class="token operator">&amp;</span>#123<span class="token punctuation">;</span>print $3<span class="token operator">&amp;</span>#125<span class="token punctuation">;</span>'<span class="token variable">)</span></span>
 export hostport=58883 # 局域网连接端口
 alias proxy='
-    export HTTPS_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
-    export HTTP_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
-    export ALL_PROXY="</span>http://<span class="token variable">${hostip}</span><span class="token keyword">:</span><span class="token variable">${hostport}</span><span class="token string">";
-    echo -e "</span>Acquire::http::Proxy \<span class="token string">"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
-    <span class="token keyword">echo</span> -e <span class="token string">"Acquire::https::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
+    export HTTPS_PROXY="</span>http://$<span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;";</span>
+    <span class="token function">export</span> HTTP_PROXY<span class="token operator">=</span><span class="token string">"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;"</span><span class="token punctuation">;</span>
+    <span class="token function">export</span> ALL_PROXY<span class="token operator">=</span><span class="token string">"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;"</span><span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"Acquire::http::Proxy \"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"Acquire::https::Proxy \"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;\";"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> -a /etc/apt/apt.conf.d/proxy.conf <span class="token operator">></span> /dev/null<span class="token punctuation">;</span>
 <span class="token string">'
 alias unproxy='</span>
     unset HTTPS_PROXY<span class="token punctuation">;</span>
@@ -625,7 +627,7 @@ alias unproxy='</span>
 <span class="token punctuation">[</span> -s <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span> <span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> \. <span class="token string">"<span class="token variable">$NVM_DIR</span>/bash_completion"</span>  <span class="token comment" spellcheck="true"># This loads nvm bash_completion</span>
 
 <span class="token comment" spellcheck="true"># yarn 全局环境变量</span>
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:<span class="token variable">${HOME}</span>/.yarn/bin"</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"<span class="token variable">$PATH</span>:$&amp;#123;HOME&amp;#125;/.yarn/bin"</span>
 <span class="token function">export</span> PATH<span class="token operator">=</span><span class="token string">"/usr/bin:<span class="token variable">$PATH</span>"</span>
 <span class="token comment" spellcheck="true"># >>> conda initialize >>></span>
 <span class="token comment" spellcheck="true"># !! Contents within this block are managed by 'conda init' !!</span>
@@ -643,35 +645,40 @@ unset __conda_setup
 <span class="token comment" spellcheck="true"># &lt;&lt;&lt; conda initialize &lt;&lt;&lt;</span>
 
 </code></pre>
-<h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h3><pre class=" language-bash"><code class="language-bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh <span class="token operator">|</span> <span class="token function">bash</span></code></pre>
-<h3 id="yarn-全局访问"><a href="#yarn-全局访问" class="headerlink" title="yarn 全局访问"></a>yarn 全局访问</h3><p><a href="https://stackoverflow.com/questions/40317578/yarn-global-command-not-working" target="_blank" rel="noopener">https://stackoverflow.com/questions/40317578/yarn-global-command-not-working</a></p>
+<h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h3><pre class=" language-bash"><code class="language-bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+</code></pre>
+<h3 id="yarn-全局访问"><a href="#yarn-全局访问" class="headerlink" title="yarn 全局访问"></a>yarn 全局访问</h3><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/40317578/yarn-global-command-not-working">https://stackoverflow.com/questions/40317578/yarn-global-command-not-working</a></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i yarn -g
-yarn global bin</code></pre>
+yarn global bin
+</code></pre>
 <h3 id="设置-ssh-秘钥权限"><a href="#设置-ssh-秘钥权限" class="headerlink" title="设置 ssh 秘钥权限"></a>设置 ssh 秘钥权限</h3><p>设置文件内所有文件</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> -R 700 ~/.ssh</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">chmod</span> -R 700 ~/.ssh
+</code></pre>
 <h3 id="配置-code-命令"><a href="#配置-code-命令" class="headerlink" title="配置 code 命令"></a>配置 code 命令</h3><p>VSCode Server 会自动安装 Code 命令，这样配置的打开路径将会在 WSL 外。</p>
 <blockquote>
 <p>.bashrc</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">alias</span> code<span class="token operator">=</span><span class="token string">"/mnt/c/Users/Kis/AppData/Local/Programs/>Microsoft\ VS\ Code/Code.exe"</span></code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">alias</span> code<span class="token operator">=</span><span class="token string">"/mnt/c/Users/Kis/AppData/Local/Programs/>Microsoft\ VS\ Code/Code.exe"</span>
+</code></pre>
 </blockquote>
-<h3 id="VSCode-ssh-remote-非-WSL-时使用"><a href="#VSCode-ssh-remote-非-WSL-时使用" class="headerlink" title="VSCode ssh remote 非 WSL 时使用"></a><a href="https://zhuanlan.zhihu.com/p/68577071" target="_blank" rel="noopener">VSCode ssh remote</a> 非 WSL 时使用</h3><p><a href="https://code.visualstudio.com/docs/remote/ssh" target="_blank" rel="noopener">系统支持列表</a>，不支持 ubuntu32 位系统</p>
+<h3 id="VSCode-ssh-remote-非-WSL-时使用"><a href="#VSCode-ssh-remote-非-WSL-时使用" class="headerlink" title="VSCode ssh remote 非 WSL 时使用"></a><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/68577071">VSCode ssh remote</a> 非 WSL 时使用</h3><p><a target="_blank" rel="noopener" href="https://code.visualstudio.com/docs/remote/ssh">系统支持列表</a>，不支持 ubuntu32 位系统</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 代理设置</span>
-<span class="token comment" spellcheck="true"># export hostip=$(ip route | grep default | awk '{print $3}')</span>
+<span class="token comment" spellcheck="true"># export hostip=$(ip route | grep default | awk '&amp;#123;print $3&amp;#125;')</span>
 <span class="token function">export</span> hostip<span class="token operator">=</span><span class="token string">"192.168.1.101"</span>
 <span class="token function">export</span> hostport<span class="token operator">=</span>58883 <span class="token comment" spellcheck="true"># 局域网连接端口</span>
 <span class="token function">alias</span> proxy<span class="token operator">=</span><span class="token string">'
-    export HTTPS_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
-    export HTTP_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
-    export ALL_PROXY="http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>";
-    echo -e "Acquire::http::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
-    echo -e "Acquire::https::Proxy \"http://<span class="token variable">${hostip}</span>:<span class="token variable">${hostport}</span>\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+    export HTTPS_PROXY="http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;";
+    export HTTP_PROXY="http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;";
+    export ALL_PROXY="http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;";
+    echo -e "Acquire::http::Proxy \"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
+    echo -e "Acquire::https::Proxy \"http://$&amp;#123;hostip&amp;#125;:$&amp;#123;hostport&amp;#125;\";" | sudo tee -a /etc/apt/apt.conf.d/proxy.conf > /dev/null;
 '</span>
 <span class="token function">alias</span> unproxy<span class="token operator">=</span><span class="token string">'
     unset HTTPS_PROXY;
     unset HTTP_PROXY;
     unset ALL_PROXY;
     sudo sed -i -e '</span>/Acquire::http::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;
-    sudo sed -i -e '</span>/Acquire::https::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;'</span></code></pre>
+    sudo sed -i -e '</span>/Acquire::https::Proxy/d<span class="token string">' /etc/apt/apt.conf.d/proxy.conf;'</span>
+</code></pre>
 <pre><code>// 先卸载
 sudo apt-get remove openssh-server
 // 安装
@@ -680,13 +687,17 @@ sudo apt-get install openssh-server
 //重启sshd服务
 sudo service ssh --full-restart
 
-sudo vim /etc/ssh/sshd_config</code></pre><h3 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span>  <span class="token function">passwd</span> root</code></pre>
+sudo vim /etc/ssh/sshd_config
+</code></pre>
+<h3 id="设置-root-密码"><a href="#设置-root-密码" class="headerlink" title="设置 root 密码"></a>设置 root 密码</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span>  <span class="token function">passwd</span> root
+</code></pre>
 <h3 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt <span class="token function">install</span> python3-pip
 pip3 <span class="token function">install</span> virtualenv
 virtualenv venv
 <span class="token function">cd</span> venv
-<span class="token function">source</span> bin/activate</code></pre>
-<p><a href="https://zhuanlan.zhihu.com/p/60647332" target="_blank" rel="noopener">最全的 Python 虚拟环境使用方法</a></p>
+<span class="token function">source</span> bin/activate
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/60647332">最全的 Python 虚拟环境使用方法</a></p>
 <pre class=" language-sh"><code class="language-sh"># ERROR: Could not install packages due to an EnvironmentError: Missing dependencies for SOCKS support.
 
 unset all_proxy
@@ -694,8 +705,9 @@ unset ALL_PROXY
 
 pip install pysocks
 
-source ~/.bashrc</code></pre>
-<p><a href="https://zhuanlan.zhihu.com/p/43298296" target="_blank" rel="noopener">Win10 下 Ubuntu(WSL)中 Python 环境配置笔记 Conda 虚拟环境</a></p>
+source ~/.bashrc
+</code></pre>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/43298296">Win10 下 Ubuntu(WSL)中 Python 环境配置笔记 Conda 虚拟环境</a></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
 <span class="token function">sudo</span> <span class="token function">apt-get</span> upgrade
 <span class="token function">sudo</span> <span class="token function">reboot</span>
@@ -714,12 +726,17 @@ conda activate py36
 <span class="token comment" spellcheck="true">#conda deactivate 用以退出环境</span>
 
 conda <span class="token function">install</span> jupyter
-jupyter notebook <span class="token comment" spellcheck="true"># 运行jupyter，用给出的链接可在Win10访问</span></code></pre>
-<h3 id="pip-下载异常"><a href="#pip-下载异常" class="headerlink" title="pip 下载异常"></a><a href="https://github.com/microsoft/WSL/issues/6643" target="_blank" rel="noopener">pip 下载异常</a></h3><p>会等几分钟后再下载</p>
-<pre><code>DISPLAY= pip install &lt;packagename&gt;</code></pre><p>或者</p>
-<p><a href="https://stackoverflow.com/q/68369527" target="_blank" rel="noopener">Importing <code>keyring</code> taking very long in WSL2</a> is an already known problem, that has been <a href="https://github.com/jaraco/keyring/issues/531" target="_blank" rel="noopener">fixed in keyring versions ≥ 21.6.0</a>.</p>
+jupyter notebook <span class="token comment" spellcheck="true"># 运行jupyter，用给出的链接可在Win10访问</span>
+</code></pre>
+<h3 id="pip-下载异常"><a href="#pip-下载异常" class="headerlink" title="pip 下载异常"></a><a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/issues/6643">pip 下载异常</a></h3><p>会等几分钟后再下载</p>
+<pre><code>DISPLAY= pip install &lt;packagename&gt;
+</code></pre>
+<p>或者</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/q/68369527">Importing <code>keyring</code> taking very long in WSL2</a> is an already known problem, that has been <a target="_blank" rel="noopener" href="https://github.com/jaraco/keyring/issues/531">fixed in keyring versions ≥ 21.6.0</a>.</p>
 <p>Therefore, updating <code>keyring</code> to the latest version should solve the problem:</p>
-<pre><code>DISPLAY= pip install -U keyring</code></pre><h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
+<pre><code>DISPLAY= pip install -U keyring
+</code></pre>
+<h3 id="网络问题"><a href="#网络问题" class="headerlink" title="网络问题"></a>网络问题</h3><p>重置网络可修复</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 测试网络</span>
 curl baidu.com
 
@@ -736,30 +753,46 @@ ipconfig /flushdns
 
 Windows Search <span class="token operator">></span> Network Reset
 
-Restart Windows</code></pre>
-<h3 id="备份-迁移-WSL2-下的子系统步骤："><a href="#备份-迁移-WSL2-下的子系统步骤：" class="headerlink" title="备份/迁移 WSL2 下的子系统步骤："></a><a href="https://www.cnblogs.com/davidchild/p/15606786.html" target="_blank" rel="noopener">备份/迁移 WSL2 下的子系统步骤：</a></h3><p>最近遇到一个问题，使用 WSL2 一段时间后，由于 WSL2 默认的安装目录是 C USER，随着使用时间的增长，C 盘被 WSL2 占用的空间也随之增长。因此需要对原</p>
+Restart Windows
+</code></pre>
+<h3 id="备份-x2F-迁移-WSL2-下的子系统步骤："><a href="#备份-x2F-迁移-WSL2-下的子系统步骤：" class="headerlink" title="备份&#x2F;迁移 WSL2 下的子系统步骤："></a><a target="_blank" rel="noopener" href="https://www.cnblogs.com/davidchild/p/15606786.html">备份&#x2F;迁移 WSL2 下的子系统步骤：</a></h3><p>最近遇到一个问题，使用 WSL2 一段时间后，由于 WSL2 默认的安装目录是 C USER，随着使用时间的增长，C 盘被 WSL2 占用的空间也随之增长。因此需要对原</p>
 <p>本已安装的 WSL2 进行重新备份，迁移，并且要迁移到其他目录中。</p>
 <p>我的系统是 Windows,预装了 WSL2 下的子系统：wsl-ubuntu20.04。</p>
-<p><a href="https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands" target="_blank" rel="noopener">https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands</a></p>
-<h4 id="1-在-Windows-PowerShell-中输入如下命令"><a href="#1-在-Windows-PowerShell-中输入如下命令" class="headerlink" title="1.在 Windows PowerShell 中输入如下命令"></a>1.在 Windows PowerShell 中输入如下命令</h4><pre class=" language-bash"><code class="language-bash">wsl -l --all -v</code></pre>
-<h4 id="2-导出分发版为-tar-文件到-d-盘-如果你只是备份，那么下面的到第二步就可以了"><a href="#2-导出分发版为-tar-文件到-d-盘-如果你只是备份，那么下面的到第二步就可以了" class="headerlink" title="2.导出分发版为 tar 文件到 d 盘(如果你只是备份，那么下面的到第二步就可以了)"></a>2.导出分发版为 tar 文件到 d 盘(如果你只是备份，那么下面的到第二步就可以了)</h4><pre class=" language-bash"><code class="language-bash">wsl --export Ubuntu-20.04 e:wsl-ubuntu20.04.tar</code></pre>
-<h4 id="3-注销当前分发版"><a href="#3-注销当前分发版" class="headerlink" title="3.注销当前分发版"></a>3.注销当前分发版</h4><pre class=" language-bash"><code class="language-bash">wsl --unregister Ubuntu-20.04</code></pre>
-<h4 id="4-重新导入并安装-WSL-在-d-wsl-ubuntu20-04（迁移-还原到其他目录）"><a href="#4-重新导入并安装-WSL-在-d-wsl-ubuntu20-04（迁移-还原到其他目录）" class="headerlink" title="4.重新导入并安装 WSL 在 d:wsl-ubuntu20.04（迁移/还原到其他目录）"></a>4.重新导入并安装 WSL 在 d:wsl-ubuntu20.04（迁移/还原到其他目录）</h4><pre class=" language-bash"><code class="language-bash">wsl --import Ubuntu-20.04 e:wsl-ubuntu20.04 e:wsl-ubuntu20.04.tar --version 2</code></pre>
-<h4 id="5-删除-tar-文件-可选"><a href="#5-删除-tar-文件-可选" class="headerlink" title="5.删除 tar 文件(可选)"></a>5.删除 tar 文件(可选)</h4><pre class=" language-bash"><code class="language-bash">del d:wsl-ubuntu20.04.tar</code></pre>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands">https://docs.microsoft.com/zh-cn/windows/wsl/basic-commands</a></p>
+<h4 id="1-在-Windows-PowerShell-中输入如下命令"><a href="#1-在-Windows-PowerShell-中输入如下命令" class="headerlink" title="1.在 Windows PowerShell 中输入如下命令"></a>1.在 Windows PowerShell 中输入如下命令</h4><pre class=" language-bash"><code class="language-bash">wsl -l --all -v
+</code></pre>
+<h4 id="2-导出分发版为-tar-文件到-d-盘-如果你只是备份，那么下面的到第二步就可以了"><a href="#2-导出分发版为-tar-文件到-d-盘-如果你只是备份，那么下面的到第二步就可以了" class="headerlink" title="2.导出分发版为 tar 文件到 d 盘(如果你只是备份，那么下面的到第二步就可以了)"></a>2.导出分发版为 tar 文件到 d 盘(如果你只是备份，那么下面的到第二步就可以了)</h4><pre class=" language-bash"><code class="language-bash">wsl --export Ubuntu-20.04 e:wsl-ubuntu20.04.tar
+</code></pre>
+<h4 id="3-注销当前分发版"><a href="#3-注销当前分发版" class="headerlink" title="3.注销当前分发版"></a>3.注销当前分发版</h4><pre class=" language-bash"><code class="language-bash">wsl --unregister Ubuntu-20.04
+</code></pre>
+<h4 id="4-重新导入并安装-WSL-在-d-wsl-ubuntu20-04（迁移-x2F-还原到其他目录）"><a href="#4-重新导入并安装-WSL-在-d-wsl-ubuntu20-04（迁移-x2F-还原到其他目录）" class="headerlink" title="4.重新导入并安装 WSL 在 d:wsl-ubuntu20.04（迁移&#x2F;还原到其他目录）"></a>4.重新导入并安装 WSL 在 d:wsl-ubuntu20.04（迁移&#x2F;还原到其他目录）</h4><pre class=" language-bash"><code class="language-bash">wsl --import Ubuntu-20.04 e:wsl-ubuntu20.04 e:wsl-ubuntu20.04.tar --version 2
+</code></pre>
+<h4 id="5-删除-tar-文件-可选"><a href="#5-删除-tar-文件-可选" class="headerlink" title="5.删除 tar 文件(可选)"></a>5.删除 tar 文件(可选)</h4><pre class=" language-bash"><code class="language-bash">del d:wsl-ubuntu20.04.tar
+</code></pre>
 <p><strong>踩坑记录：</strong></p>
 <p>迁移之后，会发现 Linux 子系统跟 Windows10 docker 通讯不了，</p>
-<p>例如：当在子系统输入 docker ps 命令时，会报：Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?</p>
+<p>例如：当在子系统输入 docker ps 命令时，会报：Cannot connect to the Docker daemon at unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock. Is the docker daemon running?</p>
 <p><strong>此时需要重新需要去 Windows 10 Docker Setting 设置：</strong></p>
 <p>General -&gt; use the wsl2 based engine</p>
 <p>Resourse -&gt; wsl integration -&gt; enable integration with my default distro</p>
 <p><strong>二、迁移 windows10 Docker 目录</strong></p>
 <p>在 Windows PowerShell</p>
 <p><strong>1、关闭和 wsl</strong></p>
-<pre><code>wsl --shutdown</code></pre><p><strong>2、备份到处 docker data</strong></p>
-<pre><code>wsl --export docker-desktop-data e:\docker-desktop-data.tar&lt;/P&gt;</code></pre><p><strong>3、注销 docker-desktop-data</strong></p>
-<pre><code>wsl --unregister docker-desktop-data</code></pre><p>4、重新导入 docker-desktop-data 到要存放的文件夹，我这边的文件夹为：e:\docker-desktop-data</p>
-<pre><code>wsl --import docker-desktop-data e:\docker-desktop-data\ e:\docker-desktop-data.tar --version 2</code></pre><p>5、重新设置 子系统 为 WSL2 –可以忽略此步骤</p>
-<pre><code>wsl --set-version Ubuntu-20.04 2</code></pre>
+<pre><code>wsl --shutdown
+</code></pre>
+<p><strong>2、备份到处 docker data</strong></p>
+<pre><code>wsl --export docker-desktop-data e:\docker-desktop-data.tar&lt;/P&gt;
+</code></pre>
+<p><strong>3、注销 docker-desktop-data</strong></p>
+<pre><code>wsl --unregister docker-desktop-data
+</code></pre>
+<p>4、重新导入 docker-desktop-data 到要存放的文件夹，我这边的文件夹为：e:\docker-desktop-data</p>
+<pre><code>wsl --import docker-desktop-data e:\docker-desktop-data\ e:\docker-desktop-data.tar --version 2
+</code></pre>
+<p>5、重新设置 子系统 为 WSL2 –可以忽略此步骤</p>
+<pre><code>wsl --set-version Ubuntu-20.04 2
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -835,16 +868,16 @@ Restart Windows</code></pre>
                                     <span class="chip bg-color">JavaScript</span>
                                 </a>
                             
+                                <a href="/tags/VSCode/">
+                                    <span class="chip bg-color">VSCode</span>
+                                </a>
+                            
                                 <a href="/tags/WSL2/">
                                     <span class="chip bg-color">WSL2</span>
                                 </a>
                             
                                 <a href="/tags/Python/">
                                     <span class="chip bg-color">Python</span>
-                                </a>
-                            
-                                <a href="/tags/VSCode/">
-                                    <span class="chip bg-color">VSCode</span>
                                 </a>
                             
                                 <a href="/tags/proxy/">
@@ -963,16 +996,16 @@ Restart Windows</code></pre>
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                     <a href="/tags/JavaScript/">
@@ -1036,16 +1069,16 @@ Restart Windows</code></pre>
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/HTML5/">
+                        <span class="chip bg-color">HTML5</span>
+                    </a>
+                    
                     <a href="/tags/Web/">
                         <span class="chip bg-color">Web</span>
                     </a>
                     
                     <a href="/tags/%E5%89%8D%E7%AB%AF/">
                         <span class="chip bg-color">前端</span>
-                    </a>
-                    
-                    <a href="/tags/HTML5/">
-                        <span class="chip bg-color">HTML5</span>
                     </a>
                     
                     <a href="/tags/JavaScript/">
