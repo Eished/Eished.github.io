@@ -6,7 +6,7 @@
   <link href="https://iknow.fun/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2023-05-18T05:12:44.175Z</updated>
+  <updated>2023-06-23T09:02:17.589Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Chrome同时登录多个账号，网站多开教程</title>
+    <link href="https://iknow.fun/2023/06/23/chrome-tong-shi-deng-lu-duo-ge-zhang-hao-wang-zhan-duo-kai-jiao-cheng/"/>
+    <id>https://iknow.fun/2023/06/23/chrome-tong-shi-deng-lu-duo-ge-zhang-hao-wang-zhan-duo-kai-jiao-cheng/</id>
+    <published>2023-06-23T08:41:40.000Z</published>
+    <updated>2023-06-23T09:02:17.589Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;Chrome同时登录多个账号&quot;&gt;&lt;a href=&quot;#Chrome同时登录多个账号&quot; class=&quot;headerlink&quot; title=&quot;Chrome同时登录多个账号&quot;&gt;&lt;/a&gt;Chrome同时登录多个账号&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;在计算机上打开</summary>
+        
+      
+    
+    
+    
+    <category term="教程" scheme="https://iknow.fun/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+    <category term="chrome" scheme="https://iknow.fun/tags/chrome/"/>
+    
+  </entry>
   
   <entry>
     <title>配置多个Git账户在HTTPS端口使用SSH连接Github</title>
@@ -647,41 +673,6 @@
     <category term="FTP" scheme="https://iknow.fun/tags/FTP/"/>
     
     <category term="网络" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Tampermonkey 油猴脚本笔记</title>
-    <link href="https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/"/>
-    <id>https://iknow.fun/2021/06/20/tampermonkey-you-hou-jiao-ben-bi-ji/</id>
-    <published>2021-06-20T12:03:56.000Z</published>
-    <updated>2021-07-22T11:57:18.713Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Tampermonkey-语法&quot;&gt;&lt;a href=&quot;#Tampermonkey-语法&quot; class=&quot;headerlink&quot; title=&quot;Tampermonkey 语法&quot;&gt;&lt;/a&gt;Tampermonkey 语法&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="JavaScript" scheme="https://iknow.fun/categories/JavaScript/"/>
-    
-    
-    <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
-    
-    <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
-    
-    <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
-    
-    <category term="Tampermonkey" scheme="https://iknow.fun/tags/Tampermonkey/"/>
-    
-    <category term="Promise" scheme="https://iknow.fun/tags/Promise/"/>
-    
-    <category term="GM_xmlhttpRequest" scheme="https://iknow.fun/tags/GM-xmlhttpRequest/"/>
     
   </entry>
   
