@@ -406,7 +406,7 @@ wsl --set-version &amp;l">
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.3k
                 </div>
                 
 
@@ -772,6 +772,10 @@ Restart Windows<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 <h4 id="5-删除-tar-文件-可选"><a href="#5-删除-tar-文件-可选" class="headerlink" title="5.删除 tar 文件(可选)"></a>5.删除 tar 文件(可选)</h4><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">del d:wsl-ubuntu20.04.tar<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h4 id="6-设置默认登录用户为之前的用户"><a href="#6-设置默认登录用户为之前的用户" class="headerlink" title="6.设置默认登录用户为之前的用户"></a>6.设置默认登录用户为之前的用户</h4><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/windows/wsl/wsl-config#user-settings">https://learn.microsoft.com/en-us/windows/wsl/wsl-config#user-settings</a></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span>user<span class="token punctuation">]</span>
+default <span class="token operator">=</span> DemoUser<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
 <p><strong>踩坑记录：</strong></p>
 <p>迁移之后，会发现 Linux 子系统跟 Windows10 docker 通讯不了，</p>
 <p>例如：当在子系统输入 docker ps 命令时，会报：Cannot connect to the Docker daemon at unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock. Is the docker daemon running?</p>
@@ -794,6 +798,7 @@ Restart Windows<span aria-hidden="true" class="line-numbers-rows"><span></span><
 
 <p>5、重新设置 子系统 为 WSL2 –可以忽略此步骤</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">wsl --set-version Ubuntu-20.04 <span class="token number">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
 
                 
             </div>
