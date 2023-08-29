@@ -50,7 +50,7 @@
 
     <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
 
-<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="iKnow's blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 
@@ -342,6 +342,10 @@
                                 <span class="chip bg-color">Git</span>
                             </a>
                         
+                            <a href="/tags/Github/">
+                                <span class="chip bg-color">Github</span>
+                            </a>
+                        
                             <a href="/tags/kex-exchange-identification/">
                                 <span class="chip bg-color">kex_exchange_identification</span>
                             </a>
@@ -384,14 +388,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    480
+                    930
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -419,58 +423,94 @@
 <p>解决方法：</p>
 <ol>
 <li>关闭代理软件</li>
-<li>修改代理软件转发配置，不代理22端口</li>
-<li>更换不屏蔽22端口的节点（比较少）</li>
+<li>或者修改代理软件转发配置，不代理22端口</li>
 <li>在HTTPS端口使用SSH连接</li>
 </ol>
 <p>前两种方法会造成clone不经过代理，下载非常慢。</p>
-<p>第四种方法实测即使不启用代理，使用443端口clone也比22端口更快。</p>
-<h2 id="在HTTPS端口使用SSH连接"><a href="#在HTTPS端口使用SSH连接" class="headerlink" title="在HTTPS端口使用SSH连接"></a><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https">在HTTPS端口使用SSH连接</a></h2><p>要测试是否可以通过 HTTPS 端口进行 SSH，请运行以下 SSH 命令：</p>
+<p>第三种方法实测即使不启用代理，使用443端口clone也比22端口更快。</p>
+<h2 id="在-HTTPS-端口使用-SSH-连接"><a href="#在-HTTPS-端口使用-SSH-连接" class="headerlink" title="在 HTTPS 端口使用 SSH 连接"></a><a target="_blank" rel="noopener" href="https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port#enabling-ssh-connections-over-https">在 HTTPS 端口使用 SSH 连接</a></h2><p>要测试是否可以通过 HTTPS 端口进行 SSH，请运行以下 SSH 命令：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">ssh</span> <span class="token parameter variable">-T</span> <span class="token parameter variable">-p</span> <span class="token number">443</span> git@ssh.github.com
 <span class="token operator">></span> Hi USERNAME<span class="token operator">!</span> You've successfully authenticated, but GitHub does not provide shell access.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<p>如果您能够通过 SSH 连接到<code>git@ssh.github.com</code>端口 443，您可以覆盖您的 SSH 设置以强制任何与 GitHub.com 的连接通过该服务器和端口运行。</p>
-<p>要设置 SSH 配置文件，请编辑该文件<code>~/.ssh/config</code>，并添加以下部分：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">Host github.com
-Hostname ssh.github.com
-Port <span class="token number">443</span>
-User <span class="token function">git</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>看到这个输出时，代表可以通过 HTTPS 端口进行 SSH 连接。</p>
+<p><strong>SSH 协议规则：</strong></p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini"><span class="token section"><span class="token punctuation">[</span><span class="token section-name selector">协议</span><span class="token punctuation">]</span></span>://[用户名]@[主机名]:[端口号]<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<h3 id="Clone存储库"><a href="#Clone存储库" class="headerlink" title="Clone存储库"></a>Clone存储库</h3><p>现在，要克隆存储库，您可以运行以下命令：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ <span class="token function">git</span> clone ssh://git@ssh.github.com:443/<span class="token operator">&lt;</span>YOUR-USERNAME<span class="token operator">></span>/<span class="token operator">&lt;</span>REPOSITORY<span class="token operator">></span>.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><strong>示例：</strong>使用 443 端口 clone 库</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone ssh://git@ssh.github.com:443/<span class="token operator">&lt;</span>YOUR-USERNAME<span class="token operator">></span>/<span class="token operator">&lt;</span>REPOSITORY<span class="token operator">></span>.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
+<h3 id="将-443-端口改为全局设置"><a href="#将-443-端口改为全局设置" class="headerlink" title="将 443 端口改为全局设置"></a>将 443 端口改为全局设置</h3><p>覆盖您的 SSH 设置以强制任何与 <code>gitHub.com</code> 的连接通过 <code>ssh.github.com</code> 服务器和 <code>443</code> 端口运行。</p>
+<p>要设置 SSH 配置文件，请编辑 <code>~/.ssh/config</code> 文件，并添加以下部分：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">Host github.com
+  Hostname ssh.github.com
+  Port 443
+  User git<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="设置多个账户后如何通过指定账户-clone"><a href="#设置多个账户后如何通过指定账户-clone" class="headerlink" title="设置多个账户后如何通过指定账户 clone"></a>设置多个账户后如何通过指定账户 clone</h3><p><code>~/.ssh/config</code> 有如下内容：test 为第二个Git账户。</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 默认git@github.com通过443</span>
+<h3 id="配置多组秘钥对"><a href="#配置多组秘钥对" class="headerlink" title="配置多组秘钥对"></a>配置多组秘钥对</h3><p>用于在一台电脑登录多个 gitHub 账号。</p>
+<p><code>~/.ssh/config</code> 有如下内容：test 为第二个 github 账号</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 默认 git@github.com 通过 443</span>
 Host github.com
-Hostname ssh.github.com
-Port <span class="token number">443</span>
-User <span class="token function">git</span>
+    Hostname ssh.github.com
+    Port <span class="token number">443</span>
+    User <span class="token function">git</span>
+<span class="token comment">#   IdentityFile ~/.ssh/id_rsa # 可指定私钥，不填则使用默认私钥</span>
 
-<span class="token comment"># 默认git用户</span>
-Host git@github.com
-HostName github.com
-User <span class="token function">git</span>
-IdentityFile ~/.ssh/id_rsa
-
-<span class="token comment"># 为test用户单独设置443</span>
+<span class="token comment"># 示例：为 test 账号单独设置 443</span>
 Host <span class="token builtin class-name">test</span>
-HostName ssh.github.com
-User <span class="token function">git</span>
-Port <span class="token number">443</span>
-IdentityFile ~/.ssh/id_test<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    HostName ssh.github.com
+    User <span class="token function">git</span>
+    Port <span class="token number">443</span>
+    IdentityFile ~/.ssh/id_test <span class="token comment"># 指定为 test 账号上传到 github 的公钥匹配的私钥</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>测试test用户是否正常：</p>
+<p>测试 test 账号是否正常：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">ssh</span> <span class="token parameter variable">-T</span> <span class="token builtin class-name">test</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>克隆则类似的：</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> clone ssh://test:443/<span class="token operator">&lt;</span>YOUR-USERNAME<span class="token operator">></span>/<span class="token operator">&lt;</span>REPOSITORY<span class="token operator">></span>.git<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>配置其它 git 仓库账号时同理。</p>
+<h2 id="SSH-配置项说明"><a href="#SSH-配置项说明" class="headerlink" title="SSH 配置项说明"></a>SSH 配置项说明</h2><pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">Host example                       # 关键词
+    HostName example.com           # 主机地址
+    User root                      # 用户名
+<span class="token comment">#   IdentityFile ~/.ssh/id_rsa     # 认证文件</span>
+<span class="token comment">#   Port 22                        # 指定端口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="已有项目换源："><a href="#已有项目换源：" class="headerlink" title="已有项目换源："></a>已有项目换源：</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> remote remove origin
-<span class="token function">git</span> remote <span class="token function">add</span> origin ssh://git@ssh.github.com:443/<span class="token operator">&lt;</span>YOUR-USERNAME<span class="token operator">></span>/<span class="token operator">&lt;</span>REPOSITORY<span class="token operator">></span>.git
-<span class="token comment"># 设置分支远程对应分支****</span>
-<span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/main main
-<span class="token function">git</span> branch --set-upstream-to<span class="token operator">=</span>origin/<span class="token operator">&lt;</span>remote<span class="token operator">></span> <span class="token operator">&lt;</span>local<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><strong>Host</strong><br>用于我们执行 SSH 命令的时候如何匹配到该配置。</p>
+<ul>
+<li><code>*</code>，匹配所有主机名。</li>
+<li><code>*.example.com</code>，匹配以 .example.com 结尾。</li>
+<li><code>!*.dialup.example.com,*.example.com</code>，以 ! 开头是排除的意思。</li>
+<li><code>192.168.0.?</code>，匹配 192.168.0.[0-9] 的 IP。</li>
+</ul>
+<p><strong>IdentityFile</strong><br>指定读取的认证文件路径，允许 DSA，ECDSA，Ed25519 或 RSA。值可以直接指定也可以用一下参数代替：</p>
+<ul>
+<li><code>%d</code>，本地用户目录 ~</li>
+<li><code>%u</code>，本地用户</li>
+<li><code>%l</code>，本地主机名</li>
+<li><code>%h</code>，远程主机名</li>
+<li><code>%r</code>，远程用户名</li>
+</ul>
+<p><strong>Port</strong><br>指定连接远程主机的哪个端口，22(default)。</p>
+<p><strong>User</strong><br>登录用户名</p>
+<p><strong>ProxyCommand</strong><br>指定连接的服务器需要执行的命令。<code>%h，%p，%r</code></p>
+<p>如：<code>ProxyCommand /usr/bin/nc -X connect -x 192.0.2.0:8080 %h %p</code></p>
+<h3 id="关键词登录"><a href="#关键词登录" class="headerlink" title="关键词登录"></a>关键词登录</h3><p>为了更方便的登录服务器，我们也可以省略用户名和主机名，采用关键词登录。那么你需要添加如下配置到 <code>~/.ssh/config</code>：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">Host deepzz                        # 别名
+    HostName deepzz.com            # 主机地址
+    User root                      # 用户名
+    <span class="token comment"># IdentityFile ~/.ssh/id_ecdsa # 认证文件</span>
+    <span class="token comment"># Port 22                      # 指定端口</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么使用 <code>$ ssh deepzz</code> 就可以直接登录服务器了。</p>
+<h3 id="代理登录"><a href="#代理登录" class="headerlink" title="代理登录"></a>代理登录</h3><p>有的时候你可能没法直接登录到某台服务器，而需要使用一台中间服务器进行中转，如公司内网服务器。首先确保你已经为服务器配置了公钥访问，并开启了agent forwarding，那么你需要添加如下配置到 <code>~/.ssh/config</code>：</p>
+<pre class="line-numbers language-ini" data-language="ini"><code class="language-ini">Host gateway
+    HostName proxy.example.com
+    User root
+Host db
+    HostName db.internal.example.com                  # 目标服务器地址
+    User root                                         # 用户名
+    <span class="token comment"># IdentityFile ~/.ssh/id_ecdsa                    # 认证文件</span>
+    ProxyCommand ssh gateway netcat -q 600 %h %p      # 代理命令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>那么你现在可以使用 <code>$ ssh db</code> 连接了。</p>
+<p>参考链接：<a target="_blank" rel="noopener" href="https://deepzz.com/post/how-to-setup-ssh-config.html">https://deepzz.com/post/how-to-setup-ssh-config.html</a></p>
 
                 
             </div>
@@ -537,6 +577,10 @@ IdentityFile ~/.ssh/id_test<span aria-hidden="true" class="line-numbers-rows"><s
                             
                                 <a href="/tags/Git/">
                                     <span class="chip bg-color">Git</span>
+                                </a>
+                            
+                                <a href="/tags/Github/">
+                                    <span class="chip bg-color">Github</span>
                                 </a>
                             
                                 <a href="/tags/kex-exchange-identification/">
