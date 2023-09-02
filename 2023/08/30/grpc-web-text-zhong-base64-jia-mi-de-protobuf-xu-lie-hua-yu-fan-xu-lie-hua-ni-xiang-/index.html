@@ -10,8 +10,8 @@
 
 一、前言1.1 目标在服务上模拟前端发送 grpc-web-text 格式的请求，并且能解析服务器返回的相同格式的响应。
 1.1 实现步骤
-学习 grpc、grpc-web、grpc-web-text 协议
-搭">
+学习 grpc、protobuf 、grpc-web 协议
+搭建最小测">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -402,14 +402,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1k
+                    1.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -437,7 +437,7 @@
 </blockquote>
 <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h3 id="1-1-目标"><a href="#1-1-目标" class="headerlink" title="1.1 目标"></a>1.1 目标</h3><p>在服务上模拟前端发送 <code>grpc-web-text</code> 格式的请求，并且能解析服务器返回的相同格式的响应。</p>
 <h3 id="1-1-实现步骤"><a href="#1-1-实现步骤" class="headerlink" title="1.1 实现步骤"></a>1.1 实现步骤</h3><ol>
-<li>学习 grpc、grpc-web、grpc-web-text 协议</li>
+<li>学习 grpc、protobuf 、grpc-web 协议</li>
 <li>搭建最小测试环境</li>
 <li>运行测试环境，确认编码规则一致</li>
 <li>逆向推导 <code>.proto</code> 文件</li>
@@ -451,7 +451,7 @@
 <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> protobuf-compiler
 protoc <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="2-3-gRPC-web-text-协议"><a href="#2-3-gRPC-web-text-协议" class="headerlink" title="2.3 gRPC-web-text 协议"></a>2.3 gRPC-web-text 协议</h3><p><a target="_blank" rel="noopener" href="https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html">https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html</a></p>
+<h3 id="2-3-gRPC-web-协议"><a href="#2-3-gRPC-web-协议" class="headerlink" title="2.3 gRPC-web 协议"></a>2.3 gRPC-web 协议</h3><p><a target="_blank" rel="noopener" href="https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html">https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html</a></p>
 <h2 id="三、环境配置"><a href="#三、环境配置" class="headerlink" title="三、环境配置"></a>三、环境配置</h2><h3 id="3-1-gRPC-Web-环境搭建"><a href="#3-1-gRPC-Web-环境搭建" class="headerlink" title="3.1 gRPC-Web 环境搭建"></a>3.1 gRPC-Web 环境搭建</h3><p><strong>1. 项目代码运行所需的环境：</strong></p>
 <ul>
 <li>Docker</li>
@@ -485,7 +485,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
 <span class="token function">npm</span> run start<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <p>访问 <a target="_blank" rel="noopener" href="http://localhost:8088/">http://localhost:8088/</a> ，在页面输入任意字符发送，服务器将返回输入的字符。</p>
-<h2 id="三、逆向推导-proto-文件"><a href="#三、逆向推导-proto-文件" class="headerlink" title="三、逆向推导 proto 文件"></a>三、逆向推导 proto 文件</h2><h3 id="3-1-请求的-proto-文件还原"><a href="#3-1-请求的-proto-文件还原" class="headerlink" title="3.1 请求的 proto 文件还原"></a>3.1 请求的 proto 文件还原</h3><p><strong>1. 通过浏览器的Network控制面板查看请求</strong></p>
+<h2 id="四、逆向推导-proto-文件"><a href="#四、逆向推导-proto-文件" class="headerlink" title="四、逆向推导 proto 文件"></a>四、逆向推导 proto 文件</h2><h3 id="4-1-请求的-proto-文件还原"><a href="#4-1-请求的-proto-文件还原" class="headerlink" title="4.1 请求的 proto 文件还原"></a>4.1 请求的 proto 文件还原</h3><p><strong>1. 通过浏览器的Network控制面板查看请求</strong></p>
 <ol>
 <li>请求头内容类型为 <code>application/grpc-web-text</code>，</li>
 <li>payload为</li>
@@ -516,7 +516,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
 <li><p>请求正常发出，并且有正确的response，response解析会报错，因为response的proto文件还没有分析，接下来还原response的proto文件。</p>
 </li>
 </ol>
-<h3 id="3-2-响应的-proto-文件还原"><a href="#3-2-响应的-proto-文件还原" class="headerlink" title="3.2 响应的 proto 文件还原"></a>3.2 响应的 proto 文件还原</h3><ol>
+<h3 id="4-2-响应的-proto-文件还原"><a href="#4-2-响应的-proto-文件还原" class="headerlink" title="4.2 响应的 proto 文件还原"></a>4.2 响应的 proto 文件还原</h3><ol>
 <li><p>有了前面的经验，能推测出响应的函数名，搜索后果然如此。</p>
 </li>
 <li><p>根据该序列化函数推导出请求参数的名称和类型</p>
@@ -524,7 +524,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
 <li><p>在 gRPC-Web Echo Server 测试环境中测试</p>
 </li>
 </ol>
-<h2 id="四、测试-proto-文件序列化与反序列化"><a href="#四、测试-proto-文件序列化与反序列化" class="headerlink" title="四、测试 proto 文件序列化与反序列化"></a>四、测试 proto 文件序列化与反序列化</h2><h4 id="4-1-安装依赖，编译ts代码"><a href="#4-1-安装依赖，编译ts代码" class="headerlink" title="4.1 安装依赖，编译ts代码"></a>4.1 安装依赖，编译ts代码</h4><p><a target="_blank" rel="noopener" href="https://github.com/timostamm/protobuf-ts">https://github.com/timostamm/protobuf-ts</a></p>
+<h2 id="五、测试-proto-文件序列化与反序列化"><a href="#五、测试-proto-文件序列化与反序列化" class="headerlink" title="五、测试 proto 文件序列化与反序列化"></a>五、测试 proto 文件序列化与反序列化</h2><h4 id="5-1-安装依赖，编译ts代码"><a href="#5-1-安装依赖，编译ts代码" class="headerlink" title="5.1 安装依赖，编译ts代码"></a>5.1 安装依赖，编译ts代码</h4><p><a target="_blank" rel="noopener" href="https://github.com/timostamm/protobuf-ts">https://github.com/timostamm/protobuf-ts</a></p>
 <p>安装转换插件</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># with npm:</span>
 <span class="token function">npm</span> <span class="token function">install</span> @protobuf-ts/plugin
@@ -550,18 +550,64 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
   <span class="token parameter variable">--ts_out</span> protos/ <span class="token punctuation">\</span>
   <span class="token parameter variable">--ts_opt</span> long_type_string <span class="token punctuation">\</span>
   <span class="token parameter variable">--proto_path</span> protos <span class="token punctuation">\</span>
-  protos/login.proto <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  protos/test.proto <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="4-2-编写代码运行"><a href="#4-2-编写代码运行" class="headerlink" title="4.2 编写代码运行"></a>4.2 编写代码运行</h3><p>测试正常运行，但 <code>protobuf-ts/grpcweb-transport</code> 有些服务器自定义错误状态码无法被抛出，抛出是统一的状态码。所以手动处理 protobuf。</p>
-<h2 id="五、手动实现-protobuf-与-base64-之间的转码与解码"><a href="#五、手动实现-protobuf-与-base64-之间的转码与解码" class="headerlink" title="五、手动实现 protobuf 与 base64 之间的转码与解码"></a>五、手动实现 protobuf 与 base64 之间的转码与解码</h2><p>不使用 protobuf-ts 发送\接收请求，而是序列化为 protobuf 再转码 base64，使用 axios 发送请求并处理响应。</p>
+<h3 id="5-2-编写代码运行"><a href="#5-2-编写代码运行" class="headerlink" title="5.2 编写代码运行"></a>5.2 编写代码运行</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GrpcWebFetchTransport <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@protobuf-ts/grpcweb-transport'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TestRequest <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'protos/test'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TestClient <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'protos/test.client'</span>
+
+<span class="token keyword">const</span> transport <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">GrpcWebFetchTransport</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  baseUrl<span class="token operator">:</span> <span class="token string">'https://目标api地址/'</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TestClient</span><span class="token punctuation">(</span>transport<span class="token punctuation">)</span>
+<span class="token keyword">const</span> step1 <span class="token operator">=</span> TestRequest<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>
+  msg<span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> client<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>step1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token operator">=></span> res<span class="token punctuation">.</span>response<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">,</span> response<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>测试正常运行，但 <code>protobuf-ts/grpcweb-transport</code> 有些服务器自定义错误状态码无法被抛出，抛出是统一的状态码。所以手动处理 protobuf。</p>
+<h2 id="六、手动实现-protobuf-与-base64-之间的转码与解码"><a href="#六、手动实现-protobuf-与-base64-之间的转码与解码" class="headerlink" title="六、手动实现 protobuf 与 base64 之间的转码与解码"></a>六、手动实现 protobuf 与 base64 之间的转码与解码</h2><p>不使用 protobuf-ts 发送\接收请求，而是序列化为 protobuf 再转码 base64，使用 axios 发送请求并处理响应。</p>
+<h3 id="6-1-编译-gRPC-web-客户端代码"><a href="#6-1-编译-gRPC-web-客户端代码" class="headerlink" title="6.1 编译 gRPC-web 客户端代码"></a>6.1 编译 gRPC-web 客户端代码</h3><p>安装编译器</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 代码编译器</span>
+<span class="token function">yarn</span> <span class="token function">add</span> ts-protoc-gen <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>仅生成 protobuf 文件，无需生成 Service 和 Client 文件</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">protoc <span class="token punctuation">\</span>
+  <span class="token parameter variable">--plugin</span><span class="token operator">=</span>protoc-gen-ts<span class="token operator">=</span>./node_modules/.bin/protoc-gen-ts <span class="token punctuation">\</span>
+  <span class="token parameter variable">--js_out</span><span class="token operator">=</span>import_style<span class="token operator">=</span>commonjs,binary:./protos <span class="token punctuation">\</span>
+  <span class="token parameter variable">--ts_out</span><span class="token operator">=</span>grpc-web:./protos <span class="token punctuation">\</span>
+  <span class="token parameter variable">-I</span> ./protos <span class="token punctuation">\</span>
+  protos/test.proto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>可选：如果使用 gRPC-web 发送请求时需要安装</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># grpc-web 基本依赖</span>
 <span class="token function">yarn</span> <span class="token function">add</span> google-protobuf @types/google-protobuf @improbable-eng/grpc-web
 
 <span class="token comment"># 编码转换器</span>
-<span class="token function">yarn</span> <span class="token function">add</span> @improbable-eng/grpc-web-node-http-transport 
+<span class="token function">yarn</span> <span class="token function">add</span> @improbable-eng/grpc-web-node-http-transport <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<span class="token comment"># 代码编译器</span>
-<span class="token function">yarn</span> <span class="token function">add</span> ts-protoc-gen <span class="token parameter variable">-D</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<h3 id="6-2-protobuf-转-base64"><a href="#6-2-protobuf-转-base64" class="headerlink" title="6.2 protobuf 转 base64"></a>6.2 protobuf 转 base64</h3><p>简易版：</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 将 Protocol Buffers 数据 Uint8Array 放入 Buffer</span>
+<span class="token keyword">const</span> encodedData <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>TestRequest<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>encodedData<span class="token punctuation">)</span>
+<span class="token comment">// 创建一个包含5个零字节的 Buffer</span>
+<span class="token keyword">const</span> zeroBuffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token comment">// 第5位写入Uint8Array数据长度</span>
+zeroBuffer<span class="token punctuation">.</span><span class="token function">writeInt32BE</span><span class="token punctuation">(</span>TestRequest<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token comment">// 将 Buffer 和 TestRequest 的二进制数据拼接在一起</span>
+<span class="token keyword">const</span> combinedBuffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span>zeroBuffer<span class="token punctuation">,</span> encodedData<span class="token punctuation">]</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>combinedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>完整版：</p>
+<h3 id="6-3-base64-转-protobuf"><a href="#6-3-base64-转-protobuf" class="headerlink" title="6.3 base64 转 protobuf"></a>6.3 base64 转 protobuf</h3><p>直接解析：</p>
+<p><code>echo &quot;AAAAAAwIARDABxoFL3Rlc3Q=&quot; | base64 -d | xxd </code></p>
+<p>头部解析：</p>
+<p>数据解析：</p>
+
                 
             </div>
             <hr/>
