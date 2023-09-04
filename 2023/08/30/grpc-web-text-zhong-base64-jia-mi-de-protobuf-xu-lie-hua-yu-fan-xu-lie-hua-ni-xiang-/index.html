@@ -9,7 +9,7 @@
 文章尚未完成，仅保留大纲
 
 一、前言1.1 目标在服务上模拟前端发送 grpc-web-text 格式的请求，并且能解析服务器返回的相同格式的响应。
-1.1 实现步骤
+1.2 实现步骤
 学习 grpc、protobuf 、grpc-web 协议
 搭建最小测">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -402,14 +402,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    8 分
                 </div>
                 
 
@@ -436,7 +436,7 @@
 <p>文章尚未完成，仅保留大纲</p>
 </blockquote>
 <h2 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h2><h3 id="1-1-目标"><a href="#1-1-目标" class="headerlink" title="1.1 目标"></a>1.1 目标</h3><p>在服务上模拟前端发送 <code>grpc-web-text</code> 格式的请求，并且能解析服务器返回的相同格式的响应。</p>
-<h3 id="1-1-实现步骤"><a href="#1-1-实现步骤" class="headerlink" title="1.1 实现步骤"></a>1.1 实现步骤</h3><ol>
+<h3 id="1-2-实现步骤"><a href="#1-2-实现步骤" class="headerlink" title="1.2 实现步骤"></a>1.2 实现步骤</h3><ol>
 <li>学习 grpc、protobuf 、grpc-web 协议</li>
 <li>搭建最小测试环境</li>
 <li>运行测试环境，确认编码规则一致</li>
@@ -579,7 +579,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
   <span class="token parameter variable">--js_out</span><span class="token operator">=</span>import_style<span class="token operator">=</span>commonjs,binary:./protos <span class="token punctuation">\</span>
   <span class="token parameter variable">--ts_out</span><span class="token operator">=</span>grpc-web:./protos <span class="token punctuation">\</span>
   <span class="token parameter variable">-I</span> ./protos <span class="token punctuation">\</span>
-  protos/test.proto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  protos/login.proto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可选：如果使用 gRPC-web 发送请求时需要安装</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># grpc-web 基本依赖</span>
@@ -590,7 +590,8 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
 
 
 
-<h3 id="6-2-protobuf-转-base64"><a href="#6-2-protobuf-转-base64" class="headerlink" title="6.2 protobuf 转 base64"></a>6.2 protobuf 转 base64</h3><p>简易版：</p>
+<h3 id="6-2-protobuf-转-base64"><a href="#6-2-protobuf-转-base64" class="headerlink" title="6.2 protobuf 转 base64"></a>6.2 protobuf 转 base64</h3><p><strong>使用 TypeScript 进行转码：</strong></p>
+<p>简易版：</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 将 Protocol Buffers 数据 Uint8Array 放入 Buffer</span>
 <span class="token keyword">const</span> encodedData <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>TestRequest<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>encodedData<span class="token punctuation">)</span>
@@ -603,10 +604,173 @@ zeroBuffer<span class="token punctuation">.</span><span class="token function">w
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>combinedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>完整版：</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> toBytesInt32 <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> Uint8Array <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// an Int32 takes 4 bytes</span>
+  <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> view <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DataView</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+  <span class="token comment">// byteOffset = 0; litteEndian = false</span>
+  view<span class="token punctuation">.</span><span class="token function">setUint32</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> num<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>arr<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> createHeader <span class="token operator">=</span> <span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">,</span> value<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> Buffer <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> buffers<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">number</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> char <span class="token keyword">of</span> name<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>char<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> char <span class="token keyword">of</span> value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>char<span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+  buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'\r'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">.</span><span class="token function">charCodeAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>buffers<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> encodeProtobuf <span class="token operator">=</span> <span class="token operator">&lt;</span>
+  GRPCReply <span class="token keyword">extends</span> <span class="token punctuation">&#123;</span> <span class="token function-variable function">serializeBinary</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> Uint8Array <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token operator">></span><span class="token punctuation">(</span>
+  reply<span class="token operator">:</span> GRPCReply<span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> replyBuffer <span class="token operator">=</span> reply<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> replyLength <span class="token operator">=</span> <span class="token function">toBytesInt32</span><span class="token punctuation">(</span>replyBuffer<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> headers <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token operator">...</span><span class="token function">createHeader</span><span class="token punctuation">(</span><span class="token string">'grpc-status'</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token operator">...</span><span class="token function">createHeader</span><span class="token punctuation">(</span><span class="token string">'grpc-message'</span><span class="token punctuation">,</span> <span class="token string">'OK'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> headersLength <span class="token operator">=</span> <span class="token function">toBytesInt32</span><span class="token punctuation">(</span>headers<span class="token punctuation">.</span>length<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> response <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// mark response start ("data" frame coming next)</span>
+    <span class="token operator">...</span>replyLength<span class="token punctuation">,</span>
+    <span class="token operator">...</span>replyBuffer<span class="token punctuation">,</span>
+    <span class="token number">128</span><span class="token punctuation">,</span> <span class="token comment">// end of "data" frame, trailer frame coming next</span>
+    <span class="token operator">...</span>headersLength<span class="token punctuation">,</span>
+    <span class="token operator">...</span>headers<span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token keyword">void</span> <span class="token punctuation">&#123;</span>
+  <span class="token comment">// UserPB is protobuf object created with protoc-gen-grpc</span>
+  <span class="token comment">// Any protobuf object with a serializeBinary function </span>
+  <span class="token comment">// which returns an Uint8Array will do</span>
+  <span class="token keyword">const</span> reply <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">UserPB</span><span class="token punctuation">.</span><span class="token function">SetUserReply</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  reply<span class="token punctuation">.</span><span class="token function">setUserId</span><span class="token punctuation">(</span><span class="token string">'mock-user-id'</span><span class="token punctuation">)</span>
+  reply<span class="token punctuation">.</span><span class="token function">setFirstName</span><span class="token punctuation">(</span><span class="token string">'foo'</span><span class="token punctuation">)</span>
+  reply<span class="token punctuation">.</span><span class="token function">setLastName</span><span class="token punctuation">(</span><span class="token string">'bar'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> encoded <span class="token operator">=</span> <span class="token function">encodeProtobuf</span><span class="token punctuation">(</span>reply<span class="token punctuation">)</span>
+  <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>encoded<span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
 <h3 id="6-3-base64-转-protobuf"><a href="#6-3-base64-转-protobuf" class="headerlink" title="6.3 base64 转 protobuf"></a>6.3 base64 转 protobuf</h3><p>直接解析：</p>
-<p><code>echo &quot;AAAAAAwIARDABxoFL3Rlc3Q=&quot; | base64 -d | xxd </code></p>
-<p>头部解析：</p>
-<p>数据解析：</p>
+<pre class="line-numbers language-none"><code class="language-none">echo &quot;AAAAAAwIARDABxoFL3Rlc3Q&#x3D;&quot; | base64 -d | xxd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>使用 protobuf 解析：</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"AAAAAAwIARDABxoFL3Rlc3Q="</span> <span class="token operator">|</span> base64 <span class="token parameter variable">-d</span> <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-c</span> +6 <span class="token operator">|</span> protoc <span class="token parameter variable">--decode_raw</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>使用 TypeScript 进行解码：</strong></p>
+<p>头部解析 + 数据解析</p>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token hashbang comment">#!/usr/bin/env node</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> exec <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'child_process'</span>
+<span class="token keyword">import</span> <span class="token punctuation">&#123;</span> promisify <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'util'</span>
+<span class="token keyword">import</span> minimist <span class="token keyword">from</span> <span class="token string">'minimist'</span>
+<span class="token keyword">import</span> chalk <span class="token keyword">from</span> <span class="token string">'chalk'</span>
+<span class="token keyword">import</span> which <span class="token keyword">from</span> <span class="token string">'which'</span>
+
+<span class="token keyword">const</span> argv <span class="token operator">=</span> <span class="token function">minimist</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>argv<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> asyncExec <span class="token operator">=</span> <span class="token function">promisify</span><span class="token punctuation">(</span>exec<span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">&#123;</span> log <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token builtin">console</span>
+
+<span class="token keyword">const</span> grpcWebTexts<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span>
+  <span class="token string">'AAAAADEKB2pvZmxveWQSJmh0dHBzOi8vcGljc3VtLnBob3Rvcy9pZC8xMzMvMjc0Mi8xODI4'</span><span class="token punctuation">,</span>
+  <span class="token string">'AAAAAAMInRQ=gAAAACBncnBjLXN0YXR1czowDQpncnBjLW1lc3NhZ2U6T0sNCg=='</span><span class="token punctuation">,</span>
+<span class="token punctuation">]</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">getBinaryHex</span> <span class="token operator">=</span> <span class="token punctuation">(</span>grpcTexts<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> buffers<span class="token operator">:</span> <span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+  grpcTexts<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>text <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> buffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>text<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token string">'base64'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> bufString <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'hex'</span><span class="token punctuation">)</span>
+    buffers<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>bufString<span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> buffers
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">validateProtocExist</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> resolved <span class="token operator">=</span> which<span class="token punctuation">.</span><span class="token function">sync</span><span class="token punctuation">(</span><span class="token string">'protoc'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> nothrow<span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>resolved<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>
+      chalk<span class="token punctuation">.</span><span class="token function">red</span><span class="token punctuation">(</span>
+        <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\ngrpcwebtext-parser requires </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>chalk<span class="token punctuation">.</span><span class="token function">bgRed</span><span class="token punctuation">(</span>
+          chalk<span class="token punctuation">.</span><span class="token function">white</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">protoc</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">\nPlease download it before running this program\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+      <span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+    process<span class="token punctuation">.</span><span class="token function">exit</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token keyword">function</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">validateProtocExist</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> _<span class="token operator">:</span> text <span class="token punctuation">&#125;</span> <span class="token operator">=</span> argv
+
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>text<span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token string">'No input grpc text, defaulting to demo values'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">&#125;</span>
+
+  <span class="token comment">// bytes are in base 16</span>
+  <span class="token keyword">const</span> buffers <span class="token operator">=</span> text<span class="token punctuation">.</span>length <span class="token operator">?</span> <span class="token function">getBinaryHex</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token function">getBinaryHex</span><span class="token punctuation">(</span>grpcWebTexts<span class="token punctuation">)</span>
+
+  <span class="token comment">// eslint-disable-next-line @typescript-eslint/no-misused-promises</span>
+  buffers<span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token keyword">async</span> <span class="token punctuation">(</span>buffer<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> responseStartMarkerLen <span class="token operator">=</span> <span class="token number">2</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> responseStartMarkerLen<span class="token punctuation">)</span> <span class="token operator">!==</span> <span class="token string">'00'</span><span class="token punctuation">)</span>
+      <span class="token keyword">return</span> <span class="token function">log</span><span class="token punctuation">(</span>chalk<span class="token punctuation">.</span><span class="token function">bgRed</span><span class="token punctuation">(</span><span class="token string">'Cannot Parse'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> frameLen <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> frameLenInt <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>frameLen<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span>
+    <span class="token keyword">const</span> frameDataIndex <span class="token operator">=</span> responseStartMarkerLen <span class="token operator">+</span> frameLen<span class="token punctuation">.</span>length
+    <span class="token keyword">const</span> frameData <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>frameDataIndex<span class="token punctuation">,</span> frameLenInt<span class="token punctuation">)</span>
+    <span class="token keyword">const</span> frameParsed <span class="token operator">=</span> <span class="token keyword">await</span> <span class="token function">asyncExec</span><span class="token punctuation">(</span>
+      <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">echo </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>frameData<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> | xxd -r -p | protoc --decode_raw</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+    <span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\n</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>chalk<span class="token punctuation">.</span><span class="token function">bgBlue</span><span class="token punctuation">(</span><span class="token string">'Web gRPC text:'</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string"> </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>text<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">||</span> grpcWebTexts<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">\n</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+    <span class="token function">log</span><span class="token punctuation">(</span>frameParsed<span class="token punctuation">.</span>stdout<span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> trailersLen <span class="token operator">=</span> <span class="token number">2</span>
+    <span class="token keyword">const</span> trailersLenIndex <span class="token operator">=</span> frameDataIndex <span class="token operator">+</span> frameLenInt
+    <span class="token keyword">const</span> hasTrailers <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>trailersLenIndex<span class="token punctuation">,</span> trailersLen<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'80'</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>hasTrailers<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> headerLenIndex <span class="token operator">=</span> trailersLenIndex <span class="token operator">+</span> trailersLen
+      <span class="token keyword">const</span> headerLen <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>headerLenIndex<span class="token punctuation">,</span> <span class="token number">4</span> <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> headerLenInt <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span>headerLen<span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token number">2</span>
+      <span class="token keyword">const</span> headerIndex <span class="token operator">=</span> headerLenIndex <span class="token operator">+</span> headerLen<span class="token punctuation">.</span>length
+      <span class="token keyword">const</span> headerData <span class="token operator">=</span> buffer<span class="token punctuation">.</span><span class="token function">substr</span><span class="token punctuation">(</span>headerIndex<span class="token punctuation">,</span> headerLenInt<span class="token punctuation">)</span>
+
+      <span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'Trailing headers:'</span><span class="token punctuation">)</span>
+
+      <span class="token comment">// '0d0a' is hex value of the '\r\n' ASCII characters</span>
+      headerData<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'0d0a'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span>header <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token function">log</span><span class="token punctuation">(</span>Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>header<span class="token punctuation">,</span> <span class="token string">'hex'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'ascii'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">':'</span><span class="token punctuation">,</span> <span class="token string">': '</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">)</span>
+<span class="token punctuation">&#125;</span>
+
+<span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
