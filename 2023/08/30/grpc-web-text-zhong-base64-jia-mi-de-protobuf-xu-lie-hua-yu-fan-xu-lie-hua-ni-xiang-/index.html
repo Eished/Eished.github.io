@@ -409,7 +409,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    8 分
+                    9 分
                 </div>
                 
 
@@ -446,19 +446,19 @@
 </ol>
 <h2 id="二、gRPC"><a href="#二、gRPC" class="headerlink" title="二、gRPC"></a>二、gRPC</h2><h3 id="2-1-gRPC-协议"><a href="#2-1-gRPC-协议" class="headerlink" title="2.1 gRPC 协议"></a>2.1 gRPC 协议</h3><p><a target="_blank" rel="noopener" href="https://grpc.io/docs/what-is-grpc/">https://grpc.io/docs/what-is-grpc/</a></p>
 <h3 id="2-2-protobuf-原理"><a href="#2-2-protobuf-原理" class="headerlink" title="2.2 protobuf 原理"></a>2.2 protobuf 原理</h3><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1520442">通过一个完整例子彻底学会protobuf序列化原理</a></p>
-<p>安装Protobuf编译器</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update
-<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> protobuf-compiler
-protoc <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
 <h3 id="2-3-gRPC-web-协议"><a href="#2-3-gRPC-web-协议" class="headerlink" title="2.3 gRPC-web 协议"></a>2.3 gRPC-web 协议</h3><p><a target="_blank" rel="noopener" href="https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html">https://grpc.github.io/grpc/core/md_doc__p_r_o_t_o_c_o_l-_w_e_b.html</a></p>
-<h2 id="三、环境配置"><a href="#三、环境配置" class="headerlink" title="三、环境配置"></a>三、环境配置</h2><h3 id="3-1-gRPC-Web-环境搭建"><a href="#3-1-gRPC-Web-环境搭建" class="headerlink" title="3.1 gRPC-Web 环境搭建"></a>3.1 gRPC-Web 环境搭建</h3><p><strong>1. 项目代码运行所需的环境：</strong></p>
+<h2 id="三、环境配置"><a href="#三、环境配置" class="headerlink" title="三、环境配置"></a>三、环境配置</h2><h3 id="3-1-gRPC-Web-环境搭建"><a href="#3-1-gRPC-Web-环境搭建" class="headerlink" title="3.1 gRPC-Web 环境搭建"></a>3.1 gRPC-Web 环境搭建</h3><p><strong>项目代码运行所需的环境：</strong></p>
 <ul>
 <li>Docker</li>
 <li>Node.js 16+</li>
 <li>protobuf compiler</li>
 <li>JavaScript</li>
 </ul>
+<p><strong>1. 安装 Protobuf 编译器</strong></p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt</span> update
+<span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> protobuf-compiler
+protoc <span class="token parameter variable">--version</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
 <p><strong>2. 下载 gRPC-Web Echo Server 项目代码</strong></p>
 <p>gRPC-Web-Echo 是我根据 grpc-web example 仓库的 Echo Server 项目改进而来，把跑在 Docker 容器里的前端和后端提取了出来，以方便本地测试。后端使用了 nodemon 热更新，前端则采用 webpack 实现。</p>
 <p>下载代码：</p>
@@ -552,7 +552,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
   <span class="token parameter variable">--proto_path</span> protos <span class="token punctuation">\</span>
   protos/test.proto <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h3 id="5-2-编写代码运行"><a href="#5-2-编写代码运行" class="headerlink" title="5.2 编写代码运行"></a>5.2 编写代码运行</h3><h3 id=""><a href="#" class="headerlink" title=""></a></h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GrpcWebFetchTransport <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@protobuf-ts/grpcweb-transport'</span>
+<h3 id="5-2-编写代码运行"><a href="#5-2-编写代码运行" class="headerlink" title="5.2 编写代码运行"></a>5.2 编写代码运行</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> GrpcWebFetchTransport <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'@protobuf-ts/grpcweb-transport'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TestRequest <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'protos/test'</span>
 <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> TestClient <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'protos/test.client'</span>
 
@@ -579,7 +579,7 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
   <span class="token parameter variable">--js_out</span><span class="token operator">=</span>import_style<span class="token operator">=</span>commonjs,binary:./protos <span class="token punctuation">\</span>
   <span class="token parameter variable">--ts_out</span><span class="token operator">=</span>grpc-web:./protos <span class="token punctuation">\</span>
   <span class="token parameter variable">-I</span> ./protos <span class="token punctuation">\</span>
-  protos/login.proto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+  protos/test.proto<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>可选：如果使用 gRPC-web 发送请求时需要安装</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># grpc-web 基本依赖</span>
@@ -592,18 +592,18 @@ protoc <span class="token parameter variable">--version</span><span aria-hidden=
 
 <h3 id="6-2-protobuf-转-base64"><a href="#6-2-protobuf-转-base64" class="headerlink" title="6.2 protobuf 转 base64"></a>6.2 protobuf 转 base64</h3><p><strong>使用 TypeScript 进行转码：</strong></p>
 <p>简易版：</p>
-<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// 将 Protocol Buffers 数据 Uint8Array 放入 Buffer</span>
+<pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token comment">// 将 Protocol Buffers 数据 Uint8Array 放入 Buffer</span>
 <span class="token keyword">const</span> encodedData <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>TestRequest<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>encodedData<span class="token punctuation">)</span>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>encodedData<span class="token punctuation">)</span>
 <span class="token comment">// 创建一个包含5个零字节的 Buffer</span>
 <span class="token keyword">const</span> zeroBuffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">alloc</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
 <span class="token comment">// 第5位写入Uint8Array数据长度</span>
 zeroBuffer<span class="token punctuation">.</span><span class="token function">writeInt32BE</span><span class="token punctuation">(</span>TestRequest<span class="token punctuation">.</span><span class="token function">serializeBinary</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>length<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token comment">// 将 Buffer 和 TestRequest 的二进制数据拼接在一起</span>
 <span class="token keyword">const</span> combinedBuffer <span class="token operator">=</span> Buffer<span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token punctuation">[</span>zeroBuffer<span class="token punctuation">,</span> encodedData<span class="token punctuation">]</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>combinedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>combinedBuffer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token string">'base64'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>完整版：</p>
+<p>生成 header 的完整版：</p>
 <pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> toBytesInt32 <span class="token operator">=</span> <span class="token punctuation">(</span>num<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> Uint8Array <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token comment">// an Int32 takes 4 bytes</span>
   <span class="token keyword">const</span> arr <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayBuffer</span><span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">)</span>
@@ -670,9 +670,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 
 <h3 id="6-3-base64-转-protobuf"><a href="#6-3-base64-转-protobuf" class="headerlink" title="6.3 base64 转 protobuf"></a>6.3 base64 转 protobuf</h3><p>直接解析：</p>
-<pre class="line-numbers language-none"><code class="language-none">echo &quot;AAAAAAwIARDABxoFL3Rlc3Q&#x3D;&quot; | base64 -d | xxd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"AAAAAAwIARDABxoFL3Rlc3Q="</span> <span class="token operator">|</span> base64 <span class="token parameter variable">-d</span> <span class="token operator">|</span> xxd<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p>使用 protobuf 解析：</p>
+<p>使用 protobuf compiler 解析：</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token builtin class-name">echo</span> <span class="token string">"AAAAAAwIARDABxoFL3Rlc3Q="</span> <span class="token operator">|</span> base64 <span class="token parameter variable">-d</span> <span class="token operator">|</span> <span class="token function">tail</span> <span class="token parameter variable">-c</span> +6 <span class="token operator">|</span> protoc <span class="token parameter variable">--decode_raw</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p><strong>使用 TypeScript 进行解码：</strong></p>
