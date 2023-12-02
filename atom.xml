@@ -84,8 +84,8 @@
   
   <entry>
     <title>配置多个Git账户在HTTPS端口使用SSH连接Github</title>
-    <link href="https://iknow.fun/2023/05/18/pei-zhi-duo-ge-gitzhang-hu-tong-guo-httpsqi-yong-sshlian-jie/"/>
-    <id>https://iknow.fun/2023/05/18/pei-zhi-duo-ge-gitzhang-hu-tong-guo-httpsqi-yong-sshlian-jie/</id>
+    <link href="https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/"/>
+    <id>https://iknow.fun/2023/05/18/pei-zhi-duo-ge-git-zhang-hu-tong-guo-https-qi-yong-ssh-lian-jie/</id>
     <published>2023-05-17T17:01:11.000Z</published>
     <updated>2023-08-29T17:12:01.721Z</updated>
     
@@ -117,8 +117,8 @@
   
   <entry>
     <title>【油猴脚本开发进阶】VSCode + Webpack + TypeScript 油猴开发环境搭建，本地调试、实时热刷新、自动构建和发布</title>
-    <link href="https://iknow.fun/2022/08/03/vscode-webpack-typescriptyou-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/"/>
-    <id>https://iknow.fun/2022/08/03/vscode-webpack-typescriptyou-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/</id>
+    <link href="https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/"/>
+    <id>https://iknow.fun/2022/08/03/vscode-webpack-typescript-you-hou-kai-fa-huan-jing-da-jian-ben-di-diao-shi-shi-shi-re-shua-xin-zi-dong-gou-jian-he-fa-bu/</id>
     <published>2022-08-02T16:06:24.000Z</published>
     <updated>2023-06-16T19:49:36.074Z</updated>
     
@@ -156,8 +156,8 @@
   
   <entry>
     <title>Webpack + TypeScript 开发油猴脚本：斗鱼直播自动切换画质2.0</title>
-    <link href="https://iknow.fun/2022/08/01/webpack-typescriptkai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/"/>
-    <id>https://iknow.fun/2022/08/01/webpack-typescriptkai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/</id>
+    <link href="https://iknow.fun/2022/08/01/webpack-typescript-kai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/"/>
+    <id>https://iknow.fun/2022/08/01/webpack-typescript-kai-fa-you-hou-jiao-ben-dou-yu-zhi-bo-zi-dong-qie-huan-hua-zhi-2-0/</id>
     <published>2022-07-31T18:55:59.000Z</published>
     <updated>2022-08-04T15:54:01.745Z</updated>
     
@@ -193,8 +193,8 @@
   
   <entry>
     <title>WSL2 + VSCode 开发 JavaScript 和 Python 环境配置总结</title>
-    <link href="https://iknow.fun/2022/05/29/wsl2-javascript-python-vscodehuan-jing-pei-zhi-zong-jie/"/>
-    <id>https://iknow.fun/2022/05/29/wsl2-javascript-python-vscodehuan-jing-pei-zhi-zong-jie/</id>
+    <link href="https://iknow.fun/2022/05/29/wsl2-javascript-python-vscode-huan-jing-pei-zhi-zong-jie/"/>
+    <id>https://iknow.fun/2022/05/29/wsl2-javascript-python-vscode-huan-jing-pei-zhi-zong-jie/</id>
     <published>2022-05-28T16:22:36.000Z</published>
     <updated>2023-07-06T08:57:53.197Z</updated>
     
@@ -233,8 +233,8 @@
   
   <entry>
     <title>React + TypeScript + Tailwindcss 开发油猴脚本</title>
-    <link href="https://iknow.fun/2022/05/25/react-typescript-tailwindcsskai-fa-you-hou-jiao-ben/"/>
-    <id>https://iknow.fun/2022/05/25/react-typescript-tailwindcsskai-fa-you-hou-jiao-ben/</id>
+    <link href="https://iknow.fun/2022/05/25/react-typescript-tailwindcss-kai-fa-you-hou-jiao-ben/"/>
+    <id>https://iknow.fun/2022/05/25/react-typescript-tailwindcss-kai-fa-you-hou-jiao-ben/</id>
     <published>2022-05-24T17:31:22.000Z</published>
     <updated>2022-07-31T18:54:52.518Z</updated>
     
@@ -276,8 +276,8 @@
   
   <entry>
     <title>使用百度AI接口OCR自动识别验证码</title>
-    <link href="https://iknow.fun/2021/11/28/orczi-dong-shi-bie-yan-zheng-ma/"/>
-    <id>https://iknow.fun/2021/11/28/orczi-dong-shi-bie-yan-zheng-ma/</id>
+    <link href="https://iknow.fun/2021/11/28/orc-zi-dong-shi-bie-yan-zheng-ma/"/>
+    <id>https://iknow.fun/2021/11/28/orc-zi-dong-shi-bie-yan-zheng-ma/</id>
     <published>2021-11-28T12:15:26.000Z</published>
     <updated>2023-06-16T19:48:46.492Z</updated>
     
@@ -380,8 +380,8 @@
   
   <entry>
     <title>JavaScript Promise 并发控制下载文件的实现</title>
-    <link href="https://iknow.fun/2021/07/29/promisebing-fa-xia-zai/"/>
-    <id>https://iknow.fun/2021/07/29/promisebing-fa-xia-zai/</id>
+    <link href="https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/"/>
+    <id>https://iknow.fun/2021/07/29/promise-bing-fa-xia-zai/</id>
     <published>2021-07-29T08:00:00.000Z</published>
     <updated>2021-07-29T08:43:57.492Z</updated>
     
@@ -411,8 +411,8 @@
   
   <entry>
     <title>HTML5 网页使用 Base64 音频或视频源</title>
-    <link href="https://iknow.fun/2021/07/24/html5wang-ye-shi-yong-base64shi-pin-yuan/"/>
-    <id>https://iknow.fun/2021/07/24/html5wang-ye-shi-yong-base64shi-pin-yuan/</id>
+    <link href="https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/"/>
+    <id>https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/</id>
     <published>2021-07-24T11:28:03.000Z</published>
     <updated>2023-06-16T19:47:53.123Z</updated>
     
@@ -473,8 +473,8 @@
   
   <entry>
     <title>油猴 Tampermonkey 中 js 的数组、对象、map、set 存储数据效率对比</title>
-    <link href="https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-setcun-chu-shu-ju-xiao-lu-dui-bi/"/>
-    <id>https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-setcun-chu-shu-ju-xiao-lu-dui-bi/</id>
+    <link href="https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-set-cun-chu-shu-ju-xiao-lu-dui-bi/"/>
+    <id>https://iknow.fun/2021/07/20/you-hou-jiao-ben-zhong-js-de-shu-zu-dui-xiang-map-set-cun-chu-shu-ju-xiao-lu-dui-bi/</id>
     <published>2021-07-20T13:55:54.000Z</published>
     <updated>2021-07-20T14:08:17.814Z</updated>
     
@@ -533,8 +533,8 @@
   
   <entry>
     <title>高性能 JavaScript 之 DOM 篇</title>
-    <link href="https://iknow.fun/2021/07/13/gao-xing-neng-javascriptzhi-dompian/"/>
-    <id>https://iknow.fun/2021/07/13/gao-xing-neng-javascriptzhi-dompian/</id>
+    <link href="https://iknow.fun/2021/07/13/gao-xing-neng-javascript-zhi-dom-pian/"/>
+    <id>https://iknow.fun/2021/07/13/gao-xing-neng-javascript-zhi-dom-pian/</id>
     <published>2021-07-13T12:52:00.000Z</published>
     <updated>2021-07-20T14:08:01.188Z</updated>
     
@@ -564,8 +564,8 @@
   
   <entry>
     <title>querySelector 与 getElementById 性能比较</title>
-    <link href="https://iknow.fun/2021/07/13/queryselectoryu-getelementbyidxing-neng-bi-jiao/"/>
-    <id>https://iknow.fun/2021/07/13/queryselectoryu-getelementbyidxing-neng-bi-jiao/</id>
+    <link href="https://iknow.fun/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/"/>
+    <id>https://iknow.fun/2021/07/13/queryselector-yu-getelementbyid-xing-neng-bi-jiao/</id>
     <published>2021-07-13T08:39:33.000Z</published>
     <updated>2021-07-16T06:28:44.294Z</updated>
     
