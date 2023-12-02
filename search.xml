@@ -22,6 +22,8 @@
             
             <tag> Web </tag>
             
+            <tag> base64 </tag>
+            
             <tag> JavaScript </tag>
             
             <tag> grpc-web-text </tag>
@@ -29,8 +31,6 @@
             <tag> grpc </tag>
             
             <tag> protobuf </tag>
-            
-            <tag> base64 </tag>
             
             <tag> 逆向 </tag>
             
@@ -413,7 +413,7 @@
             
             <tag> 前端 </tag>
             
-            <tag> BASE64 </tag>
+            <tag> base64 </tag>
             
         </tags>
       

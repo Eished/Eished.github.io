@@ -6,7 +6,7 @@
   <link href="https://iknow.fun/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2023-09-09T15:00:18.819Z</updated>
+  <updated>2023-12-02T16:44:59.285Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang-/"/>
     <id>https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang-/</id>
     <published>2023-08-29T18:09:49.000Z</published>
-    <updated>2023-09-09T15:00:18.819Z</updated>
+    <updated>2023-12-02T16:44:59.285Z</updated>
     
     
       
@@ -42,6 +42,8 @@
     
     <category term="Web" scheme="https://iknow.fun/tags/Web/"/>
     
+    <category term="base64" scheme="https://iknow.fun/tags/base64/"/>
+    
     <category term="JavaScript" scheme="https://iknow.fun/tags/JavaScript/"/>
     
     <category term="grpc-web-text" scheme="https://iknow.fun/tags/grpc-web-text/"/>
@@ -49,8 +51,6 @@
     <category term="grpc" scheme="https://iknow.fun/tags/grpc/"/>
     
     <category term="protobuf" scheme="https://iknow.fun/tags/protobuf/"/>
-    
-    <category term="base64" scheme="https://iknow.fun/tags/base64/"/>
     
     <category term="逆向" scheme="https://iknow.fun/tags/%E9%80%86%E5%90%91/"/>
     
@@ -414,7 +414,7 @@
     <link href="https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/"/>
     <id>https://iknow.fun/2021/07/24/html5-wang-ye-shi-yong-base64-shi-pin-yuan/</id>
     <published>2021-07-24T11:28:03.000Z</published>
-    <updated>2023-06-16T19:47:53.123Z</updated>
+    <updated>2023-12-02T16:45:18.662Z</updated>
     
     
       
@@ -436,7 +436,7 @@
     
     <category term="前端" scheme="https://iknow.fun/tags/%E5%89%8D%E7%AB%AF/"/>
     
-    <category term="BASE64" scheme="https://iknow.fun/tags/BASE64/"/>
+    <category term="base64" scheme="https://iknow.fun/tags/base64/"/>
     
   </entry>
   
