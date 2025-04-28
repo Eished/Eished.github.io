@@ -6,7 +6,7 @@
   <link href="https://iknow.fun/atom.xml" rel="self"/>
   
   <link href="https://iknow.fun/"/>
-  <updated>2023-12-02T16:44:59.285Z</updated>
+  <updated>2025-04-28T07:47:00.714Z</updated>
   <id>https://iknow.fun/</id>
   
   <author>
@@ -17,9 +17,48 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>小米CR660x kwrt/immortalwrt 24最新固件在线编译教程，解决pppoe拨号问题，支持sing-box</title>
+    <link href="https://iknow.fun/2025/04/28/xiao-mi-cr660x-kwrt-immortalwrt-24-zui-xin-gu-jian-zai-xian-bian-yi-jiao-cheng-jie-jue-pppoe-bo-hao-wen-ti-zhi-chi-sing-box/"/>
+    <id>https://iknow.fun/2025/04/28/xiao-mi-cr660x-kwrt-immortalwrt-24-zui-xin-gu-jian-zai-xian-bian-yi-jiao-cheng-jie-jue-pppoe-bo-hao-wen-ti-zhi-chi-sing-box/</id>
+    <published>2025-04-28T07:37:56.000Z</published>
+    <updated>2025-04-28T07:47:00.714Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;小米CR660x-kwrt-immortalwrt-24最新固件在线编译教程，解决pppoe拨号问题，支持sing-box&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="openwrt" scheme="https://iknow.fun/categories/openwrt/"/>
+    
+    
+    <category term="局域网" scheme="https://iknow.fun/tags/%E5%B1%80%E5%9F%9F%E7%BD%91/"/>
+    
+    <category term="网络" scheme="https://iknow.fun/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+    <category term="openwrt" scheme="https://iknow.fun/tags/openwrt/"/>
+    
+    <category term="kwrt" scheme="https://iknow.fun/tags/kwrt/"/>
+    
+    <category term="immortalwrt" scheme="https://iknow.fun/tags/immortalwrt/"/>
+    
+    <category term="pppoe" scheme="https://iknow.fun/tags/pppoe/"/>
+    
+    <category term="sing-box" scheme="https://iknow.fun/tags/sing-box/"/>
+    
+    <category term="passwall" scheme="https://iknow.fun/tags/passwall/"/>
+    
+  </entry>
+  
+  <entry>
     <title>grpc-web-text 中 base64 加密的 protobuf 序列化与反序列化（逆向）</title>
-    <link href="https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang-/"/>
-    <id>https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang-/</id>
+    <link href="https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang/"/>
+    <id>https://iknow.fun/2023/08/30/grpc-web-text-zhong-base64-jia-mi-de-protobuf-xu-lie-hua-yu-fan-xu-lie-hua-ni-xiang/</id>
     <published>2023-08-29T18:09:49.000Z</published>
     <updated>2023-12-02T16:44:59.285Z</updated>
     
@@ -347,8 +386,8 @@
   
   <entry>
     <title>C/C++网络编程，从socket到epoll</title>
-    <link href="https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socketdao-epoll/"/>
-    <id>https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socketdao-epoll/</id>
+    <link href="https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/"/>
+    <id>https://iknow.fun/2021/07/29/c-wang-luo-bian-cheng-cong-socket-dao-epoll/</id>
     <published>2021-07-29T08:20:15.000Z</published>
     <updated>2021-08-23T02:44:52.667Z</updated>
     
@@ -652,40 +691,6 @@
     <category term="Hexo" scheme="https://iknow.fun/tags/Hexo/"/>
     
     <category term="prism" scheme="https://iknow.fun/tags/prism/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C++ 实现学生信息管理系统</title>
-    <link href="https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/"/>
-    <id>https://iknow.fun/2021/07/02/c-shi-xian-xue-sheng-xin-xi-guan-li-xi-tong/</id>
-    <published>2021-07-02T05:15:58.000Z</published>
-    <updated>2021-08-23T02:46:52.424Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;cpp-实现学生信息管理系统&quot;&gt;&lt;a href=&quot;#cpp-实现学生信息管理系统&quot; class=&quot;headerlink&quot; title=&quot;cpp 实现学生信息管理系统&quot;&gt;&lt;/a&gt;cpp 实现学生信息管理系统&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="C/C++" scheme="https://iknow.fun/categories/C-C/"/>
-    
-    
-    <category term="信息管理系统" scheme="https://iknow.fun/tags/%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"/>
-    
-    <category term="C" scheme="https://iknow.fun/tags/C/"/>
-    
-    <category term="C++" scheme="https://iknow.fun/tags/C/"/>
-    
-    <category term="实践" scheme="https://iknow.fun/tags/%E5%AE%9E%E8%B7%B5/"/>
-    
-    <category term="考试" scheme="https://iknow.fun/tags/%E8%80%83%E8%AF%95/"/>
     
   </entry>
   
