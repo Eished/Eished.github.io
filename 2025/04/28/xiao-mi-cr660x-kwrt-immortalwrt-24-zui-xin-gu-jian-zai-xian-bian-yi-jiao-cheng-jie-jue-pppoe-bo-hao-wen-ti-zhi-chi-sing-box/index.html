@@ -401,7 +401,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    823
+                    873
                 </div>
                 
 
@@ -435,7 +435,8 @@
 <p>该固件使用在线编译，新版passwall支持sing-box，测试性能有所提升，内存占用降低，经过局域网大文件无线传输压力测试不会死机重启。</p>
 <p>系统截图：</p>
 <p><img src="/images/image-20250428144213409.png" alt="image-20250428144213409"></p>
-<h2 id="编译地址和插件："><a href="#编译地址和插件：" class="headerlink" title="编译地址和插件："></a>编译地址和插件：</h2><ul>
+<h2 id="编译地址和插件："><a href="#编译地址和插件：" class="headerlink" title="编译地址和插件："></a>编译地址和插件：</h2><p>LEDE最新版本固件也编译测试了，没有pppoe拨号问题，但目前还不是默认firewall4，不支持新版passwall，手动更换容易造成问题，所以不考虑。</p>
+<ul>
 <li>Kwrt: <ol>
 <li>网址：<a href="https://openwrt.ai/?target=ramips/mt7621&id=xiaomi_mi-router-cr660x">https://openwrt.ai/?target=ramips%2Fmt7621&amp;id=xiaomi_mi-router-cr660x</a></li>
 <li>插件：<code>luci-theme-argon sing-box hysteria geoview xray-core</code> ，不要安装 <code>turboacc</code> 插件，测试会造成负载过高死机重启。</li>
