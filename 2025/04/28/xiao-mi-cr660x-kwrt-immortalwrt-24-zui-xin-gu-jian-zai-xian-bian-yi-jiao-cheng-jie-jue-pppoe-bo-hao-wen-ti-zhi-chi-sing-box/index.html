@@ -461,7 +461,7 @@
 <h2 id="修改启动项，解决pppoe拨号失败"><a href="#修改启动项，解决pppoe拨号失败" class="headerlink" title="修改启动项，解决pppoe拨号失败"></a>修改启动项，解决pppoe拨号失败</h2><blockquote>
 <p>由于我不太清楚为什么会导致这个问题，偶然手动重启pppoe接口就正常了，所以加上了这个脚本在系统启动后自动重启pppoe接口，知道如何修复的大佬可以留言联系我。</p>
 </blockquote>
-<p>在系统-启动项-本地启动脚步里加入：</p>
+<p>在系统-启动项-本地启动脚本里加入：</p>
 <pre class="line-numbers language-none"><code class="language-none"># 延迟5秒后重启网络
 (
     sleep 5
